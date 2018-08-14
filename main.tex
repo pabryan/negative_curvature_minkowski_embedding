@@ -1,0 +1,112 @@
+\documentclass[a4paper, 12pt]{amsart}
+
+\input{StandardPaper2}
+\input{bis}
+\input{local_definitions}
+
+\begin{document}
+
+\title[Negative curvature Minkowski embedding]{Embedding negatively curved three-manifolds in Minkowski space}
+
+\date{}
+
+\dedicatory{}
+\subjclass[2010]{58J35, 35K10, 58B20}
+\keywords{Negative curvature, embedding, Minkowski, space-like}
+
+\maketitle
+
+\begin{abstract}
+We consider the problem of embedding negatively curved three-manifolds into Minkowksi space.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi : (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that the isometry
+\[
+(M/G, \bar{g}) \underset{\simeq}{\to} (N, k)
+\]
+and the quotient map \(M \to M/G\) is just \(\pi\) under this identification. Then \((M/G, \bar{g})\) is a compact Riemannian quotient and we say \((M, g)\) is a co-compact Riemannian manifold.
+
+\begin{rem}
+The map \(\pi^{\ast}\) establishes an isomorphism of metrics on \(N\) with metrics on \(M\) invariant under the action of \(G\). Note also that all geometric invariants such as curvature are invariant under \(G\).
+\end{rem}
+
+Now, since \((N, k)\) has strictly negative sectional curvature, so does \((M, g)\) hence by the Cartan-Hadamard theorem, \(M \simeq \R^3\) is diffeomorphic to \(\R^3\) via the exponential map. In particular we may equip \(M\) with the hyperbolic metric, \(g_{\H}\) of constant, negative sectional curvature equal to \(-1\). Let us write \(G_{\H}\) for the isometry group of \((M, g_{\H})\).
+
+On \(M\), there is a simple, smooth homotopy from \(g\) to \(g_{\H}\):
+\[
+h(t) = tg + (1-t)g_{\H}, \quad t \in [0, 1].
+\]
+This gives rise to the following very simple lemma:
+
+\begin{lemma}
+\label{lem:const_neg}
+Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. Then the following are equivalent:
+\begin{enumerate}[i]
+\item \label{enum:neg_met} \(N\) admits a metric of constant, negative sectional curvature,
+\item \label{enum:deck_met} For \((M, g)\) the Riemannian universal cover of \((N, k)\), the hyperbolic metric \(g_{\H}\) is invariant under \(G\), the group of deck transformations of the cover \(\pi : M \to N\),
+\item \label{enum:subgroup} The isometry group, \(G_{\H}\) of \((M, g_{\H})\) is a sub-group of \(G\),
+\item \label{enum:homo_met} \(k\) is smoothly homotopic to a metric of constant, negative sectional curvature,
+\item \label{enum:homo_deck} Every \(G\)-invariant metric \(g\) on \(M\) is smoothly homotopic to \(g_{\H}\) via a smooth \(G\)-invariant homotopy.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Throughout, \(\pi : M \to N\) denotes the universal cover and \(G\) the group of deck transformations.
+
+\begin{itemize}
+\item \ref{enum:neg_met} is equivalent to \ref{enum:deck_met} is equivalent to \ref{enum:subgroup}:
+
+Since \(\pi^{\ast}\) establishes an isomorphism of metrics on \(M\) invariant under \(G\) with metrics on \(N\) and since curvature is a local invariant, there is metric \(k_{\H}\) on \(N\) with constant sectional curvature, if and only if \(g^{\H}\) is invariant under \(G\) giving the first equivalence. The second equivalence follows since \(g_{\H}\) is invariant under \(G\) if and only \(G \leq G_{\H}\).
+
+\item \ref{enum:neg_met} is equivalent to \ref{enum:homo_met}:
+
+The condition \ref{enum:homo_met} obviously implies \ref{enum:neg_met}. Conversely, let \(g = \pi^{\ast} k\) denote the lifted metric to \(M\) which is then invariant under \(G\). Let \(k_{\H}\) denote the constant sectional curvature metric supposed to exist on \(N\). Then (after rescaling if necessary) the hyperbolic metric on \(M\) is given by \(g_{\H} = \pi^{\ast} k_{\H}\). In particular, \(g_{\H}\)  is invariant under \(G\) (which also proves \ref{enum:deck_met}). Thus for any \(t \in [0, 1]\), the metric \(g_t = t g + (1-t) g_{\H}\) is also invariant under \(G\) by linearity of the action \(\varphi^{\ast}\) for each \(\varphi \in G\) acting on metrics. Thus there exists a metric \(k_t\) on \(N\) such that \(g_t = \pi^{\ast} k_t\) and \(k_t\) gives the desired homotopy proving \ref{enum:homo_met}.
+
+\item \ref{enum:homo_met} is equivalent to \ref{enum:homo_deck}:
+
+Again the isomorphism \(\pi^{\ast}\) establishes an isomorphism between homotopies \(k_t\) on \(N\) and homotopies \(g_t\) invariant under \(G\) on \(M\).
+\end{itemize}
+\end{proof}
+
+\begin{rem}
+In condition \ref{enum:subgroup}, to say that \(G_{\H}\) is a sub-group of \(G\) here is via the concrete realisation (representation) of both groups acting on \(M\): the inclusion the inclusion map \(\iota : G_{\H} \to G\) is compatible with the actions of \(G_{\H}\) and \(G\) on \(M\) so that \(\iota(\varphi) \cdot x = \varphi \cdot x\) for every \(\varphi \in G_{\H}\) and \(x \in M\). Thus it is not enough for \(G_{\H}\) to be isomorphic to a subgroup of \(G\). The ismorphism must also be compatible with the actions.
+\end{rem}
+
+The question of whether the conditions of \Cref{lem:const_neg} are satisfied are not easy to check but the lemma affords us with several possible approaches to the problem. Here we prove the following theorem giving a \emph{sufficient} condition for when \((N, k)\) admits a metric of constant, negative sectional curvature.
+
+\begin{thm}[Integrability and constant negative sectional curvature]
+\label{thm:intg_const_curv}
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det P} P^{-1}\) is \emph{Codazzi}. Here \(P\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric.
+
+Then \(N\) admits a metric of constant, negative sectional curvature.
+\end{thm}
+
+The theorem is in fact a corollary of another theorem we prove stating that with the same assumptions, the Riemannian universal cover of \((N, k)\) can be isometrically embedded into Minkowski space \(\R^{3,1}\).
+
+\begin{thm}[Integrability implies embeddability]
+\label{thm:intg_embed}
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det P} P^{-1}\) is Codazzi.
+
+Then the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\).
+\end{thm}
+
+\begin{rem}
+Necessarily, the embedding of \((M, g)\) is as a co-compact, spacelike hypersurface (i.e. the metric, \(g\) induced by the Lorentzian metric is positive definite). Since there are no compact, spacelike hypersurfaces in Minkowksi space, it is not possible to isometrically embed \((N, k)\).
+\end{rem}
+
+\begin{proof}
+[Proof of \Cref{thm:intg_const_curv} assuming \Cref{thm:intg_embed}]
+
+By \Cref{thm:intg_embed} we may embed \((N, k)\) into Minkowksi space as a co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the re-scaled flow Gauss curvature flow deforms \((N, k)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus we obtain a homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result.
+\end{proof}
+
+\begin{rem}
+Under the Gauss curvature flow, as described in \cite[12. Application to the cross-curvature flow]{MR3344442}, the metric evolves by the Cross Curvature Flow introduced in \cite{MR2055396}. It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped.
+\end{rem}
+
+\printbibliography
+
+\end{document}

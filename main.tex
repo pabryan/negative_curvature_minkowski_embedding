@@ -85,7 +85,7 @@ The question of whether the conditions of \Cref{lem:const_neg} are satisfied are
 
 \begin{thm}[Integrability and constant negative sectional curvature]
 \label{thm:intg_const_curv}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det P} P^{-1}\) is \emph{Codazzi}. Here \(P\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Here \(\Ein\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric.
 
 Then \(N\) admits a metric of constant, negative sectional curvature.
 \end{thm}
@@ -94,7 +94,7 @@ The theorem is in fact a corollary of another theorem we prove stating that with
 
 \begin{thm}[Integrability implies embeddability]
 \label{thm:intg_embed}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det P} P^{-1}\) is Codazzi.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi.
 
 Then the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\).
 \end{thm}
@@ -113,6 +113,210 @@ By \Cref{thm:intg_embed} we may embed \((N, k)\) into Minkowksi space as a co-co
 Under the Gauss curvature flow, as described in \cite[12. Application to the cross-curvature flow]{MR3344442}, the metric evolves by the Cross Curvature Flow introduced in \cite{MR2055396}. It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped.
 \end{rem}
 
+\section{Notation and preliminary results}
+\label{sec:notation}
+
+\subsection{Intrinsic geometry conventions}
+\label{subsec:notation_intrinsic}
+
+Given a metric \(g\), let \(\nabla = \nabla^g\) denote the Levi-Civita connection. The superscript will be dropped when the metric is clear from context. Let \(\inpr{\cdot}{\cdot}\) denote the inner-product on Minkowski space and \(D\) the corresponding Levi-Civita connection. Our conventions for the curvature tensor is
+\[
+\Rm(X, Y) Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z
+\]
+and
+\[
+\Rm(X, Y, Z, W) = g(\Rm(X, Y) Z, W).
+\]
+The sectional curvature is then
+\[
+K(X \wedge Y) = \frac{\Rm(X, Y, Y X)}{\abs{X \wedge Y}_g^2}
+\]
+and \(g\) has constant sectional curvature \(K_0\) if and only if (note the minus sign!)
+\[
+\Rm = -\frac{K}{2} g \owedge g
+\]
+where
+\[
+\frac{1}{2} g \owedge g (X, Y, Z, W) = g(X, Z) g (Y, W) - g(X, W) g(Y, Z)
+\]
+denotes the Kulkarni-Nomizu product. Note that
+\[
+\frac{1}{2} g \owedge g (X, Y, Y, X) = -\abs{X \wedge Y}_g^2.
+\]
+
+We define the Ricci curvature
+\[
+\Ric(X, Y) = \Tr \Rm(\cdot, X) Y
+\]
+and scalar curvature
+\[
+\Sc = \Tr \mathcal{R}ic
+\]
+where \(\mathcal{R}ic\) is the self-adjoint endomorphism defined by \(\Ric(X, Y) = g(\mathcal{R}ic(X), Y)\). Equivalently, \(\Sc = \Tr_g \Ric := \Tr g^{\ast} \otimes \Ric\) is the full contraction and where \(g^{\ast}\) denotes the dual metric on \(T^{\ast}M\) induced by the metric \(g\) on \(TM\).
+
+The Einstein tensor is defined by
+\[
+\Ein = \Ric - \frac{\Sc}{2} g
+\]
+We also have the Schouten tensor defined when \(n \geq 3\),
+\[
+\Sch = \frac{1}{n-2} \left(\Ric - \frac{\Sc}{2(n-1)}g \right).
+\]
+Obviously, given \(\Ric\) we obtain \(\Ein\) and \(\Sch\) but we may also recover \(\Ric\) from either of \(\Ein\) or \(\Sch\) so that any of the three determines the other two:
+\[
+\Ric = \Ein + \frac{1}{2-n} \Tr_g \Ein g
+\]
+and
+\[
+\Ric = (n-2) \Sch + \frac{n-2}{2n-3} \Tr_g \Sch g.
+\]
+Moreover, all three tensors are symmetric and simultaneously diagonalisable with an orthonormal basis of eigenvectors.
+
+The Ricci decomposition of the curvature tensor can be written in terms of the three tensors as
+\begin{align*}
+\Rm &= -\Sch \owedge g + W \\
+&= -\frac{1}{n-2} \left(\Ric - \frac{R}{2(n-1)} g\right) \owedge g + W \\
+&= -\frac{1}{n-2} \left(\Ein  -\frac{1}{n-1} \Tr_g \Ein g\right) \owedge g + W
+\end{align*}
+where \(W = \Rm + \Sch \owedge g\) is the Weyl tensor. Note the first term in the sum on the right hand side of each line further decomposes into irreducible components but we don't need that here.
+
+\subsection{Extrinsic geometry conventions}
+\label{subsec:notation_extrinsic}
+
+For an immersion \(F : M^n \to \R^{n,1}\) with \(M\) oriented, we define the second fundamental form by
+\[
+D_{F_{\ast} X} F_{\ast} Y = F_{\ast} \nabla_X Y + h(X, Y).
+\]
+The Gauss formula says that \(F_{\ast} \nabla_X Y = (D_{F_{\ast} X} F_{\ast} Y)^T\) is the tangential part of \(D_{F_{\ast} X} F{\ast} Y\) so that \(h(X, Y)\) is normal. The immersion is \emph{spacelike} if the induced metric \(g = F^{\ast} \inpr{\cdot}{\cdot}\) is positive definite, in which case the unit normal \(\nu\) is \emph{timelike}:
+\[
+\inpr{\nu}{\nu} = -1.
+\]
+Then we may write
+\[
+h(X, Y) = A(X, Y) \nu
+\]
+where
+\[
+A(X, Y) = -\inpr{D_{F_{\ast} X} F_{\ast} Y}{\nu} = \inpr{F_{\ast} Y}{D_{F_{\ast} X} \nu} = g(\W(X), Y)
+\]
+where \(\W = F_{\ast}^{-1} D\nu: TM \to TM\) denotes the Weingarten map.
+
+Recalling that Minkowski space is flat, the Gauss equation for spacelike hypersurfaces reads
+\[
+\Rm(X, Y, Z, W) = -\inpr{h(X, Z)}{h(Y, W)} + \inpr{h(X, W)}{h(Y, Z)} = \frac{1}{2} A \owedge A (X, Y, Z, W).
+\]
+Since \(A(X, Y) = g(\W(X), Y)\) we have
+\begin{align*}
+g(\Rm(X, Y) Z, W) &= g(\W(X), Z) g(\W(Y), W) - g(\W(X), W) g(\W(Y), Z) \\
+&= g(g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X), W)
+\end{align*}
+so that
+\[
+\Rm(X, Y) Z = g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X).
+\]
+Then
+\[
+\begin{split}
+\Ric(X, Y) &= \Tr Z \mapsto \Rm(Z, X) Y \\
+&= \Tr [Z \mapsto g(\W(Y), Z) \W(X)] - \Tr[Z \mapsto g(\W(X), Y) \W(Z)].
+\end{split}
+\]
+The first map may be written \(Z \mapsto [g(\W(Y), \cdot) \otimes \W(X)] (Z)\) which has trace
+\[
+\Tr [Z \mapsto g(\W(Y), Z) \W(X)] = g(\W(Y), \cdot) (\W(X)) = g(\W(X), \W(Y)).
+\]
+The second is
+\[
+\Tr [Z \mapsto g(\W(X), Y) \W(Z)] = g(\W(X), Y) \Tr \W = H A(X, Y).
+\]
+Thus
+\[
+\Ric(X, Y) = g(\W(X),\W(Y)) - H A(X, Y).
+\]
+Since \(\W\) is self-adjoint we may write this as
+\[
+\Ric(X, Y) = g(\W^2(X) - H \W(X), Y)
+\]
+so that
+\[
+\Sc = \Tr [\W^2 - H\W] = \|A\|^2 - H^2.
+\]
+
+The Codazzi-Mainardi equation reads
+\[
+\nabla A (X; Y, Z) := \nabla_X A (Y, Z) = \nabla A(Y; X, Z).
+\]
+Of course, since \(A\) is already symmetric, \(\nabla A\) is automatically symmetric in the last two slots hence the Codazzi-Mainardi equation implies \(\nabla A\) becomes fully symmetric in all three slots.
+
+
+\subsection{The three dimensional case}
+\label{subsec:notation_threedim}
+
+\subsubsection{Intrinsic geometry}
+
+Specialising to the case \(n = 3\), we have
+\[
+\Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
+\]
+Then the Ricci decomposition becomes
+\[
+\Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g G}{2} g \owedge g.
+\]
+Then we may express the sectional curvature
+\begin{align*}
+\abs{X \wedge Y} K(X \wedge Y) &= -2\Sch(X, Y) g(X, Y) + \Sch(X, X) g(Y, Y) + \Sch(Y, Y) g(X, X) \\
+&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) - \frac{\Sc}{2} \abs{X \wedge Y} \\
+&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) - \Tr_g \Ein \abs{X \wedge Y} \\
+\end{align*}
+
+In particular, if \(X, Y\) are orthonormal eigenvectors for \(\Ric\), then
+\begin{align*}
+K(X \wedge Y) &= \lambda^{\Sch}(X) + \lambda^{\Sch}(Y) \\
+&= \lambda^{\Ric} (X) + \lambda^{\Ric} (Y) - \frac{\Sc}{2} \\
+&= \lambda^{\Ein} (X) + \lambda^{\Ein} (Y) - \Tr_g \Ein \\
+\end{align*}
+where \(\lambda^{\Sch}(X)\) denotes the eigenvalue of \(\Sch\) corresponding to \(X\) and likewise for \(\lambda^{\Ric}\) and \(\lambda^{\Ein}\). In particular, if \(\{E_1, E_2, E_3\}\) is an orthonormal basis of eigenvectors, then the trace is simply the sum of the corresponding eigenvalues, hence for \(i \ne j\) and letting \(k\) denote the remaining index we have
+\begin{align*}
+K(E_i \wedge E_j) &= \lambda^{\Sch}_i + \lambda^{\Sch}_j \\
+&= \lambda^{\Ric}_i  + \lambda^{\Ric}_j - \frac{1}{2} \sum_l \lambda^{\Ric}_l = \frac{1}{2}\left(\lambda^{\Ric}_i + \lambda^{\Ric}_j -\lambda^{\Ric}_k\right) \\
+&= \lambda^{\Ein}_i + \lambda^{\Ein}_j - \sum_l \lambda^{\Ein}_l = -\lambda^{\Ein}_k.
+\end{align*}
+For this reason, on three manifolds, the Einstein tensor holds special significance with eigenvalues equal to the \emph{principal sectional curvatures}. Thus, although from the point of view of the curvature decomposition, it is more natural and simpler to work with \(\Sch\), from the point of view of sectional curvatures, it is more convenient to work with \(\Ein\). Of course the two are equivalent so we may choose whichever is more suited to our purposes which at present is to study negative sectional curvature so we work with \(\Ein\). In particular we note that:
+
+\vfill
+\emph{\(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite.}
+\vfill
+
+
+\subsubsection{Extrinsic geometry}
+
+The change of perspective from \(\Sch\) is \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation gave us
+\[
+\Ric(X, Y) = g(\W^2(X) - H \W(X), Y), \quad \Sc = \|A\|^2 - H^2.
+\]
+Note that
+\[
+\mathcal{R}ic (X) = \W^2(X) - H \W
+\]
+is simultaneously diagonalisable with \(\W\) and hence so too \(\Ein\) is simultaneously diagonalisable with \(A\). We have
+\[
+\Ein (X, Y) = g(\W^2(X), Y) - H A(X, Y) - \frac{\|A\|^2 - H^2}{2} g (X, Y).
+\]
+Denoting the eigenvalues of \(\W\) (i.e. the principal curvatures) by \(\kappa_i\), we then have with \(j \ne k\) the two distinct indices from \(i\),
+\[
+\begin{split}
+-K(E_j \wedge E_k) = \lambda^{\Ein}_i &= \Ein(E_i, E_i) = \kappa_i^2 - \kappa_i \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
+&= - \kappa_i \kappa_j - \kappa_i \kappa_k + \kappa_i \kappa_j + \kappa_i \kappa_k + \kappa_j \kappa_k \\
+&= \kappa_j \kappa_k.
+\end{split}
+\]
+Thus we see that the sectional curvatures are minus the product of the corresponding principal curvatures and \(\Ein\) is positive definite if and only if all the \(\kappa_i\) have the same sign. This is true either if all are negative or all are positive. By changing orientation \(\nu \mapsto -\nu\) if necessary we assume that \(\kappa_i > 0\).
+
+\vfill
+\emph{\(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).}
+\vfill
+
 \printbibliography
+
 
 \end{document}

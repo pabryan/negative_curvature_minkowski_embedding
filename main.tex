@@ -316,6 +316,28 @@ Thus we see that the sectional curvatures are minus the product of the correspon
 \emph{\(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).}
 \vfill
 
+Furthermore, the Gauss curvature is \(K = \det \W = \kappa_i \kappa_j \kappa_k\) and when \(A\) is positive definite, \(\W^{-1}\) is well defined, simultaneously diagonalisable with \(\W\) with eigenvalues \(\kappa_i^{-1}\) and hence
+\[
+\adj \W := \det \W \W^{-1} = \kappa_i \kappa_j \kappa_j \kappa_i^{-1} \delta_{il} = \kappa_j \kappa_k \delta_{il} = \lambda^{\Ein}_i \delta_{il} = \Ein.
+\]
+That is, the tensor \(\adj \W\) is \emph{intrinsic}. In fact, writing \(\Ein(X, Y) = g(\mathcal{\Ein} (X), Y)\),
+\[
+\det \mathcal{\Ein} = \lambda^{\Ein}_i \lambda^{\Ein}_j \lambda^{\Ein}_3 = \kappa_j \kappa_k \kappa_i \kappa_k \kappa_i \kappa_j = K^2.
+\]
+Then since \(\mathcal{\Ein}^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j \kappa_k)^{-1}\),
+\[
+\sqrt{\det \mathcal{\Ein}} \mathcal{\Ein}^{-1} = \kappa_i \kappa_j \kappa_k (\kappa_j \kappa_k){-1} \delta_{il} = \kappa_i \delta_{il} = \W 
+\]
+we see that in fact \(\W\) is intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\mathcal{\Ein}^{-1} (X), Y)\) we have
+\[
+\alpha := \sqrt{\det \mathcal{\Ein}} \Ein^{-1} = A
+\]
+and hence \(\alpha\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
+
+\begin{rem}
+We see a strong rigidity statement that the \emph{extrinsic geometry} of embedded, spacelike hypersurfaces is completely determined by the \emph{intrinsic geometry}. Our main theorem is then the statement that if the intrinsic geometry satisfies \(\alpha\) is Codazzi, then in fact, the intrinsic geometry is induced by an spacelike embedding.
+\end{rem}
+
 \section{The embedding problem}
 \label{sec:embedding}
 

@@ -319,4 +319,84 @@ Thus we see that the sectional curvatures are minus the product of the correspon
 \printbibliography
 
 
+\section{The embedding problem}
+\label{sec:embedding}
+
+\begin{lemma}
+Let \(M^n \to \R^{n,1}\) be an immersed, spacelike hypersurface. Then \(M^n\) is embedded as a graph over the \(y^{n+1} = 0\) hyperplane.
+\end{lemma}
+
+\begin{proof}
+Take any local parametrisation \(\varphi : U \subset \R^n \to \R^{n,1}\) of \(M\). For any non-zero \(X \in TU\) write
+\[
+d\varphi \cdot X = \bar{X} + X^{n+1} e_{n+1}
+\]
+with \(\bar{X} = \bar{X}^a \partial_a = \varphi^a_i X^i \partial_a \in \text{span} \{\partial_a : 1 \leq a \leq n\}\). Then since \(M\) is spacelike, we have
+\[
+0 < g(X, X) = \inpr{\bar{X} + X^{n+1} e_{n+1}}{\bar{X} + X^{n+1} e_{n+1}} = \|\bar{X}\|_{\R^n}^2 - (X^{n+1})^2.
+\]
+That is
+\[
+\|\bar{X}\|_{\R^n}^2 > (X^{n+1})^2 \geq 0.
+\]
+
+Now let \(\pi(y^1, \cdots, y^n, y^{n+1}) = (y^1, \cdots, y^n)\) denote the orthogonal projection onto the \(y^{n+1} = 0\) hyperplane and consider
+\[
+\pi \circ \varphi (x) = (\varphi^1(x), \cdots, \varphi^n(x)).
+\]
+Since \(d \pi\) is projection onto \(\text{span} \{\partial_a : 1 \leq a \leq n\}\) we obtain that
+\[
+d(\pi \circ \varphi) \cdot X = d\pi (\bar{X} + X^{n+1} e_{n+1}) = \bar{X}.
+\]
+Thus if \(X \ne 0\),
+\[
+\|d(\pi \circ \varphi) \cdot X\|_{\R^n}^2 = \|\bar{X}\|_{\R^n}^2 > 0
+\]
+and hence \(d(\pi \circ \varphi)\) is non-singular. By the inverse function theorem, locally \(\pi \circ \varphi\) is invertible and we find that
+\[
+\varphi \circ (\pi \circ \varphi)^{-1} (y^1, \cdots, y^n) = (y^1, \cdots, y^n, \varphi^{n+1} \circ (\pi \circ \varphi)^{-1} (y_1, \cdots, y_n))
+\]
+expresses \(M\) locally as a graph of the function \(\varphi^{n+1} \circ (\pi \circ \varphi)^{-1}\) over the \(y^{n+1} = 0\) plane. But this is true locally everywhere and since graphs are unique, \(M\) is globally a graph and hence also embedded.
+\end{proof}
+
+Thus we may assume any immersed, spacelike hypersurface is a graph. Now we may formulate the embedding problem as follows: Let \(g\) be a metric on \(\R^3\) with negative sectional curvature. Then \((\R^3, g)\) embeds isometrically into \(\R^{3,1}\) if and only if there exists a function \(u : \R^3 \to \R\) such that
+\[
+F : x \in \R^3 \mapsto (x, u(x)) \in \R^{3,1}
+\]
+is an isometric embedding. The induced metric on \(\R^3\) via the embedding \(F\) is
+\[
+F^{\ast} \inpr{\cdot}{\cdot} = \delta - Du \otimes Du
+\]
+where \(\delta\) denotes the Euclidean metric and \(Du = \partial_i dx^i\) the Euclidean differential. In coordinates the induced metric is
+\[
+\delta_{ij} - \partial_i u \partial_j u.
+\]
+
+The embedding problem is the equation \(\delta - Du \otimes Du = g\), or
+\[
+Du \otimes Du = \delta - g
+\]
+where \(\delta\) and \(g\) are given symmetric, positive definite bilinear forms. In coordinates, we have \(6\) equation in one unknown
+\[
+\partial_i u \partial_j u = \delta_{ij} - g_{ij}, \quad 1 \leq i \leq 3, \quad i \leq j \leq 3.
+\]
+
+This is an \emph{overdetermined} system. However, there is an a-priori necessary condition that \(g\) must satisfy in order that \(g = F^{\ast} \inpr{\cdot}{\cdot}\) can have a solution. This obtained by translating the Codazzi equation into an intrinsic condition on \(g\).
+
+\begin{lemma}
+Let \(g = F^{\ast} \inpr{\cdot}{\cdot}\) and let \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\). Then \(\alpha\) is Codazzi. That is, \(\nabla \alpha\) is totally symmetric.
+\end{lemma}
+
+\begin{proof}
+Since \(\Ein^{-1}\) is symmetric, we immediately have \(\nabla \alpha(X; Y, Z) = \nabla \alpha(X; Z, Y)\) so it suffices to prove that
+\[
+\nabla \alpha (X; Y, Z) = \nabla (Y; X, Z).
+\]
+That is,
+\[
+\nabla_X \alpha (Y, Z) = \nabla_Y \alpha (X, Z).
+\]
+\end{proof}
+
+Thus if \(g\) is a metric such that \(\alpha\) is not Codazzi, then there are no solutions \(u\) to the embedding problem. Thus we restrict to case of metrics satisfying this condition which we think of as an integrability condition. The addition of this integrability condition allows us to reduce the number of independent equations for \(u\).
 \end{document}

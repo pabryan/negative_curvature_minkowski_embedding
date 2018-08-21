@@ -320,17 +320,17 @@ Furthermore, the Gauss curvature is \(K = \det \W = \kappa_i \kappa_j \kappa_k\)
 \[
 \adj \W := \det \W \W^{-1} = \kappa_i \kappa_j \kappa_j \kappa_i^{-1} \delta_{il} = \kappa_j \kappa_k \delta_{il} = \lambda^{\Ein}_i \delta_{il} = \Ein.
 \]
-That is, the tensor \(\adj \W\) is \emph{intrinsic}. In fact, writing \(\Ein(X, Y) = g(\mathcal{\Ein} (X), Y)\),
+That is, the tensor \(\adj \W\) is \emph{intrinsic}. In fact, writing \(\Ein(X, Y) = g(\opEin (X), Y)\),
 \[
-\det \mathcal{\Ein} = \lambda^{\Ein}_i \lambda^{\Ein}_j \lambda^{\Ein}_3 = \kappa_j \kappa_k \kappa_i \kappa_k \kappa_i \kappa_j = K^2.
+\det \opEin = \lambda^{\Ein}_i \lambda^{\Ein}_j \lambda^{\Ein}_3 = \kappa_j \kappa_k \kappa_i \kappa_k \kappa_i \kappa_j = K^2.
 \]
-Then since \(\mathcal{\Ein}^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j \kappa_k)^{-1}\),
+Then since \(\opEin^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j \kappa_k)^{-1}\),
 \[
-\sqrt{\det \mathcal{\Ein}} \mathcal{\Ein}^{-1} = \kappa_i \kappa_j \kappa_k (\kappa_j \kappa_k){-1} \delta_{il} = \kappa_i \delta_{il} = \W 
+\sqrt{\det \opEin} \opEin^{-1} = \kappa_i \kappa_j \kappa_k (\kappa_j \kappa_k)^{-1} \delta_{il} = \kappa_i \delta_{il} = \W
 \]
-we see that in fact \(\W\) is intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\mathcal{\Ein}^{-1} (X), Y)\) we have
+we see that in fact \(\W\) is intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\) we have
 \[
-\alpha := \sqrt{\det \mathcal{\Ein}} \Ein^{-1} = A
+\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
 \]
 and hence \(\alpha\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
 
@@ -400,24 +400,7 @@ where \(\delta\) and \(g\) are given symmetric, positive definite bilinear forms
 \partial_i u \partial_j u = \delta_{ij} - g_{ij}, \quad 1 \leq i \leq 3, \quad i \leq j \leq 3.
 \]
 
-This is an \emph{overdetermined} system. However, there is an a-priori necessary condition that \(g\) must satisfy in order that \(g = F^{\ast} \inpr{\cdot}{\cdot}\) can have a solution. This obtained by translating the Codazzi equation into an intrinsic condition on \(g\).
-
-\begin{lemma}
-Let \(g = F^{\ast} \inpr{\cdot}{\cdot}\) and let \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\). Then \(\alpha\) is Codazzi. That is, \(\nabla \alpha\) is totally symmetric.
-\end{lemma}
-
-\begin{proof}
-Since \(\Ein^{-1}\) is symmetric, we immediately have \(\nabla \alpha(X; Y, Z) = \nabla \alpha(X; Z, Y)\) so it suffices to prove that
-\[
-\nabla \alpha (X; Y, Z) = \nabla (Y; X, Z).
-\]
-That is,
-\[
-\nabla_X \alpha (Y, Z) = \nabla_Y \alpha (X, Z).
-\]
-\end{proof}
-
-Thus if \(g\) is a metric such that \(\alpha\) is not Codazzi, then there are no solutions \(u\) to the embedding problem. Thus we restrict to case of metrics satisfying this condition which we think of as an integrability condition. The addition of this integrability condition allows us to reduce the number of independent equations for \(u\).
+This is an \emph{overdetermined} system. However, there is an a-priori necessary condition that \(g\) must satisfy in order that \(g = F^{\ast} \inpr{\cdot}{\cdot}\) can have a solution. This is that \(\alpha = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi. Thus if \(g\) is a metric such that \(\alpha\) is not Codazzi, then there are no solutions \(u\) to the embedding problem. Thus we restrict to case of metrics satisfying this condition which we think of as an integrability condition. The addition of this integrability condition allows us to reduce the number of independent equations for \(u\).
 
 \printbibliography
 

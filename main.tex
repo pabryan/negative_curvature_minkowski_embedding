@@ -345,6 +345,8 @@ We see a strong rigidity statement that the \emph{extrinsic geometry} of embedde
 \label{subsec:embedding_graph}
 
 \begin{lemma}
+\label{lem:graph}
+
 Let \(M^n \to \R^{n,1}\) be an immersed, spacelike hypersurface. Then \(M^n\) is embedded as a graph over the \(y^{n+1} = 0\) hyperplane.
 \end{lemma}
 
@@ -403,7 +405,45 @@ where \(\delta\) and \(g\) are given symmetric, positive definite bilinear forms
 \partial_i u \partial_j u = \delta_{ij} - g_{ij}, \quad 1 \leq i \leq 3, \quad i \leq j \leq 3.
 \]
 
-This is an \emph{overdetermined} system. However, there is an a-priori necessary condition that \(g\) must satisfy in order that \(g = F^{\ast} \inpr{\cdot}{\cdot}\) can have a solution. This is that \(\alpha = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi. Thus if \(g\) is a metric such that \(\alpha\) is not Codazzi, then there are no solutions \(u\) to the embedding problem. Thus we restrict to case of metrics satisfying this condition which we think of as an integrability condition. The addition of this integrability condition allows us to reduce the number of independent equations for \(u\).
+The embedding equation is an \emph{overdetermined} system. However, there is an a-priori necessary condition that \(g\) must satisfy in order that \(g = F^{\ast} \inpr{\cdot}{\cdot}\) can have a solution. This is that \(\alpha = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi. Thus if \(g\) is a metric such that \(\alpha\) is not Codazzi, then there are no solutions \(u\) to the embedding problem and there is nothing left to do. We have the following simple result characterising precisely for which \(g\) there is a solution.
+
+\begin{lemma}
+The metric \(g\) is induced by an embedding \(\R^3 \to \R^{3,1}\) if and only if
+\[
+g = \varphi^{\ast} (\delta - \omega \otimes \omega)
+\]
+for some diffeomorphism \(\varphi : \R^3 \to \R^3\) and for \(\omega\) a closed form.
+\end{lemma}
+
+\begin{proof}
+By \Cref{lem:graph} any embedding \(F : \R^3 \to \R^{3,1}\) may be written
+\[
+F(x) = (\varphi(x), u (\varphi(x))) \in \R^3 \times \R
+\]
+for some diffeomorphism \(\varphi : \R^3 \to \R^3\) and some function \(u : \R^3 \to \R\). That is \(F = G \circ \varphi\) where
+\(G(x) = (x, u(x))\) is a graph. Then
+\[
+F^{\ast} \inpr{\cdot}{\cdot} = (G \circ \varphi)^{\ast} \inpr{\cdot}{\cdot} = \varphi^{\ast} G^{\ast} \inpr{\cdot}{\cdot} = \varphi^{\ast} (\delta - du \otimees du).
+\]
+
+By the Poincar\'e lemma on \(\R^3\) closed forms \(\omega\) are precisely exact forms \(du\). Thus the space of metrics induced by an embedding \(\R^3 \to \R^{3,1}\) is precisely the space of metrics stated in the lemma.
+\end{proof}
+
+The goal now becomes to show that for a metric \(g\), the condition \(\alpha\) is Codazzi is in fact equivalent to the condition that \(g = \varphi^{\ast}(\delta - \omega \otimes \omega)\) for some closed form \(\omega\).
+
+\subsection{The Codazzi Condition}
+\label{subsec:codazzi}
+
+Let \(g\) be a metric on \(\R^3\) such that \(\alpha\) is Codazzi. We can always perform a change of coordinates \(\varphi : \R^3 \to \R^3\) so that \(\varphi^{\ast} g (0) = \delta\) without affecting the Codazzi condition, since it is geometric. Then we  aim to show that in fact \(\varphi^{\ast} g(0) = \delta - \omega \otimes \omega\) for a closed form \(\omega\). Thus without loss of generality we assume that \(g(0) = \delta\).
+
+\begin{thm}
+Let \(g\) be a metric such that \(\alpha\) is Codazzi and such that \(g(0) = \delta\). Then there exists a closed form \(\omega\) such that \(g = \delta - \omega \otimes \omega\).
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
 
 \subsection{Method of continuity}
 \label{subsec:embedding_continuity}

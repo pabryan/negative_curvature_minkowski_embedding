@@ -99,12 +99,25 @@ Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative secti
 Then the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\).
 \end{thm}
 
+\begin{proof}
+The tensor $\alpha$ is a solution of the once-contracted Gauss equation. Consider the system of equations for unknowns $X_{;1},X_{;2},X_{;3},\nu:$
+\begin{align}
+\left\{
+  \begin{array}{ll}
+    X_{;ij}=-\alpha_{ij}\nu & \\
+    \nu_{;i}=\alpha_i^jX_{;j}, & 
+  \end{array}
+\right.
+\end{align}
+The integrability conditions (Gauss and Codazzi equations) are satisfied. Thus we can locally solve this system and deduce that the induced metric agrees with $g.$
+\end{proof}
+
 \begin{rem}
 Necessarily, the embedding of \((M, g)\) is as a co-compact, spacelike hypersurface (i.e. the metric, \(g\) induced by the Lorentzian metric is positive definite). Since there are no compact, spacelike hypersurfaces in Minkowksi space, it is not possible to isometrically embed \((N, k)\).
 \end{rem}
 
 \begin{proof}
-[Proof of \Cref{thm:intg_const_curv} assuming \Cref{thm:intg_embed}]
+[Proof of \Cref{thm:intg_const_curv}]
 
 By \Cref{thm:intg_embed} we may embed \((N, k)\) into Minkowksi space as a co-compact, spacelike hypersurface. By the Gauss equation, since the second fundamental form is positive definite hence the embedding is in fact locally convex. By \cite[Theorem 1.1]{MR3344442}, the re-scaled Gauss curvature flow deforms \((N, k)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus we obtain a homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result since the flow preserves the isometry group of the initial metric \(g\).
 \end{proof}

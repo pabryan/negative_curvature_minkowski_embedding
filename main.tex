@@ -90,13 +90,11 @@ Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative secti
 Then \(N\) admits a metric of constant, negative sectional curvature.
 \end{thm}
 
-The theorem is in fact a corollary of another theorem we prove stating that with the same assumptions, the Riemannian universal cover of \((N, k)\) can be isometrically embedded into Minkowski space \(\R^{3,1}\).
+The theorem is in fact a corollary of another theorem we prove stating that with the same assumptions, the Riemannian universal cover of \((N, k)\) can be isometrically embedded into Minkowski space \(\R^{3,1}\) and then applying \cite[Theorem 1.1]{MR3344442} which says that \(N\) may be deformed to the one-sheeted hyperbolid at infinity by the Gauss curvature flow. First, the isometric embedding.
 
 \begin{thm}[Integrability implies embeddability]
 \label{thm:intg_embed}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi.
-
-Then the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\).
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, spacelike hypersurface.
 \end{thm}
 
 \begin{proof}
@@ -261,103 +259,7 @@ The Codazzi-Mainardi equation reads
 \]
 Of course, since \(A\) is already symmetric, \(\nabla A\) is automatically symmetric in the last two slots hence the Codazzi-Mainardi equation implies \(\nabla A\) becomes fully symmetric in all three slots.
 
-
-\subsection{The Three Dimensional Case}
-\label{subsec:notation_threedim}
-
-\subsubsection{Intrinsic geometry}
-
-Specialising to the case \(n = 3\), we have
-\[
-\Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
-\]
-Then the Ricci decomposition becomes
-\[
-\Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g G}{2} g \owedge g.
-\]
-Then we may express the sectional curvature
-\begin{align*}
-\abs{X \wedge Y} K(X \wedge Y) &= -2\Sch(X, Y) g(X, Y) + \Sch(X, X) g(Y, Y) + \Sch(Y, Y) g(X, X) \\
-&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) - \frac{\Sc}{2} \abs{X \wedge Y} \\
-&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) - \Tr_g \Ein \abs{X \wedge Y} \\
-\end{align*}
-
-In particular, if \(X, Y\) are orthonormal eigenvectors for \(\Ric\), then
-\begin{align*}
-K(X \wedge Y) &= \lambda^{\Sch}(X) + \lambda^{\Sch}(Y) \\
-&= \lambda^{\Ric} (X) + \lambda^{\Ric} (Y) - \frac{\Sc}{2} \\
-&= \lambda^{\Ein} (X) + \lambda^{\Ein} (Y) - \Tr_g \Ein \\
-\end{align*}
-where \(\lambda^{\Sch}(X)\) denotes the eigenvalue of \(\Sch\) corresponding to \(X\) and likewise for \(\lambda^{\Ric}\) and \(\lambda^{\Ein}\). In particular, if \(\{E_1, E_2, E_3\}\) is an orthonormal basis of eigenvectors, then the trace is simply the sum of the corresponding eigenvalues, hence for \(i \ne j\) and letting \(k\) denote the remaining index we have
-\begin{align*}
-K(E_i \wedge E_j) &= \lambda^{\Sch}_i + \lambda^{\Sch}_j \\
-&= \lambda^{\Ric}_i  + \lambda^{\Ric}_j - \frac{1}{2} \sum_l \lambda^{\Ric}_l = \frac{1}{2}\left(\lambda^{\Ric}_i + \lambda^{\Ric}_j -\lambda^{\Ric}_k\right) \\
-&= \lambda^{\Ein}_i + \lambda^{\Ein}_j - \sum_l \lambda^{\Ein}_l = -\lambda^{\Ein}_k.
-\end{align*}
-For this reason, on three manifolds, the Einstein tensor holds special significance with eigenvalues equal to the \emph{principal sectional curvatures}. Thus, although from the point of view of the curvature decomposition, it is more natural and simpler to work with \(\Sch\), from the point of view of sectional curvatures, it is more convenient to work with \(\Ein\). Of course the two are equivalent so we may choose whichever is more suited to our purposes which at present is to study negative sectional curvature so we work with \(\Ein\). In particular we note that:
-
-\vfill
-\emph{\(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite.}
-\vfill
-
-
-\subsubsection{Extrinsic geometry}
-
-The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation gave us
-\[
-\Ric(X, Y) = g(\W^2(X) - H \W(X), Y), \quad \Sc = \|A\|^2 - H^2.
-\]
-Note that
-\[
-\mathcal{R}ic (X) = \W^2(X) - H \W
-\]
-is simultaneously diagonalisable with \(\W\) and hence so too \(\Ein\) is simultaneously diagonalisable with \(A\). We have
-\[
-\Ein (X, Y) = g(\W^2(X), Y) - H A(X, Y) - \frac{\|A\|^2 - H^2}{2} g (X, Y).
-\]
-Denoting the eigenvalues of \(\W\) (i.e. the principal curvatures) by \(\kappa_i\), we then have with \(j \ne k\) the two distinct indices from \(i\),
-\[
-\begin{split}
--K(E_j \wedge E_k) = \lambda^{\Ein}_i &= \Ein(E_i, E_i) = \kappa_i^2 - \kappa_i \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
-&= - \kappa_i \kappa_j - \kappa_i \kappa_k + \kappa_i \kappa_j + \kappa_i \kappa_k + \kappa_j \kappa_k \\
-&= \kappa_j \kappa_k.
-\end{split}
-\]
-Thus we see that the sectional curvatures are minus the product of the corresponding principal curvatures and \(\Ein\) is positive definite if and only if all the \(\kappa_i\) have the same sign. This is true either if all are negative or all are positive. By changing orientation \(\nu \mapsto -\nu\) if necessary we assume that \(\kappa_i > 0\).
-
-\vfill
-\emph{\(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).}
-\vfill
-
-Furthermore, the Gauss curvature is \(K = \det \W = \kappa_i \kappa_j \kappa_k\) and when \(A\) is positive definite, \(\W^{-1}\) is well defined, simultaneously diagonalisable with \(\W\) with eigenvalues \(\kappa_i^{-1}\) and hence
-\[
-\adj \W := \det \W \W^{-1} = \kappa_i \kappa_j \kappa_j \kappa_i^{-1} \delta_{il} = \kappa_j \kappa_k \delta_{il} = \lambda^{\Ein}_i \delta_{il} = \Ein.
-\]
-That is, the tensor \(\adj \W\) is \emph{intrinsic}. In fact, writing \(\Ein(X, Y) = g(\opEin (X), Y)\),
-\[
-\det \opEin = \lambda^{\Ein}_i \lambda^{\Ein}_j \lambda^{\Ein}_3 = \kappa_j \kappa_k \kappa_i \kappa_k \kappa_i \kappa_j = K^2.
-\]
-Then since \(\opEin^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j \kappa_k)^{-1}\),
-\[
-\sqrt{\det \opEin} \opEin^{-1} = \kappa_i \kappa_j \kappa_k (\kappa_j \kappa_k)^{-1} \delta_{il} = \kappa_i \delta_{il} = \W
-\]
-we see that in fact \(\W\) is intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\) we have
-\[
-\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
-\]
-and hence \(\alpha\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
-
-\begin{rem}
-We see a strong rigidity statement that the \emph{extrinsic geometry} of embedded, spacelike hypersurfaces is completely determined by the \emph{intrinsic geometry}. Our main theorem is then the statement that if the intrinsic geometry satisfies \(\alpha\) is Codazzi, then in fact, the intrinsic geometry is induced by an spacelike embedding.
-\end{rem}
-
-\subsection{The \(n\) Dimensional Case}
-\label{subsec:notation_ndim}
-\section{The Embedding Problem}
-\label{sec:embedding}
-
-\subsection{Reduction To The Graph Case}
-\label{subsec:embedding_graph}
+Let us round out this section with a simple lemma showing spacelike hypersurfaces, \(M\) are graphs over the \(y^{n+1} = 0\) spacelike hyperplane. This simply follows because \(M\) has a timelike normal vector field, \(\nu\) so that \(\inpr{\nu}{e_{n+1}}\) has a fixed sign. We give the proof for completeness.
 
 \begin{lemma}
 \label{lem:graph}
@@ -397,6 +299,122 @@ and hence \(d(\pi \circ \varphi)\) is non-singular. By the inverse function theo
 \]
 expresses \(M\) locally as a graph of the function \(\varphi^{n+1} \circ (\pi \circ \varphi)^{-1}\) over the \(y^{n+1} = 0\) plane. But this is true locally everywhere and since graphs are unique, \(M\) is globally a graph and hence also embedded.
 \end{proof}
+
+
+\subsection{The Three Dimensional Case}
+\label{subsec:notation_threedim}
+
+\subsubsection{Intrinsic geometry}
+
+Specialising to the case \(n = 3\), we have
+\[
+\Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
+\]
+Then the Ricci decomposition becomes
+\[
+\Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g G}{2} g \owedge g.
+\]
+Then we may express the sectional curvature
+\begin{align*}
+\abs{X \wedge Y} K(X \wedge Y) &= -2\Sch(X, Y) g(X, Y) + \Sch(X, X) g(Y, Y) + \Sch(Y, Y) g(X, X) \\
+&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) - \frac{\Sc}{2} \abs{X \wedge Y} \\
+&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) - \Tr_g \Ein \abs{X \wedge Y} \\
+\end{align*}
+
+\begin{lemma}
+\label{lem:eins_sectional}
+
+The eigenvalues, \(\lambda^{\Ein}_k\) of the Einstein tensor equal the \emph{principal sectional curvatures}:
+\[
+\Rm (E_i \wedge E_j) = -\lambda^{\Ein}_k E_i \wedge E_j
+\]
+where \(\{E_i, E_j E_k\}\) is an orthonormal frame of eigenvectors for \(\Ein\). Therefore, \(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite.
+\end{lemma}
+
+\begin{proof}
+If \(X, Y\) are orthonormal eigenvectors for \(\Ric\), then
+\begin{align*}
+K(X \wedge Y) &= \lambda^{\Sch}(X) + \lambda^{\Sch}(Y) \\
+&= \lambda^{\Ric} (X) + \lambda^{\Ric} (Y) - \frac{\Sc}{2} \\
+&= \lambda^{\Ein} (X) + \lambda^{\Ein} (Y) - \Tr_g \Ein \\
+\end{align*}
+where \(\lambda^{\Sch}(X)\) denotes the eigenvalue of \(\Sch\) corresponding to \(X\) and likewise for \(\lambda^{\Ric}\) and \(\lambda^{\Ein}\). In particular, if \(\{E_1, E_2, E_3\}\) is an orthonormal basis of eigenvectors, then the trace is simply the sum of the corresponding eigenvalues, hence for distinct\(i,j,k\) we have
+\begin{align*}
+K(E_i \wedge E_j) &= \lambda^{\Sch}_i + \lambda^{\Sch}_j \\
+&= \lambda^{\Ric}_i  + \lambda^{\Ric}_j - \frac{1}{2} \sum_l \lambda^{\Ric}_l = \frac{1}{2}\left(\lambda^{\Ric}_i + \lambda^{\Ric}_j -\lambda^{\Ric}_k\right) \\
+&= \lambda^{\Ein}_i + \lambda^{\Ein}_j - \sum_l \lambda^{\Ein}_l = -\lambda^{\Ein}_k.
+\end{align*}
+\end{proof}
+
+For this reason, on three manifolds, the Einstein tensor holds special significance. Thus, although from the point of view of the curvature decomposition, it is more natural and simpler to work with \(\Sch\), from the point of view of sectional curvatures, it is more convenient to work with \(\Ein\). Of course the two are equivalent so we may choose whichever is more suited to our purposes which at present is to study negative sectional curvature so we work with \(\Ein\).
+
+\subsubsection{Extrinsic geometry}
+
+The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation gave us
+\[
+\Ric(X, Y) = g(\W^2(X) - H \W(X), Y), \quad \Sc = \|A\|^2 - H^2.
+\]
+Note that
+\[
+\mathcal{R}ic (X) = \W^2(X) - H \W
+\]
+is simultaneously diagonalisable with \(\W\) and hence so too \(\Ein\) is simultaneously diagonalisable with \(A\). We have
+\begin{equation}
+\label{eq:ein_extrinsic}
+\Ein (X, Y) = g(\W^2(X), Y) - H A(X, Y) - \frac{\|A\|^2 - H^2}{2} g (X, Y).
+\end{equation}
+
+\begin{lemma}
+\label{lem:ein_W}
+
+We have
+\[
+\W = \sqrt{\det \opEin} \opEin^{-1}
+\]
+and hence the tensor
+\[
+\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
+\]
+is Codazzi. Moreover,
+\[
+\Rm (E_i \wedge E_j) = \kappa_i \kappa_j E_i \wedge E_j,
+\]
+and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).
+\end{lemma}
+
+\begin{proof}
+Denoting the eigenvalues of \(\W\) (i.e. the principal curvatures) by \(\kappa_i\), and applying equation \eqref{eq:ein_extrinsic} and \Cref{lem:eins_sectional}, we have for distinct indices \(i,j\):
+\[
+\begin{split}
+-K(E_i \wedge E_j) = \lambda^{\Ein}_k &= \Ein(E_k, E_k) = \kappa_k^2 - \kappa_k \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
+&= - \kappa_k \kappa_i - \kappa_k \kappa_j + \kappa_k \kappa_i + \kappa_k \kappa_j + \kappa_i \kappa_j \\
+&= \kappa_i \kappa_j.
+\end{split}
+\]
+Thus we see that the sectional curvatures are minus the product of the corresponding principal curvatures and \(\Ein\) is positive definite if and only if all the \(\kappa_i\) have the same sign. This is true either if all are negative or all are positive. By changing orientation \(\nu \mapsto -\nu\) if necessary we assume that \(\kappa_i > 0\).
+
+Furthermore, the Gauss curvature is \(K = \det \W = \kappa_i \kappa_j \kappa_k\) and when \(A\) is positive definite, \(\W^{-1}\) is well defined, simultaneously diagonalisable with \(\W\) with eigenvalues \(\kappa_i^{-1}\) and hence
+\[
+\adj \W := \det \W \W^{-1} = \kappa_i \kappa_j \kappa_j \kappa_i^{-1} \delta_{il} = \kappa_j \kappa_k \delta_{il} = \lambda^{\Ein}_i \delta_{il} = \Ein.
+\]
+That is, the tensor \(\adj \W\) is \emph{intrinsic}. In fact, writing \(\Ein(X, Y) = g(\opEin (X), Y)\),
+\[
+\det \opEin = \lambda^{\Ein}_i \lambda^{\Ein}_j \lambda^{\Ein}_k = \kappa_j \kappa_k \kappa_i \kappa_k \kappa_i \kappa_j = K^2.
+\]
+Then since \(\opEin^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j \kappa_k)^{-1}\),
+\[
+\sqrt{\det \opEin} \opEin^{-1} = \kappa_i \kappa_j \kappa_k (\kappa_j \kappa_k)^{-1} \delta_{il} = \kappa_i \delta_{il} = \W
+\]
+we see that in fact \(\W\) is itself intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\) we have
+\[
+\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
+\]
+and hence \(\alpha\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
+\end{proof}
+
+\begin{rem}
+We see a strong rigidity statement that the \emph{extrinsic geometry} of embedded, spacelike hypersurfaces is completely determined by the \emph{intrinsic geometry}. Then the extrinsic condition of local convexity is equivalent to the intrinsic condition of negative sectional curvature.
+\end{rem}
 
 \section{The Cross Curvature Flow}
 \label{sec:xcf}

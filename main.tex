@@ -85,9 +85,7 @@ The question of whether the conditions of \Cref{lem:const_neg} are satisfied are
 
 \begin{thm}[Integrability and constant negative sectional curvature]
 \label{thm:intg_const_curv}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Here \(\Ein\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric.
-
-Then \(N\) admits a metric of constant, negative sectional curvature.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Here \(\Ein\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric. Then \(N\) admits a metric of constant, negative sectional curvature.
 \end{thm}
 
 The theorem is in fact a corollary of another theorem we prove stating that with the same assumptions, the Riemannian universal cover of \((N, k)\) can be isometrically embedded into Minkowski space \(\R^{3,1}\) and then applying \cite[Theorem 1.1]{MR3344442} which says that \(N\) may be deformed to the one-sheeted hyperbolid at infinity by the Gauss curvature flow. First, the isometric embedding.
@@ -496,6 +494,74 @@ To prove the last claim of the lemma, recall from \cite[page 6]{MR2055396} that
 \label{subsec:xcf_solitions_harnack}
 \subsection{Dynamic Stability Of Embeddible Flows}
 \label{subsec:xcf_dynamic}
+
+
+The evolution equation of the metric is given by
+\begin{equation}
+\partial_tg_{ij}=2h_{ij},
+\end{equation}
+where
+\begin{equation}
+h_{ij}:=-\frac{1}{2}P^{kl}R_{ikjl}
+\end{equation}
+and
+\begin{equation}
+P_{ij}:=R_{ij}-\frac{1}{2}Rg_{ij},\quad
+P^{mn}=\left(R_{ij}-\frac{1}{2}Rg_{ij}\right)g^{im}g^{jn}.
+\end{equation}
+Let $V_{ij}$ be the inverse of $P^{ij}$. We mention that
+\begin{equation}
+h_{ij}=V_{ij}\det P,
+\end{equation}
+where $\det P = \det (g_{km} P^{ml}).$
+
+
+We also write
+\begin{align}
+ u&=\log\det P,\quad
+O_{ij}=V_{ij}\sqrt{\det P},\\
+T^{kij}&=P^{kl}\nabla_l P^{ij},\quad T^i=V_{jk}T^{ijk}=P^{ij}\nabla_ju.
+\end{align}
+We have
+\begin{align}
+    T^{ijk}-T^{jik}&=E^{ijk}-E^{jik}+\frac{1}{2}\left(P^{jk}T^i-P^{ik}T^j\right),
+\end{align}
+for some tensor $E^{ijk}$ whose trace with respect to $V_{kl}$ is zero.
+
+An important tensor that will play a key role in the analysis of XCF is
+\[D^{ijk}:=E^{ijk}-E^{jik}.\]
+The tensor $D^{ijk}$ satisfies
+\begin{align}
+D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
+V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
+\end{align}
+\begin{lemma}\label{codazzi}
+The tensor $O_{ij}=V_{ij}\sqrt{\det P}$ satisfies
+\begin{align}
+|D^{ijk}|_V^2=\frac{1}{\det P}|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2
+\end{align}
+In particular, $\frac{d}{dt}\int \sqrt{\det P}d\mu=0$ if and only if $\nabla_k O_{ij}$ is fully symmetric.
+\end{lemma}
+\begin{proof}
+Using the definition we calculate
+\begin{align}
+T^{kij}=&-P^{kl}P^{im}P^{jn}\nabla_l V_{mn}=-P^{kl}P^{im}P^{jn}\nabla_l (e^{-\frac{1}{2}u}O_{mn})\\
+=&-\frac{1}{\sqrt{\det P}}P^{kl}P^{im}P^{jn}\nabla_l O_{mn}+\frac{1}{2}P^{ij}T^k.
+\end{align}
+Thus we obtain
+\begin{align*}
+T^{kij}-T^{ikj}=&\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)+\frac{1}{2}(P^{ij}T^k-P^{kj}T^i).
+\end{align*}
+This implies
+\begin{align}
+D^{kij}&=\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)\\
+|D^{ijk}|_V^2\det P&=|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2.
+\end{align}
+To prove the last claim of the lemma, recall from \cite[page 6]{Chowcross2002} that
+\begin{align}
+\frac{d}{dt}\int \sqrt{\det P}d\mu=\frac{1}{4}\int |D^{ijk}|_V^2\sqrt{\det P}d\mu.
+\end{align}
+\end{proof}
 
 \printbibliography
 

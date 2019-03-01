@@ -92,20 +92,20 @@ The theorem is in fact a corollary of another theorem we prove stating that with
 
 \begin{thm}[Integrability implies embeddability]
 \label{thm:intg_embed}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, spacelike hypersurface.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
 \end{thm}
 
 \begin{proof}
-The tensor $\alpha$ is a solution of the once-contracted Gauss equation. Consider the system of equations for unknowns $X_{;1},X_{;2},X_{;3},\nu:$
-\begin{align}
-\left\{
-  \begin{array}{ll}
-    X_{;ij}=-\alpha_{ij}\nu & \\
-    \nu_{;i}=\alpha_i^jX_{;j}, & 
-  \end{array}
-\right.
-\end{align}
-The integrability conditions (Gauss and Codazzi equations) are satisfied. Thus we can locally solve this system and deduce that the induced metric agrees with $g.$
+If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \alpha\), hence \(\alpha\) is Codazzi.
+
+Conversely, suppose \(\alpha\) is Codazzi and let \(T\) be such that \(\alpha(X, Y) = g(T(X), Y)\). Then \(\alpha\) begin Codazzi is precisely the integrability condition required to locally integrate the over-determined system
+\begin{align*}
+F^{\ast} \inpr{\cdot}{\cdot} &= g \\
+\W(F) &= T
+\end{align*}
+for \(F\). See for example \cite{MR1713298}[Theorem 7] or a similar argument in \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
+
+Since \((M, g)\) is the universal cover of the \((N, k)\) with strictly negative sectional curvature, \(M\) is diffeomorphic to \(\R^3\) and we can globally integrate to obtain \(F\).
 \end{proof}
 
 \begin{rem}
@@ -115,7 +115,7 @@ Necessarily, the embedding of \((M, g)\) is as a co-compact, spacelike hypersurf
 \begin{proof}
 [Proof of \Cref{thm:intg_const_curv}]
 
-By \Cref{thm:intg_embed} we may embed \((N, k)\) into Minkowksi space as a co-compact, spacelike hypersurface. By the Gauss equation, since the second fundamental form is positive definite hence the embedding is in fact locally convex. By \cite[Theorem 1.1]{MR3344442}, the re-scaled Gauss curvature flow deforms \((N, k)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus we obtain a homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result since the flow preserves the isometry group of the initial metric \(g\).
+By \Cref{thm:intg_embed} we may embed \((M, g)\) into Minkowksi space as a locally convex, co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the re-scaled Gauss curvature flow deforms \((M, g)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus we obtain a homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result since the flow preserves the isometry group of the initial metric \(g\).
 \end{proof}
 
 \begin{rem}
@@ -252,9 +252,10 @@ so that
 \]
 
 The Codazzi-Mainardi equation reads
-\[
+\begin{equation}
+\label{eq:codazzi}
 \nabla A (X; Y, Z) := \nabla_X A (Y, Z) = \nabla A(Y; X, Z).
-\]
+\end{equation}
 Of course, since \(A\) is already symmetric, \(\nabla A\) is automatically symmetric in the last two slots hence the Codazzi-Mainardi equation implies \(\nabla A\) becomes fully symmetric in all three slots.
 
 Let us round out this section with a simple lemma showing spacelike hypersurfaces, \(M\) are graphs over the \(y^{n+1} = 0\) spacelike hyperplane. This simply follows because \(M\) has a timelike normal vector field, \(\nu\) so that \(\inpr{\nu}{e_{n+1}}\) has a fixed sign. We give the proof for completeness.

@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\title[Negative curvature Minkowski embedding]{Embedding negatively curved three-manifolds in Minkowski space}
+\title[Negatively Curved Three Manifolds]{Negatively Curved Three-Manifolds, Hyperbolic Metrics, Isometric Embedding In Minkowski Space And The Cross Curvature Flow}
 
 \date{}
 
@@ -14,11 +14,11 @@
 \subjclass[2010]{58J35, 35K10, 58B20}
 \keywords{Negative curvature, embedding, Minkowski, space-like}
 
-\maketitle
-
 \begin{abstract}
 We consider the problem of embedding negatively curved three-manifolds into Minkowksi space.
 \end{abstract}
+
+\maketitle
 
 \section{Introduction}
 \label{sec:intro}
@@ -59,7 +59,7 @@ Throughout, \(\pi : M \to N\) denotes the universal cover and \(G\) the group of
 \begin{itemize}
 \item \ref{enum:neg_met} is equivalent to \ref{enum:deck_met} is equivalent to \ref{enum:subgroup}:
 
-Since \(\pi^{\ast}\) establishes an isomorphism of metrics on \(M\) invariant under \(G\) with metrics on \(N\) and since curvature is a local invariant, there is metric \(k_{\H}\) on \(N\) with constant sectional curvature, if and only if \(g^{\H}\) is invariant under \(G\) giving the first equivalence. The second equivalence follows since \(g_{\H}\) is invariant under \(G\) if and only \(G \leq G_{\H}\).
+Since \(\pi^{\ast}\) establishes an isomorphism of metrics on \(N\) with metrics on \(M\) invariant under \(G\), and since curvature is a local invariant, there is a metric \(k_{\H}\) on \(N\) with constant sectional curvature if and only if \(g^{\H}\) is invariant under \(G\) giving the first equivalence. The second equivalence follows since \(g_{\H}\) is invariant under \(G\) if and only \(G \leq G_{\H}\).
 
 \item \ref{enum:neg_met} is equivalent to \ref{enum:homo_met}:
 
@@ -72,7 +72,7 @@ Again the isomorphism \(\pi^{\ast}\) establishes an isomorphism between homotopi
 \end{proof}
 
 \begin{rem}
-In condition \ref{enum:subgroup}, to say that \(G_{\H}\) is a sub-group of \(G\) here is via the concrete realisation (representation) of both groups acting on \(M\): the inclusion the inclusion map \(\iota : G_{\H} \to G\) is compatible with the actions of \(G_{\H}\) and \(G\) on \(M\) so that \(\iota(\varphi) \cdot x = \varphi \cdot x\) for every \(\varphi \in G_{\H}\) and \(x \in M\). Thus it is not enough for \(G_{\H}\) to be isomorphic to a subgroup of \(G\). The isomorphism must also be compatible with the actions.
+In condition \ref{enum:subgroup}, to say that \(G_{\H}\) is a sub-group of \(G\) here is via the concrete realisation (representation) of both groups acting on \(M\): the inclusion the inclusion map \(\iota : G_{\H} \to G\) is compatible with the actions of \(G_{\H}\) and \(G\) on \(M\) so that \(\iota(\varphi) \cdot x = \varphi \cdot x\) for every \(\varphi \in G_{\H}\) and \(x \in M\). Thus it is not enough for \(G_{\H}\) to be isomorphic to a subgroup of \(G\) - the isomorphism must also be compatible with the actions.
 \end{rem}
 
 \begin{rem}
@@ -85,27 +85,31 @@ The question of whether the conditions of \Cref{lem:const_neg} are satisfied are
 
 \begin{thm}[Integrability and constant negative sectional curvature]
 \label{thm:intg_const_curv}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Here \(\Ein\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \alpha\) is totally symmetric. Then \(N\) admits a metric of constant, negative sectional curvature.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\obstensor = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Here \(\Ein\) denotes the Einstein tensor and to be Codazzi means that the three-tensor \(\nabla \obstensor\) is totally symmetric. Then \(N\) admits a metric of constant, negative sectional curvature.
 \end{thm}
 
-The theorem is in fact a corollary of another theorem we prove stating that with the same assumptions, the Riemannian universal cover of \((N, k)\) can be isometrically embedded into Minkowski space \(\R^{3,1}\) and then applying \cite[Theorem 1.1]{MR3344442} which says that \(N\) may be deformed to the one-sheeted hyperbolid at infinity by the Gauss curvature flow. First, the isometric embedding.
+\begin{rem}
+Note that by \Cref{lem:eins_sectional} below, in three dimensions, \(k\) has strictly negative sectional curvature if and only if \(\Ein\) is strictly positive definite. In that case, by writing \(\Ein(X, Y) = g(\opEin(X), Y)\) we see that \(\opEin\) is a strictly positive-definite endomorphism and in particular invertible. Thus we may define \(\Ein^{-1} (X, Y) = g(\opEin^{-1} (X), Y)\) and \(\obstensor\) is well defined.
+\end{rem}
 
-\begin{thm}[Integrability implies embeddability]
+The theorem is in fact a corollary of the simple \Cref{thm:intg_embed} and \cite[Theorem 1.1]{MR3344442} which says that \(N\) may be deformed to the one-sheeted hyperbolid at infinity by the Gauss curvature flow.
+
+\begin{thm}[Integrability implies isometric embeddability]
 \label{thm:intg_embed}
-Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\alpha = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
+Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\obstensor = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
 \end{thm}
 
 \begin{proof}
-If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \alpha\), hence \(\alpha\) is Codazzi.
+If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \obstensor\), hence \(\obstensor\) is Codazzi.
 
-Conversely, suppose \(\alpha\) is Codazzi and let \(T\) be such that \(\alpha(X, Y) = g(T(X), Y)\). Then \(\alpha\) begin Codazzi is precisely the integrability condition required to locally integrate the over-determined system
+Conversely, suppose \(\obstensor\) is Codazzi and let \(T\) be such that \(\obstensor(X, Y) = g(T(X), Y)\). Then \(\obstensor\) being Codazzi is precisely the integrability condition required to locally integrate the over-determined system
 \begin{align*}
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
 \W(F) &= T
 \end{align*}
 for \(F\). See for example \cite{MR1713298}[Theorem 7] or a similar argument in \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
 
-Since \((M, g)\) is the universal cover of the \((N, k)\) with strictly negative sectional curvature, \(M\) is diffeomorphic to \(\R^3\) and we can globally integrate to obtain \(F\).
+Since \((M, g)\) is the universal cover of \((N, k)\) with strictly negative sectional curvature, \(M\) is diffeomorphic to \(\R^3\) by the Cartan-Hadamard theorem and we can globally integrate to obtain \(F\).
 \end{proof}
 
 \begin{rem}
@@ -115,11 +119,27 @@ Necessarily, the embedding of \((M, g)\) is as a co-compact, spacelike hypersurf
 \begin{proof}
 [Proof of \Cref{thm:intg_const_curv}]
 
-By \Cref{thm:intg_embed} we may embed \((M, g)\) into Minkowksi space as a locally convex, co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the re-scaled Gauss curvature flow deforms \((M, g)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus we obtain a homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result since the flow preserves the isometry group of the initial metric \(g\).
+By \Cref{thm:intg_embed} we may embed \((M, g)\) into Minkowksi space as a locally convex, co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the re-scaled Gauss curvature flow deforms \((M, g)\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus the flow provides a smooth homotopy from \((M, g)\) to \((M, g_{\H})\) and \Cref{lem:const_neg} gives the result since the flow preserves the isometry group of the initial metric \(g\).
+
+That the initial isometry group is preserved follows by the geometric invariance of the flow and uniqueness of solutions: according to \cite[12. Application to the cross-curvature flow]{MR3344442}, the induced metric, \(g_t\) on \(M\) evolves by the Cross Curvature Flow introduced in \cite{MR2055396} (see also \Cref{subsec:xcf_gcf} and particularly \Cref{lem:xcf_gcf} below):
+\[
+\begin{cases}
+\partial_t g_t &= -\adj\Ein(g_t) \\
+g_0 &= g.
+\end{cases}
+\]
+At the initial time, we have \(\varphi^{\ast} g_0 = g_0\) for every \(\varphi \in G\). Then given any \(\varphi \in G\), letting \(\bar{g}_t = \varphi^{\ast} g_t\) we have
+\[
+\begin{cases}
+\partial_t \bar{g}_t &= \varphi^{\ast} \partial_t g_t = -\varphi^{\ast}(\adj\Ein(g_t)) = -\adj\Ein(\bar{g}_t) \\
+\bar{g}_0 &= g_0 = g.
+\end{cases}
+\]
+That is \(g_t\) and \(\bar{g}_t\) both solve the Cross Curvature Flow with the same initial condition, hence by uniqueness of solutions (\cite{MR2055396,MR2207496}, \Cref{thm:xcf_existence_uniqueness}), \(g_t = \bar{g}_t = \varphi^{\ast} g_t\) and the flow is invariant under the action of \(G\).
 \end{proof}
 
 \begin{rem}
-Under the Gauss curvature flow, as described in \cite[12. Application to the cross-curvature flow]{MR3344442}, the metric evolves by the Cross Curvature Flow introduced in \cite{MR2055396}. It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped.
+It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped. The cross curvature flow is discussed below in \Cref{sec:xcf}.
 \end{rem}
 
 \section{Notation And Preliminary Results}
@@ -159,9 +179,9 @@ We define the Ricci curvature
 \]
 and scalar curvature
 \[
-\Sc = \Tr \mathcal{R}ic
+\Sc = \Tr \opRic
 \]
-where \(\mathcal{R}ic\) is the self-adjoint endomorphism defined by \(\Ric(X, Y) = g(\mathcal{R}ic(X), Y)\). Equivalently, \(\Sc = \Tr_g \Ric := \Tr g^{\ast} \otimes \Ric\) is the full contraction and where \(g^{\ast}\) denotes the dual metric on \(T^{\ast}M\) induced by the metric \(g\) on \(TM\).
+where \(\opRic\) is the self-adjoint endomorphism defined by \(\Ric(X, Y) = g(\opRic(X), Y)\). Equivalently, \(\Sc = \Tr_g \Ric := \Tr g^{\ast} \otimes \Ric\) is the full contraction and where \(g^{\ast}\) denotes the dual metric on \(T^{\ast}M\) induced by the metric \(g\) on \(TM\).
 
 The Einstein tensor is defined by
 \[
@@ -210,6 +230,18 @@ A(X, Y) = -\inpr{D_{F_{\ast} X} F_{\ast} Y}{\nu} = \inpr{F_{\ast} Y}{D_{F_{\ast}
 \]
 where \(\W = F_{\ast}^{-1} D\nu: TM \to TM\) denotes the Weingarten map.
 
+The basic equations of hypersurfaces in Minkowski space is recorded in the following Lemma.
+
+\begin{lemma}
+We have
+\begin{itemize}
+\item \(\Rm(X, Y) Z = A(X, Z) \W(Y) - A(Y, Z) \W(X)\),
+\item \(\Ric(X, Y) = g(\W^2(X) - H \W(X), Y)\),
+\item \(\Sc = \|A\|^2 - H^2\).
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
 Recalling that Minkowski space is flat, the Gauss equation for spacelike hypersurfaces reads
 \[
 \Rm(X, Y, Z, W) = -\inpr{h(X, Z)}{h(Y, W)} + \inpr{h(X, W)}{h(Y, Z)} = \frac{1}{2} A \owedge A (X, Y, Z, W).
@@ -219,11 +251,12 @@ Since \(A(X, Y) = g(\W(X), Y)\) we have
 g(\Rm(X, Y) Z, W) &= g(\W(X), Z) g(\W(Y), W) - g(\W(X), W) g(\W(Y), Z) \\
 &= g(g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X), W)
 \end{align*}
-so that
+so that we obtain the desired expression for the curvature tensor:
 \[
 \Rm(X, Y) Z = g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X).
 \]
-Then
+
+Taking the trace,
 \[
 \begin{split}
 \Ric(X, Y) &= \Tr Z \mapsto \Rm(Z, X) Y \\
@@ -242,19 +275,26 @@ Thus
 \[
 \Ric(X, Y) = g(\W(X),\W(Y)) - H A(X, Y).
 \]
-Since \(\W\) is self-adjoint we may write this as
+Since \(\W\) is self-adjoint we obtain the expression for the Ricci curvature,
 \[
-\Ric(X, Y) = g(\W^2(X) - H \W(X), Y)
+\Ric(X, Y) = g(\W^2(X) - H \W(X), Y).
 \]
-so that
+
+Thus we have
+\[
+\opRic = \W^2 - H\W
+\]
+and taking one final trace gives the scalar curvature,
 \[
 \Sc = \Tr [\W^2 - H\W] = \|A\|^2 - H^2.
 \]
+\end{proof}
+
 
 The Codazzi-Mainardi equation reads
 \begin{equation}
 \label{eq:codazzi}
-\nabla A (X; Y, Z) := \nabla_X A (Y, Z) = \nabla A(Y; X, Z).
+\nabla A (X; Y, Z) := \nabla_X A (Y, Z) = \nabla_Y A(X, Z) =: \nabla A(Y; X, Z).
 \end{equation}
 Of course, since \(A\) is already symmetric, \(\nabla A\) is automatically symmetric in the last two slots hence the Codazzi-Mainardi equation implies \(\nabla A\) becomes fully symmetric in all three slots.
 
@@ -313,11 +353,13 @@ Then the Ricci decomposition becomes
 \[
 \Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g G}{2} g \owedge g.
 \]
-Then we may express the sectional curvature
+Then we may express the sectional curvature through any of of \(\Sch, \Ric, \Ein\) as:
 \begin{align*}
 \abs{X \wedge Y} K(X \wedge Y) &= -2\Sch(X, Y) g(X, Y) + \Sch(X, X) g(Y, Y) + \Sch(Y, Y) g(X, X) \\
-&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) - \frac{\Sc}{2} \abs{X \wedge Y} \\
-&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) - \Tr_g \Ein \abs{X \wedge Y} \\
+&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) \\
+&\quad - \frac{\Sc}{2} \abs{X \wedge Y} \\
+&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) \\
+&\quad - \Tr_g \Ein \abs{X \wedge Y} \\
 \end{align*}
 
 \begin{lemma}
@@ -355,7 +397,7 @@ The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when co
 \]
 Note that
 \[
-\mathcal{R}ic (X) = \W^2(X) - H \W
+\opRic (X) = \W^2(X) - H \W
 \]
 is simultaneously diagonalisable with \(\W\) and hence so too \(\Ein\) is simultaneously diagonalisable with \(A\). We have
 \begin{equation}
@@ -372,7 +414,7 @@ We have
 \]
 and hence the tensor
 \[
-\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
+\obstensor := \sqrt{\det \opEin} \Ein^{-1} = A
 \]
 is Codazzi. Moreover,
 \[
@@ -406,9 +448,9 @@ Then since \(\opEin^{-1}\) has eigenvalues \((\lambda_i^{\Ein})^{-1} = (\kappa_j
 \]
 we see that in fact \(\W\) is itself intrinsic! Therefore, defining \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\) we have
 \[
-\alpha := \sqrt{\det \opEin} \Ein^{-1} = A
+\obstensor := \sqrt{\det \opEin} \Ein^{-1} = A
 \]
-and hence \(\alpha\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
+and hence \(\obstensor\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
 \end{proof}
 
 \begin{rem}
@@ -421,25 +463,22 @@ We see a strong rigidity statement that the \emph{extrinsic geometry} of embedde
 \subsection{Definition And Basic Properties Of  The Flow}
 \label{subsec:xcf_defn}
 
-The evolution equation of the metric is given by
+Let \((N, k)\) be a closed, Riemannian manifold. The Cross Curvature Flow is the evolution equation,
 \begin{equation}
-\partial_tg_{ij}=2h_{ij},
+\label{eq:xcf}
+\begin{cases}
+\partial_t k_t  &= \adj\Ein(k_t), \\
+k_0 &= k
+\end{cases}
 \end{equation}
-where
-\begin{equation}
-h_{ij}:=-\frac{1}{2}P^{kl}R_{ikjl}
-\end{equation}
-and
-\begin{equation}
-P_{ij}:=R_{ij}-\frac{1}{2}Rg_{ij},\quad
-P^{mn}=\left(R_{ij}-\frac{1}{2}Rg_{ij}\right)g^{im}g^{jn}.
-\end{equation}
-Let $V_{ij}$ be the inverse of $P^{ij}$. We mention that
-\begin{equation}
-h_{ij}=V_{ij}\det P,
-\end{equation}
-where $\det P = \det (g_{km} P^{ml}).$
 
+\begin{rem}
+Let \(\pi : M \to N\) be the universal cover, and \(g_t = \pi^{\ast} k_t\). Similarly to the proof of \Cref{thm:intg_const_curv}, we then have
+\[
+\partial_t g_t = \pi^{\ast} \partial_t k_t = \pi^{\ast} \adj\Ein(k_t) = \adj\Ein(g_t)
+\]
+and \(g_t\) solves the Cross Curvature Flow with initial condition \(g_0 = \pi^{\ast} k_0\). Conversely, if \(g_t\) is a \(G\)-invariant solution of the Cross Curvature Flow on \(M\), then there is a unique solution, \(k_t\) of the Cross Curvature Flow on \(N\) such that \(g_t = \pi^{\ast} k_t\).
+\end{rem}
 
 We also write
 \begin{align}
@@ -460,13 +499,69 @@ The tensor $D^{ijk}$ satisfies
 D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
 V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
 \end{align}
-\begin{lemma}\label{codazzi}
+
+
+\subsection{Short Time Existence And Uniqueness}
+\label{subsec:xcf_existence_uniqueness}
+
+\begin{thm}
+\label{thm:xcf_existence_uniqueness}
+
+Given any initial smooth metric \(k\) on a closed three-manifold, \(N\), there exists a unique solution \(k_t\) to the Cross Curvature Flow,
+\[
+\begin{cases}
+\partial_t g_t &= -\adj\Ein(g_t) \\
+g_0 &= g.
+\end{cases}
+\]
+defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty\).
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\subsection{Stability Of The Hyperbolic Metric}
+\label{subsec:xcf_stability}
+
+\subsection{Integrability And Embeddibility}
+\label{subsec:xcf_gcf}
+
+\begin{lemma}
+\label{lem:xcf_gcf}
+
+The induced metric under the Gauss Curvature Flow in Minkowski space evolves by Cross Curvature Flow.
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+\label{thm:xcf_integrable_convergence}
+
+Under the integrability condition, the Cross Curvature Flow smoothly converges to a hyperbolic metric.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\subsection{Solitons And The Harnack Inequality}
+\label{subsec:xcf_solitons}
+\subsection{Volume Monotonicity}
+\label{subsec:xcf_volume}
+
+\begin{lemma}
+\label{codazzi}
+
 The tensor $O_{ij}=V_{ij}\sqrt{\det P}$ satisfies
 \begin{align}
 |D^{ijk}|_V^2=\frac{1}{\det P}|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2
 \end{align}
 In particular, $\frac{d}{dt}\int \sqrt{\det P}d\mu=0$ if and only if $\nabla_k O_{ij}$ is fully symmetric.
 \end{lemma}
+
 \begin{proof}
 Using the definition we calculate
 \begin{align}
@@ -487,6 +582,15 @@ To prove the last claim of the lemma, recall from \cite[page 6]{MR2055396} that
 \frac{d}{dt}\int \sqrt{\det P}d\mu=\frac{1}{4}\int |D^{ijk}|_V^2\sqrt{\det P}d\mu.
 \end{align}
 \end{proof}
+
+\subsection{Homogeneous Spaces}
+\label{subsec:xcf_homogeneous}
+
+\subsection{The General Case}
+\label{subsec:xcf_general}
+
+\section*{}
+% Empty section for bib so I don't lose it when collapsing sections
 
 \printbibliography
 

@@ -142,6 +142,20 @@ That is \(g_t\) and \(\bar{g}_t\) both solve the Cross Curvature Flow with the s
 It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped. The cross curvature flow is discussed below in \Cref{sec:xcf}.
 \end{rem}
 
+\section{Geometrisation Of Three Manifolds}
+\label{sec:geometrisation}
+
+\subsection{Geometrisation of Two Manfolds}
+\label{sec:geometrisation_2d}
+
+{\color{red} Uniformisation thm}
+
+\subsection{Thurston's Geometrisation of Three Manfolds}
+\label{sec:geometrisation_2d}
+
+{\color{red} Three dimensional version. See \cite{MR705527} for an excellent exposition.}
+
+
 \section{Notation And Preliminary Results}
 \label{sec:notation}
 
@@ -480,6 +494,8 @@ Let \(\pi : M \to N\) be the universal cover, and \(g_t = \pi^{\ast} k_t\). Simi
 and \(g_t\) solves the Cross Curvature Flow with initial condition \(g_0 = \pi^{\ast} k_0\). Conversely, if \(g_t\) is a \(G\)-invariant solution of the Cross Curvature Flow on \(M\), then there is a unique solution, \(k_t\) of the Cross Curvature Flow on \(N\) such that \(g_t = \pi^{\ast} k_t\).
 \end{rem}
 
+{\color{red} Some of this comes up later, but it's not yet clear exactly how much is needed.}
+
 We also write
 \begin{align}
  u&=\log\det P,\quad
@@ -500,29 +516,131 @@ D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
 V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
 \end{align}
 
-
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
+
+The question of short time existence and uniqueness of solutions to geometric, parabolic equations on vector bundles raises some issues not seen in the standard theory on \(\R^n\). The most pressing issue is that the geometric invariance of the problem leads to degeneracies in the principal symbol. As a result the flow is degenerate parabolic and the standard theory must be modified to take this into account.
+
+For the Ricci flow, \cite{Hamilton:/1982} dealt with this issue by employing the Nash-Moser inverse function theorem (see for example \cite{MR656198}) and similarly for the Cross Curvature Flow \cite{MR2055396}. However, as pointed out by \cite{MR2207496}, whilst this method is well suited to the Ricci flow which enjoys a first order integrability condition, the integrability condition for the Cross Curvature Flow is second order. The question of whether the technique in \cite{Hamilton:/1982} applies is certainly of interest, but there is another approach to short time existence and uniqueness that also has the advantage of simplicity in comparison with the Nash-Moser approach.
+
+For the Ricci flow, \cite{MR697987} gave an alternative proof to short time existence and uniqueness. Then, \cite{MR2207496} adapted this proof to the Cross Curvature Flow. The method is essentially a gauge-fixing argument whereby the diffeomorphism class is fixed in such a way to produce a new flow, referred to as the DeTurck flow, which is strictly parabolic and then standard arguments apply to give existence and uniqueness of the DeTurck flow. Existence of the original flow is then easily obtained, but there is an extra step required for uniqueness which was omitted in \cite{MR2207496}. Here we outline the complete proof.
+
+The standard theory gives that strictly parabolic, linear equations with smooth coefficients can be uniquely solved (e.g. by a contraction mapping) for smooth solutions given initial smooth data. Then the non-linear equation will be uniquely solvable on some small time interval if the linearisation is strictly parabolic by appealing to the implicit function theorem. Writing the solution as \(g_t = \varphi_t(g_0)\), the semi-group property of the solution \(g_{t_1 + t_2} = \varphi_{t_1 + t_2} (g_0) = \varphi_{t_2} (\varphi_{t_1} (g_0))\) then ensures there is a maximal time interval \([0, T)\) (possibly with \(T = \infty\)) on which the solution is defined. We take all this as given and focus only on showing strict parabolicity of the DeTurck flow and proving that this leads to existence and uniqueness of the original flow.
+
 
 \begin{thm}
 \label{thm:xcf_existence_uniqueness}
 
-Given any initial smooth metric \(k\) on a closed three-manifold, \(N\), there exists a unique solution \(k_t\) to the Cross Curvature Flow,
+Given any initial smooth metric \(k\) on a closed three-manifold \(N\), there exists a unique solution \(k_t\) to the Cross Curvature Flow,
 \[
 \begin{cases}
-\partial_t g_t &= -\adj\Ein(g_t) \\
+\partial_t g_t &= \adj\Ein(g_t) \\
 g_0 &= g.
 \end{cases}
 \]
 defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty\).
 \end{thm}
 
+Note that we may write the map \(g \mapsto \adj\Ein(g)\) as
+\begin{equation}
+\label{eq:adjein_op}
+\adj\Ein(g) = \adj_g \circ \Grav_g \circ \Ric (g)
+\end{equation}
+where for a bilinear form \(B\) on a finite dimensional vector space with an inner product \(g\) we define the \emph{gravitation linear map}
+\[
+\Grav_g(B) (\cdot, \cdot) = g(\opGrav(\op{B}) \cdot, \cdot) = g\left(\left[\op{B} - \frac{1}{2} \Tr\op{B} \Id\right] \cdot, \cdot\right) = B - \frac{1}{2} \Tr_g B g
+\]
+where
+\[
+B(\cdot, \cdot) = g(\op{B} \cdot, \cdot).
+\]
+In other words, defining
+\[
+\opGrav(\op{B}) = \op{B} - \frac{1}{2} \Tr \op{B} \Id
+\]
+we have
+\[
+\Grav_g(B) = g(\opGrav(\op{B}) \cdot, \cdot).
+\]
+Similarly, for the adjugate
+\[
+\adj_g B = g(\adj\op{B} \cdot, \cdot)
+\]
+is a \emph{non linear} function taking bilinear forms to bilinear forms.
+
+\begin{rem}
+It's worth explicitly pointing out that the dependence of \(\adj\Ein\) on \(g\) appears in several place. The first is via the second order differential operator \(g \mapsto \Ric(g)\). Note that,
+\[
+g \mapsto \nabla(g)
+\]
+is a non linear first order operator for \(g\) which can be seen through the Koszul formula defining \(\nabla = \nabla(g)\):
+\[
+\begin{split}
+2 g(\nabla_X Y, Z) &= \partial_X g(Y, Z) + \partial_Y g(X, Z) - \partial_Z g(X, Y) \\
+&\quad + g([X, Y], Z) - g([Y, Z], X) + g([Z, X], Y).
+\end{split}
+\]
+In coordinates \(\nabla(g)\) is determined by \(\Gamma(g)_{ij}^k \partial_k = (\nabla(g)_{\partial i} \partial j\), given by
+\[
+\Gamma_{ij}^k = \frac{1}{2} g^{kl} \left(\partial_i g_{jk} + \partial_j g_{ik} - \partial_k g_{ij}\right)
+\]
+where \(g^{kl}\) denotes the inverse matrix of \(g_{ij}\). So we see that \(\nabla\) depends non-linearly on first derivatives and \(0\)-th order terms in \(g\).
+
+Then the Ricci curvature is a second order non-linear differential operator, \(g \mapsto \Ric(g)\) defined by
+\[
+\Ric(g) (X, Y) = \Tr \nabla^2_{X,Y} - \nabla^2_{Y,X}.
+\]
+Here we see that \(\nabla\) is differentiated so that \(\Ric(g)\) is first order in \(\nabla\), hence second order in \(g\). In coordinates,
+\[
+\Ric(g)_{ij} = \partial_k \Gamma^k_{ij} - \partial_j \Gamma^k_{ik} + \Gamma^k_{kl} \Gamma^l_{ij} - \Gamma^k_{lj} \Gamma^l_{ik}.
+\]
+Then we see that \(\Ric(g)\) involves a nonlinear combination of first derivatives and \(0\)-order terms of \(\Gamma\) which itself involves a nonlinear combination of first derivatives and \(0\)-order terms of \(g\). The result of which is that \(\Ric\) is a second order nonlinear operator.
+
+The reminder of the dependence is in \(\Grav_g\) and \(\adj_g\). Although \(\Ric(g)\) appears linearly as the argument to \(\Grav_g\), the map \(\Grav_g\) itself also depends on \(g\) to \(0\)-th order. Similarly \(\Grav_g(\Ric(g))\) appears nonlinearly as the argument to \(\adj_g\) but also \(\adj_g\) depends on \(g\) to \(0\)-th order.
+
+Since only the second order dependence is relevant to parabolicity, the variation of \(g\) in \(\Grav_g\) and \(\adj_g\) will not come into play.
+\end{rem}
+
+{\color{red} Actually, this turned out to be a little tricky to do this way. I don't yet see why \((\adj \circ \Grav)'_S\) should be non-degenerate. In the end, the linearisation of the cross curvature tensor is just \[(\adj\opEin)'_g \cdot V = (\adj \circ \Grav)'_{\opRic(g)} \cdot \opRic'_g \cdot V\] and the final conclusion should be that \((\adj\opEin)'_g\) is non-degenerate so the existence/uniqueness is more or less the same as Ricci flow.}
+
+{\color{red} The other way to do it is to give a little lemma showing that the cross curvature tensor is the trace of \(Z \mapsto \Rm(\opEin(Z), X) Y\) and then linearising that one. This is effectively how Hamilton/Chow do it.}
+
+Before proving the theorem, let us compute the linearisation of the operator \(\adj \circ \opGrav\) at \(S\) where \(\opGrav(S)\) is invertible.
+
+\begin{lemma}
+Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearsiation of \(\adj \circ \opGrav\) at \(S\) is given by
+\[
+(\adj \circ \Grav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
+\]
+where
+\[
+(\adj \circ \Grav)'_S \cdot T := \partial_u|_{u=0} (\adj \circ \Grav) (S + uT).
+\]
+\end{lemma}
+
 \begin{proof}
 
 \end{proof}
 
+\begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
+First we linearise the second differential operator \(g \mapsto \adj\Ein(g)\). 
+\end{proof}
+
+\subsection{Preserving Negative Curvature}
+\label{subsec:xcf_preserving}
+
+\begin{lemma}
+The cross curvature flow preserves negative sectional curvature up to the first singular time.
+\end{lemma}
+
+\begin{proof}
+{\color{red} Sketch of details referring to Hamilton/Chow computations.}
+\end{proof}
+
 \subsection{Stability Of The Hyperbolic Metric}
 \label{subsec:xcf_stability}
+
+{\color{red} Refer to \cite{MR2448593}.}
 
 \subsection{Integrability And Embeddibility}
 \label{subsec:xcf_gcf}
@@ -534,7 +652,7 @@ The induced metric under the Gauss Curvature Flow in Minkowski space evolves by 
 \end{lemma}
 
 \begin{proof}
-
+{\color{red} This just follows by \(\partial_t g = -K h\) and \Cref{lem:ein_W}}
 \end{proof}
 
 \begin{thm}
@@ -543,14 +661,25 @@ The induced metric under the Gauss Curvature Flow in Minkowski space evolves by 
 Under the integrability condition, the Cross Curvature Flow smoothly converges to a hyperbolic metric.
 \end{thm}
 
+{\color{red}For proof just apply \Cref{lem:xcf_gcf} and the non-trivial part is in \cite{MR3344442}.}
+
+\subsection{Solitons}
+\label{subsec:xcf_solitons}
+
+Solitons are fixed points of the flow modulo scaling and diffeomorphism. As such, they are the expected limits (up to rescaling) of the flow. Unlike other flows such as the Ricci Flow, solitons for the Cross Curvature Flow are very rigid.
+
+\begin{lemma}
+The only solitons to the Cross Curvature Flow are constant curvature metrics.
+\end{lemma}
+
 \begin{proof}
 
 \end{proof}
 
-\subsection{Solitons And The Harnack Inequality}
-\label{subsec:xcf_solitons}
 \subsection{Volume Monotonicity}
 \label{subsec:xcf_volume}
+
+{\color{red} What goes here - the lemma or does that go somewhere else? Then volume monotonicity is certainly of interest!}
 
 \begin{lemma}
 \label{codazzi}
@@ -586,8 +715,13 @@ To prove the last claim of the lemma, recall from \cite[page 6]{MR2055396} that
 \subsection{Homogeneous Spaces}
 \label{subsec:xcf_homogeneous}
 
+
+{\color{red} Need to mention the results here.}
+
 \subsection{The General Case}
 \label{subsec:xcf_general}
+
+{\color{red} Some words about the devil tensor and the difficulties it causes}
 
 \section*{}
 % Empty section for bib so I don't lose it when collapsing sections

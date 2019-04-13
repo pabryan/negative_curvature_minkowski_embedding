@@ -23,10 +23,11 @@ We consider the problem of embedding negatively curved three-manifolds into Mink
 \section{Introduction}
 \label{sec:intro}
 
-Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi : (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that the isometry
+Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi\colon (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that
 \[
 (M/G, \bar{g}) \underset{\simeq}{\to} (N, k)
 \]
+is an isometry
 and the quotient map \(M \to M/G\) is just \(\pi\) under this identification. Then \((M/G, \bar{g})\) is a compact Riemannian quotient and we say \((M, g)\) is a co-compact Riemannian manifold.
 
 \begin{rem}
@@ -39,36 +40,41 @@ On \(M\), there is a simple, smooth homotopy from \(g\) to \(g_{\H}\):
 \[
 h(t) = tg + (1-t)g_{\H}, \quad t \in [0, 1].
 \]
-This gives rise to the following very simple lemma:
+This gives rise to the following lemma:
 
 \begin{lemma}
 \label{lem:const_neg}
-Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. Then the following are equivalent:
-\begin{enumerate}[i]
-\item \label{enum:neg_met} \(N\) admits a metric of constant, negative sectional curvature,
-\item \label{enum:deck_met} For \((M, g)\) the Riemannian universal cover of \((N, k)\), the hyperbolic metric \(g_{\H}\) is invariant under \(G\), the group of deck transformations of the cover \(\pi : M \to N\),
-\item \label{enum:subgroup} The isometry group, \(G_{\H}\) of \((M, g_{\H})\) is a sub-group of \(G\),
-\item \label{enum:homo_met} \(k\) is smoothly homotopic to a metric of constant, negative sectional curvature,
+Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. Then the following statements are equivalent:
+\begin{enumerate}[(i)]
+\item \label{enum:neg_met} \(N\) admits a metric of constant, negative sectional curvature.
+\item \label{enum:deck_met} \(g_{\H}\) is invariant under \(G\).
+\item \label{enum:subgroup} G is a subgroup of \(G_{\H}\).
+\item \label{enum:homo_met} \(k\) is smoothly homotopic to a metric of constant, negative sectional curvature.
 \item \label{enum:homo_deck} Every \(G\)-invariant metric \(g\) on \(M\) is smoothly homotopic to \(g_{\H}\) via a smooth \(G\)-invariant homotopy.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-Throughout, \(\pi : M \to N\) denotes the universal cover and \(G\) the group of deck transformations.
 
-\begin{itemize}
-\item \ref{enum:neg_met} is equivalent to \ref{enum:deck_met} is equivalent to \ref{enum:subgroup}:
 
-Since \(\pi^{\ast}\) establishes an isomorphism of metrics on \(N\) with metrics on \(M\) invariant under \(G\), and since curvature is a local invariant, there is a metric \(k_{\H}\) on \(N\) with constant sectional curvature if and only if \(g^{\H}\) is invariant under \(G\) giving the first equivalence. The second equivalence follows since \(g_{\H}\) is invariant under \(G\) if and only \(G \leq G_{\H}\).
 
-\item \ref{enum:neg_met} is equivalent to \ref{enum:homo_met}:
 
-The condition \ref{enum:homo_met} obviously implies \ref{enum:neg_met}. Conversely, let \(g = \pi^{\ast} k\) denote the lifted metric to \(M\) which is then invariant under \(G\). Let \(k_{\H}\) denote the constant sectional curvature metric supposed to exist on \(N\). Then (after rescaling if necessary) the hyperbolic metric on \(M\) is given by \(g_{\H} = \pi^{\ast} k_{\H}\). In particular, \(g_{\H}\)  is invariant under \(G\) (which also proves \ref{enum:deck_met}). Thus for any \(t \in [0, 1]\), the metric \(g_t = t g + (1-t) g_{\H}\) is also invariant under \(G\) by linearity of the action \(\varphi^{\ast}\) for each \(\varphi \in G\) acting on metrics. Thus there exists a metric \(k_t\) on \(N\) such that \(g_t = \pi^{\ast} k_t\) and \(k_t\) gives the desired homotopy proving \ref{enum:homo_met}.
+(i)\(\Rightarrow\)(ii)
+The pullback of a constant curvature metric is the hyperbolic one, which is then \(G\)-invariant.
 
-\item \ref{enum:homo_met} is equivalent to \ref{enum:homo_deck}:
+(ii)\(\Rightarrow\)(iii)
+Clear, since \(G_{\H}\) is the whole isometry group.
 
-Again the isomorphism \(\pi^{\ast}\) establishes an isomorphism between homotopies \(k_t\) on \(N\) and homotopies \(g_t\) invariant under \(G\) on \(M\).
-\end{itemize}
+(iii)\(\Rightarrow\)(iv)
+Since \(g\) and \(g_{\H}\) are invariant under G, so is \(h(t)\), which in turn descends to a homotopy on \(M\backslash G\). This pushes forward to the desired homotopy on \(N\).
+
+(iv)\(\Rightarrow\)(v)
+For any given \(g\), \(h\) defined as above is the desired homotopy.
+
+(v)\(\Rightarrow\)(i)
+Apply (v) to the pullback of \(k\) and push forward the resulting homotopy to \(N\).
+
+
 \end{proof}
 
 \begin{rem}

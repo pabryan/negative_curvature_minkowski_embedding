@@ -246,68 +246,18 @@ A(X, Y) = -\inpr{D_{F_{\ast} X} F_{\ast} Y}{\nu} = \inpr{F_{\ast} Y}{D_{F_{\ast}
 \]
 where \(\W = F_{\ast}^{-1} D\nu: TM \to TM\) denotes the Weingarten map.
 
-The basic equations of hypersurfaces in Minkowski space is recorded in the following Lemma.
+The basic equations of hypersurfaces (Gauss equation) in Minkowski space are
 
-\begin{lemma}
-We have
-\begin{itemize}
-\item \(\Rm(X, Y) Z = A(X, Z) \W(Y) - A(Y, Z) \W(X)\),
-\item \(\Ric(X, Y) = g(\W^2(X) - H \W(X), Y)\),
-\item \(\Sc = \|A\|^2 - H^2\).
-\end{itemize}
-\end{lemma}
-
-\begin{proof}
-Recalling that Minkowski space is flat, the Gauss equation for spacelike hypersurfaces reads
-\[
-\Rm(X, Y, Z, W) = -\inpr{h(X, Z)}{h(Y, W)} + \inpr{h(X, W)}{h(Y, Z)} = \frac{1}{2} A \owedge A (X, Y, Z, W).
-\]
-Since \(A(X, Y) = g(\W(X), Y)\) we have
-\begin{align*}
-g(\Rm(X, Y) Z, W) &= g(\W(X), Z) g(\W(Y), W) - g(\W(X), W) g(\W(Y), Z) \\
-&= g(g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X), W)
-\end{align*}
-so that we obtain the desired expression for the curvature tensor:
-\[
-\Rm(X, Y) Z = g(\W(X), Z) \W(Y) - g(\W(Y), Z) \W(X).
-\]
-
-Taking the trace,
-\[
+\begin{equation}
+\label{eq:gauss}
 \begin{split}
-\Ric(X, Y) &= \Tr Z \mapsto \Rm(Z, X) Y \\
-&= \Tr [Z \mapsto g(\W(Y), Z) \W(X)] - \Tr[Z \mapsto g(\W(X), Y) \W(Z)].
+\Rm(X, Y) Z &= A(X, Z) \W(Y) - A(Y, Z) \W(X), \\
+\Ric(X, Y) &= g(\W^2(X) - H \W(X), Y), \\
+\Sc &= \|A\|^2 - H^2.
 \end{split}
-\]
-The first map may be written \(Z \mapsto [g(\W(Y), \cdot) \otimes \W(X)] (Z)\) which has trace
-\[
-\Tr [Z \mapsto g(\W(Y), Z) \W(X)] = g(\W(Y), \cdot) (\W(X)) = g(\W(X), \W(Y)).
-\]
-The second is
-\[
-\Tr [Z \mapsto g(\W(X), Y) \W(Z)] = g(\W(X), Y) \Tr \W = H A(X, Y).
-\]
-Thus
-\[
-\Ric(X, Y) = g(\W(X),\W(Y)) - H A(X, Y).
-\]
-Since \(\W\) is self-adjoint we obtain the expression for the Ricci curvature,
-\[
-\Ric(X, Y) = g(\W^2(X) - H \W(X), Y).
-\]
+\end{equation}
 
-Thus we have
-\[
-\opRic = \W^2 - H\W
-\]
-and taking one final trace gives the scalar curvature,
-\[
-\Sc = \Tr [\W^2 - H\W] = \|A\|^2 - H^2.
-\]
-\end{proof}
-
-
-The Codazzi-Mainardi equation reads
+The Codazzi-Mainardi equation is of particular importance in relation to the integrability condition in \Cref{thm:intg_const_curv}. It reads
 \begin{equation}
 \label{eq:codazzi}
 \nabla A (X; Y, Z) := \nabla_X A (Y, Z) = \nabla_Y A(X, Z) =: \nabla A(Y; X, Z).
@@ -407,7 +357,7 @@ For this reason, on three manifolds, the Einstein tensor holds special significa
 
 \subsubsection{Extrinsic geometry}
 
-The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation gave us
+The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation \eqref{eq:gauss} gave us
 \[
 \Ric(X, Y) = g(\W^2(X) - H \W(X), Y), \quad \Sc = \|A\|^2 - H^2.
 \]

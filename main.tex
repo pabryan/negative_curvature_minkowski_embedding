@@ -281,24 +281,12 @@ with \(\bar{X} = \bar{X}^a \partial_a = \varphi^a_i X^i \partial_a \in \text{spa
 \[
 0 < g(X, X) = \inpr{\bar{X} + X^{n+1} e_{n+1}}{\bar{X} + X^{n+1} e_{n+1}} = \|\bar{X}\|_{\R^n}^2 - (X^{n+1})^2.
 \]
-That is
-\[
-\|\bar{X}\|_{\R^n}^2 > (X^{n+1})^2 \geq 0.
-\]
 
-Now let \(\pi(y^1, \cdots, y^n, y^{n+1}) = (y^1, \cdots, y^n)\) denote the orthogonal projection onto the \(y^{n+1} = 0\) hyperplane and consider
+Letting \(\pi(y^1, \cdots, y^n, y^{n+1}) = (y^1, \cdots, y^n)\) denote the orthogonal projection onto the \(y^{n+1} = 0\) hyperplane we have \(\pi \circ \varphi (x) = (\varphi^1(x), \cdots, \varphi^n(x))\) satisfies for \(X \ne 0\),
 \[
-\pi \circ \varphi (x) = (\varphi^1(x), \cdots, \varphi^n(x)).
+\|d(\pi \circ \varphi) \cdot X\|_{\R^n}^2 = \|\bar{X}\|_{\R^n}^2  > (X^{n+1})^2 \geq 0
 \]
-Since \(d \pi\) is projection onto \(\text{span} \{\partial_a : 1 \leq a \leq n\}\) we obtain that
-\[
-d(\pi \circ \varphi) \cdot X = d\pi (\bar{X} + X^{n+1} e_{n+1}) = \bar{X}.
-\]
-Thus if \(X \ne 0\),
-\[
-\|d(\pi \circ \varphi) \cdot X\|_{\R^n}^2 = \|\bar{X}\|_{\R^n}^2 > 0
-\]
-and hence \(d(\pi \circ \varphi)\) is non-singular. By the inverse function theorem, locally \(\pi \circ \varphi\) is invertible and we find that
+so that \(d(\pi \circ \varphi)\) is non-singular. By the inverse function theorem, locally \(\pi \circ \varphi\) is invertible and we find that
 \[
 \varphi \circ (\pi \circ \varphi)^{-1} (y^1, \cdots, y^n) = (y^1, \cdots, y^n, \varphi^{n+1} \circ (\pi \circ \varphi)^{-1} (y_1, \cdots, y_n))
 \]

@@ -494,15 +494,15 @@ which is precisely the contracted second Bianchi identity. A similar identity ho
 \label{lem:xcf_hamilton_integrability}
 The cross curvature tensor satisfies
 \[
-\dive_{\adj\Ein} \nabla \adj\Ein = \frac{1}{2} \Tr_{\adj\Ein} \nabla \adj\Ein.
+\dive_{\adj\Ein} \adj\Ein = \frac{1}{2} \Tr_{\adj\Ein} \nabla \adj\Ein.
 \]
 \end{lemma}
 
-Here, \(\dive_{\adj\Ein}\) is the trace of \(\nabla \adj\Ein\) with respect to \(\adj\Ein\) contracting the differentiated slot with one of the other slots (either choice gives the same result since \(\adj\Ein\) is symmetric), whereas \(\Tr_{\adj\Ein} \nabla\adj\Ein\) is the full contraction of the non differentiated slots with \(\adj\Ein\). In terms of indices,
+Here, \(\dive_{\adj\Ein} \adj\Ein\) is the trace of \(\nabla \adj\Ein\) with respect to \(\adj\Ein\) contracting the differentiated slot with one of the other slots (either choice gives the same result since \(\adj\Ein\) is symmetric), whereas \(\Tr_{\adj\Ein} \nabla\adj\Ein\) is the full contraction of the non differentiated slots with \(\adj\Ein\). In terms of indices,
 \[
 \begin{split}
-\left(\dive_{\adj\Ein} \nabla \adj\Ein\right)_m &= \adj\Ein^{ij} \nabla_i \adj\Ein_{jm}, \\
-\Tr_{\adj\Ein} \nabla \adj\Ein &= \adj\Ein^{ij} \nabla_m \adj\Ein_{ij},
+\left(\dive_{\adj\Ein} \adj\Ein\right)_m &= \adj\Ein^{ij} \nabla_i \adj\Ein_{jm}, \\
+\left(\Tr_{\adj\Ein} \nabla \adj\Ein\right)_m &= \adj\Ein^{ij} \nabla_m \adj\Ein_{ij},
 \end{split}
 \]
 where
@@ -512,7 +512,7 @@ where
 is the full raising of \(\adj\Ein\) with respect to the metric.
 
 \begin{proof}
-
+{\color{red}Write or cite proof}
 \end{proof}
 
 The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the cross curvature flow as described below in \Cref{subsec:xcf_existence_uniqueness}.
@@ -554,76 +554,124 @@ where
 \[
 B(\cdot, \cdot) = g(\op{B} \cdot, \cdot).
 \]
-In other words, defining
-\[
-\opGrav(\op{B}) = \op{B} - \frac{1}{2} \Tr \op{B} \Id
-\]
-we have
-\[
-\Grav_g(B) = g(\opGrav(\op{B}) \cdot, \cdot).
-\]
-Similarly, for the adjugate
+Similarly, the adjugate
 \[
 \adj_g B = g(\adj\op{B} \cdot, \cdot)
 \]
-is a \emph{non linear} function taking bilinear forms to bilinear forms.
-
-\begin{rem}
-It's worth explicitly pointing out that the dependence of \(\adj\Ein\) on \(g\) appears in several place. The first is via the second order differential operator \(g \mapsto \Ric(g)\). Note that,
+is a \emph{non linear} function taking bilinear forms to bilinear forms. The construction respects compositions in the sense that
 \[
-g \mapsto \nabla(g)
+(\adj \circ \Grav)_g = \adj_g \circ \Grav_g.
 \]
-is a non linear first order operator for \(g\) which can be seen through the Koszul formula defining \(\nabla = \nabla(g)\):
-\[
-\begin{split}
-2 g(\nabla_X Y, Z) &= \partial_X g(Y, Z) + \partial_Y g(X, Z) - \partial_Z g(X, Y) \\
-&\quad + g([X, Y], Z) - g([Y, Z], X) + g([Z, X], Y).
-\end{split}
-\]
-In coordinates \(\nabla(g)\) is determined by \(\Gamma(g)_{ij}^k \partial_k = (\nabla(g)_{\partial i} \partial j\), given by
-\[
-\Gamma_{ij}^k = \frac{1}{2} g^{kl} \left(\partial_i g_{jk} + \partial_j g_{ik} - \partial_k g_{ij}\right)
-\]
-where \(g^{kl}\) denotes the inverse matrix of \(g_{ij}\). So we see that \(\nabla\) depends non-linearly on first derivatives and \(0\)-th order terms in \(g\).
 
-Then the Ricci curvature is a second order non-linear differential operator, \(g \mapsto \Ric(g)\) defined by
-\[
-\Ric(g) (X, Y) = \Tr \nabla^2_{X,Y} - \nabla^2_{Y,X}.
-\]
-Here we see that \(\nabla\) is differentiated so that \(\Ric(g)\) is first order in \(\nabla\), hence second order in \(g\). In coordinates,
-\[
-\Ric(g)_{ij} = \partial_k \Gamma^k_{ij} - \partial_j \Gamma^k_{ik} + \Gamma^k_{kl} \Gamma^l_{ij} - \Gamma^k_{lj} \Gamma^l_{ik}.
-\]
-Then we see that \(\Ric(g)\) involves a nonlinear combination of first derivatives and \(0\)-order terms of \(\Gamma\) which itself involves a nonlinear combination of first derivatives and \(0\)-order terms of \(g\). The result of which is that \(\Ric\) is a second order nonlinear operator.
+It will be convenient to write \(\adj\Ein\) in the form,
+\begin{equation}
+\label{eq:adjein_op}
+\adj\Ein (g) = F(g, \Ric(g)) \text{ where } F(k, B) = (\adj \circ \opGrav)_k (B).
+\end{equation}
+In particular, \(\adj\Ein\) depends to zero order in the \(k=g\) variable and to second order through the \(B = \Ric\) variable in \(F(k, B)\).
 
-The reminder of the dependence is in \(\Grav_g\) and \(\adj_g\). Although \(\Ric(g)\) appears linearly as the argument to \(\Grav_g\), the map \(\Grav_g\) itself also depends on \(g\) to \(0\)-th order. Similarly \(\Grav_g(\Ric(g))\) appears nonlinearly as the argument to \(\adj_g\) but also \(\adj_g\) depends on \(g\) to \(0\)-th order.
-
-Since only the second order dependence is relevant to parabolicity, the variation of \(g\) in \(\Grav_g\) and \(\adj_g\) will not come into play.
-\end{rem}
-
-{\color{red} Actually, this turned out to be a little tricky to do this way. I don't yet see why \((\adj \circ \Grav)'_S\) should be non-degenerate. In the end, the linearisation of the cross curvature tensor is just \[(\adj\opEin)'_g \cdot V = (\adj \circ \Grav)'_{\opRic(g)} \cdot \opRic'_g \cdot V\] and the final conclusion should be that \((\adj\opEin)'_g\) is non-degenerate so the existence/uniqueness is more or less the same as Ricci flow.}
-
-{\color{red} The other way to do it is to give a little lemma showing that the cross curvature tensor is the trace of \(Z \mapsto \Rm(\opEin(Z), X) Y\) and then linearising that one. This is effectively how Hamilton/Chow do it.}
-
-Before proving the theorem, let us compute the linearisation of the operator \(\adj \circ \opGrav\) at \(S\) where \(\opGrav(S)\) is invertible.
+To prove the theorem, first we need to compute the linearisation of the operator \(\adj \circ \opGrav\) at \(S\) such that \(\opGrav(S)\) is invertible.
 
 \begin{lemma}
+\label{lem:dadjG}
+
 Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearsiation of \(\adj \circ \opGrav\) at \(S\) is given by
 \[
-(\adj \circ \Grav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
+(\adj \circ \opGrav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
 \]
 where
 \[
-(\adj \circ \Grav)'_S \cdot T := \partial_u|_{u=0} (\adj \circ \Grav) (S + uT).
+(\adj \circ \opGrav)'_S \cdot T := \partial_u|_{u=0} (\adj \circ \opGrav) (S + uT).
 \]
 \end{lemma}
 
 \begin{proof}
-
+{\color{red} To write up}
 \end{proof}
 
+Recall that by \Cref{lem:eins_sectional}, \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. Then for \(\xi \in T^{\ast} M\), we define,
+\[
+\|\xi\|_{\Ein}^2 = \Ein(\xi^{\sharp}, \xi^{\sharp})
+\]
+where \(\xi^{\sharp}\) is the metric raising defined by \(\xi(X) = g(\xi^{\sharp}, X)\) for any \(X \in TM\) (with the same base point of \(\xi\), \(x = \pi_{T^{\ast}M} (\xi) = \pi_{TM} (X)\)). We can also raise using \(\Ein\) and so define \(\sharp_{\Ein} \xi\) by
+\[
+\xi(X) = \Ein(\sharp_{\Ein} \xi, X).
+\]
+We can also trace bilinear forms with respect to \(\Ein\), by first defining \(\Tr_{\Ein}\) on simple bilinear forms \(\xi \otimes \eta\):
+\[
+\Tr_{\Ein} \xi \otimes \eta = \Ein(\xi^{\sharp}, \eta^{\sharp})
+\]
+and extending by bilinearity.
+
+\begin{rem}
+Apart from \(\sharp_{\Ein}\), these constructions rely also on metric raising by \(g\). In particular,
+\[
+\abs{\xi}^2_{\Ein} \ne \Ein(\sharp_{\Ein} (\xi), \sharp_{\Ein} (\xi))
+\]
+where the right hand side is what we would obtain by extending \(\Ein\) from a metric on \(TM\) to a metric on \(T^{\ast} M\) in the usual way. In particular, written in terms of indices, \(\Ein^{ij} = g^{ik}g^{\ell j} \Ein_{k\ell}\) is not the inverse matrix of \(E_{ij}\).
+\end{rem}
+
+Next we compute the principal symbol of the cross curvature tensor at a metric of negative sectional curvature. Recall that for a nonlinear, second order differential operator \(D : E \to F\) acting on vector bundles \(E, F\) over \(M\), we define
+\begin{equation}
+\label{eq:symbol}
+\sigma_{\xi} [D_s] = \sigma_{\xi} [D'_s]
+\end{equation}
+where \(s, u \in \Gamma(E)\) are sections of \(E\) and
+\[
+D'_s (u) = \partial_w|_{w=0} D(s + w u)
+\]
+is the linearisation of \(D\) around \(s\). Recall also that the principal symbol, \(\sigma_{\xi} [D'_s]\) of \(D'_s\) is obtained by replacing second order derivatives by components of \(\xi\), and may be conveniently computed by
+\begin{equation}
+\label{eq:symbol_compute}
+\sigma_{\xi} [D'_s] (u) = \lim_{w\to \infty} \left[w^{-2} e^{-w\varphi(x)} D'_s (e^{w\varphi(x)} u)(x)\right]
+\end{equation}
+where \(\varphi\) is any smooth function satisfying \(d\varphi_x = \xi\) and \(x = \pi_{T^{\ast}M} (\xi)\).
+
+For a natural (e.g. invariant under change of basis) and not necessarily linear map, \(f : V \to V\) and a linear differential operator \(L\), we also have the following chain rule,
+\begin{equation}
+\label{eq:chain_rule}
+\sigma_{\xi} [f(L))] (u) = f'_{D(u)} \circ \sigma_{\xi}[L] (u).
+\end{equation}
+
+\begin{lemma}
+\label{lem:xcf_symbol}
+
+The principal symbol of the cross curvature tensor is,
+\[
+\sigma_{\xi} [\adj\Ein_g] (V) = \abs{\xi}^2_{\Ein} - 2 \Sym \xi \otimes V(\sharp_{\Ein}\xi, \cdot) + \Tr_{\Ein} V \xi \otimes \xi.
+\]
+\end{lemma}
+
+\begin{proof}
+Making use of the chain rule \eqref{eq:chain_rule} and the formulation, \(\adj\Ein = F(g, \Ric(r)) = \adj\Ein_g(\Ric(g))\) in \eqref{eq:adjein_op} we obtain
+\[
+\sigma_{\xi} [\adj\Ein_g] (V) = f'_{\Ric(g)} \circ \sigma_{\xi} [\Ric_g] (V).
+\]
+where
+\[
+f(B) = \adj\Ein_g (B) = g(\adj \circ \opGrav \op{B} \cdot, \cdot).
+\]
+\Cref{lem:dadjG} gives that,
+\[
+f'_B (C) = g(\left[\Tr(\adj\opGrav(\op{B}) \opGrav(\op{C}))\Id - \adj\opGrav(\op{B}) \opGrav(\op{C})\right] \opGrav(\op{B})^{-1}
+\]
+According to \cite[Section 5.1]{MR2265040}, the linearisation of \(\Ric\) is
+\[
+\sigma_{\xi} [\Ric_g] (V) = \abs{\xi}^2 V - 2 \Sym \xi \otimes V(\xi^{\sharp}, \cdot) + \Tr_g V \xi \otimes \xi.
+\]
+
+{\color{red} Need to put it all together now}
+\end{proof}
+
+\begin{rem}
+We see that as with any geometric evolution equation, that the cross curvature flow is only weakly parabolic. However, the degeneracy results solely from the diffeomorphism invariance and using DeTurck's method this is easily dealt with.
+
+Let us also now note that the Hamilton integrability condition from \Cref{lem:xcf_hamilton_integrability} and the diffeomorphism invariance are closely related. {\color{red} Describe this}
+\end{rem}
+
 \begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
-First we linearise the second differential operator \(g \mapsto \adj\Ein(g)\). 
+
+{\color{red} Show how to construct DeTurck flow and that it's strictly parabolic. Show how to obtain uniqueness by the analogue of harmonic map heat flow.}
 \end{proof}
 
 \subsection{Preserving Negative Curvature}
@@ -663,7 +711,7 @@ Under the integrability condition, the Cross Curvature Flow smoothly converges t
 
 {\color{red}For proof just apply \Cref{lem:xcf_gcf} and the non-trivial part is in \cite{MR3344442}.}
 
-\subsection{Solitons}
+\subsection{Solitons And The Harnack Inequality}
 \label{subsec:xcf_solitons}
 
 Solitons are fixed points of the flow modulo scaling and diffeomorphism. As such, they are the expected limits (up to rescaling) of the flow. Unlike other flows such as the Ricci Flow, solitons for the Cross Curvature Flow are very rigid.
@@ -674,6 +722,21 @@ The only solitons to the Cross Curvature Flow are constant curvature metrics.
 
 \begin{proof}
 
+\end{proof}
+
+There is a Harnack inequality for integrable solutions of the cross curvature flow.
+
+\begin{lemma}
+\label{lem:harnack}
+
+The following Li-Yau-Hamilton Harnack inequality holds for the cross curvature flow,
+\[
+\partial_t \sqrt{\det \Ein}
+\]
+\end{lemma}
+
+\begin{proof}
+{\color{red}Use embedding and BIS4.}
 \end{proof}
 
 \subsection{Volume Monotonicity}
@@ -741,7 +804,7 @@ To prove the last claim of the lemma, recall from \cite[page 6]{MR2055396} that
 \subsection{The General Case}
 \label{subsec:xcf_general}
 
-{\color{red} Some words about the devil tensor and the difficulties it causes}
+{\color{red} Some words about the devil tensor and the difficulties it causes. Perhaps give the evolution of the cubic form?}
 
 \section*{}
 % Empty section for bib so I don't lose it when collapsing sections

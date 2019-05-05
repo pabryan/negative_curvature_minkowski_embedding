@@ -29,6 +29,14 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 
+%%% Redfine subsection to add newline after heading
+\makeatletter
+\def\subsection{\@startsection{subsection}{2}%
+  \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+  {\normalfont\bfseries}}
+\makeatother
+
+
 \declaretheorem[name=Theorem,numberwithin=section]{thm}
 \declaretheorem[name=Remark,style=remark,sibling=thm]{rem}
 \declaretheorem[name=Lemma,sibling=thm]{lemma}

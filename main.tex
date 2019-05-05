@@ -490,6 +490,8 @@ It is well known that the Einstein tensor is divergence free,
 \]
 which is precisely the contracted second Bianchi identity. A similar identity holds for the cross curvature tensor was given in \cite[Lemma 1]{MR2055396}:
 
+{\color{red} Not at all happy with the notation in the following lemma!}
+
 \begin{lemma}
 \label{lem:xcf_hamilton_integrability}
 The cross curvature tensor satisfies
@@ -515,10 +517,36 @@ is the full raising of \(\adj\Ein\) with respect to the metric.
 {\color{red}Write or cite proof}
 \end{proof}
 
-The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the cross curvature flow as described below in \Cref{subsec:xcf_existence_uniqueness}.
+The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the cross curvature flow as described below in \Cref{rem:invariance_integrability}.
+
+Before moving on, note that we may write the map \(g \mapsto \adj\Ein(g)\) as
+\[
+\adj\Ein(g) = \adj_g \circ \Grav_g \circ \Ric (g) = (\adj \circ \opGrav)_g (\Ric(g))
+\]
+where for a bilinear form \(B\) on a finite dimensional vector space with an inner product \(g\) we define the \emph{gravitation linear map}
+\[
+\Grav_g(B) (\cdot, \cdot) = g(\opGrav(\op{B}) \cdot, \cdot) = g\left(\left[\op{B} - \frac{1}{2} \Tr\op{B} \Id\right] \cdot, \cdot\right) = B - \frac{1}{2} \Tr_g B g
+\]
+where
+\[
+B(\cdot, \cdot) = g(\op{B} \cdot, \cdot).
+\]
+Similarly, the adjugate \(\adj_g B = g(\adj\op{B} \cdot, \cdot)\) is a \emph{non linear} function taking bilinear forms to bilinear forms. The construction respects compositions in the sense that
+\[
+(\adj \circ \Grav)_g = \adj_g \circ \Grav_g.
+\]
+
+It will be convenient to write \(\adj\Ein\) in the form,
+\begin{equation}
+\label{eq:adjein_op}
+\adj\Ein (g) = F(g, \Ric(g)) \text{ where } F(k, B) = (\adj \circ \opGrav)_k (B).
+\end{equation}
+In particular, \(\adj\Ein\) depends to zero order in the \(k=g\) variable and to second order through the \(B = \Ric\) variable in \(F(k, B)\).
 
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
+
+{\color{red} Probably cut this to a single paragraph}
 
 The question of short time existence and uniqueness of solutions to geometric, parabolic equations on vector bundles raises some issues not seen in the standard theory on \(\R^n\). The most pressing issue is that the geometric invariance of the problem leads to degeneracies in the principal symbol. As a result the flow is degenerate parabolic and the standard theory must be modified to take this into account.
 
@@ -542,35 +570,7 @@ g_0 &= g.
 defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty\).
 \end{thm}
 
-Note that we may write the map \(g \mapsto \adj\Ein(g)\) as
-\[
-\adj\Ein(g) = \adj_g \circ \Grav_g \circ \Ric (g) = (\adj \circ \opGrav)_g (\Ric(g))
-\]
-where for a bilinear form \(B\) on a finite dimensional vector space with an inner product \(g\) we define the \emph{gravitation linear map}
-\[
-\Grav_g(B) (\cdot, \cdot) = g(\opGrav(\op{B}) \cdot, \cdot) = g\left(\left[\op{B} - \frac{1}{2} \Tr\op{B} \Id\right] \cdot, \cdot\right) = B - \frac{1}{2} \Tr_g B g
-\]
-where
-\[
-B(\cdot, \cdot) = g(\op{B} \cdot, \cdot).
-\]
-Similarly, the adjugate
-\[
-\adj_g B = g(\adj\op{B} \cdot, \cdot)
-\]
-is a \emph{non linear} function taking bilinear forms to bilinear forms. The construction respects compositions in the sense that
-\[
-(\adj \circ \Grav)_g = \adj_g \circ \Grav_g.
-\]
-
-It will be convenient to write \(\adj\Ein\) in the form,
-\begin{equation}
-\label{eq:adjein_op}
-\adj\Ein (g) = F(g, \Ric(g)) \text{ where } F(k, B) = (\adj \circ \opGrav)_k (B).
-\end{equation}
-In particular, \(\adj\Ein\) depends to zero order in the \(k=g\) variable and to second order through the \(B = \Ric\) variable in \(F(k, B)\).
-
-To prove the theorem, first we need to compute the linearisation of the operator \(\adj \circ \opGrav\) at \(S\) such that \(\opGrav(S)\) is invertible.
+To prove the theorem, recalling the formulation \(\adj\Ein = (\adj\circ\opGrav)_g (\Ric(g))\) in equation \eqref{eq:adjein_op}, we first compute the linearisation of the operator \(\adj \circ \opGrav\). Since we will evaluate this operator at \(S = \opRic(g)\) where \(g\) has negative sectional curvature, which by \Cref{lem:eins_sectional} implies \(\Ein\) is positive definite, we may assume \(\opGrav(S) = \opEin\) is invertible, and hence \(\adj \opGrav(S) = \det(\opGrav(S)) \opGrav(S)^{-1}\).
 
 \begin{lemma}
 \label{lem:dadjG}
@@ -664,6 +664,8 @@ According to \cite[Section 5.1]{MR2265040}, the linearisation of \(\Ric\) is
 \end{proof}
 
 \begin{rem}
+\label{rem:invariance_integrability}
+
 We see that as with any geometric evolution equation, that the cross curvature flow is only weakly parabolic. However, the degeneracy results solely from the diffeomorphism invariance and using DeTurck's method this is easily dealt with.
 
 Let us also now note that the Hamilton integrability condition from \Cref{lem:xcf_hamilton_integrability} and the diffeomorphism invariance are closely related. {\color{red} Describe this}
@@ -672,6 +674,57 @@ Let us also now note that the Hamilton integrability condition from \Cref{lem:xc
 \begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
 
 {\color{red} Show how to construct DeTurck flow and that it's strictly parabolic. Show how to obtain uniqueness by the analogue of harmonic map heat flow.}
+\end{proof}
+
+\subsection{Basic Evolution Equations}
+\label{subsec:xcf_evolution}
+
+{\color{red} Give the evolution equations and definitions necessary for later}
+
+We also write
+\begin{align}
+ u&=\log\det P,\quad
+O_{ij}=V_{ij}\sqrt{\det P},\\
+T^{kij}&=P^{kl}\nabla_l P^{ij},\quad T^i=V_{jk}T^{ijk}=P^{ij}\nabla_ju.
+\end{align}
+We have
+\begin{align}
+    T^{ijk}-T^{jik}&=E^{ijk}-E^{jik}+\frac{1}{2}\left(P^{jk}T^i-P^{ik}T^j\right),
+\end{align}
+for some tensor $E^{ijk}$ whose trace with respect to $V_{kl}$ is zero.
+
+An important tensor that will play a key role in the analysis of XCF is
+\[D^{ijk}:=E^{ijk}-E^{jik}.\]
+The tensor $D^{ijk}$ satisfies
+\begin{align}
+D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
+V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
+\end{align}
+
+\begin{lemma}
+\label{lem:cubicform_codazzi}
+
+The tensor $O_{ij}=V_{ij}\sqrt{\det P}$ satisfies
+\begin{align}
+|D^{ijk}|_V^2=\frac{1}{\det P}|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Using the definition we calculate
+\begin{align}
+T^{kij}=&-P^{kl}P^{im}P^{jn}\nabla_l V_{mn}=-P^{kl}P^{im}P^{jn}\nabla_l (e^{-\frac{1}{2}u}O_{mn})\\
+=&-\frac{1}{\sqrt{\det P}}P^{kl}P^{im}P^{jn}\nabla_l O_{mn}+\frac{1}{2}P^{ij}T^k.
+\end{align}
+Thus we obtain
+\begin{align*}
+T^{kij}-T^{ikj}=&\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)+\frac{1}{2}(P^{ij}T^k-P^{kj}T^i).
+\end{align*}
+This implies
+\begin{align}
+D^{kij}&=\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)\\
+|D^{ijk}|_V^2\det P&=|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2.
+\end{align}
 \end{proof}
 
 \subsection{Preserving Negative Curvature}
@@ -742,64 +795,29 @@ The following Li-Yau-Hamilton Harnack inequality holds for the cross curvature f
 \subsection{Volume Monotonicity}
 \label{subsec:xcf_volume}
 
-{\color{red} What goes here - the lemma or does that go somewhere else? Then volume monotonicity is certainly of interest!}
-
-We also write
-\begin{align}
- u&=\log\det P,\quad
-O_{ij}=V_{ij}\sqrt{\det P},\\
-T^{kij}&=P^{kl}\nabla_l P^{ij},\quad T^i=V_{jk}T^{ijk}=P^{ij}\nabla_ju.
-\end{align}
-We have
-\begin{align}
-    T^{ijk}-T^{jik}&=E^{ijk}-E^{jik}+\frac{1}{2}\left(P^{jk}T^i-P^{ik}T^j\right),
-\end{align}
-for some tensor $E^{ijk}$ whose trace with respect to $V_{kl}$ is zero.
-
-An important tensor that will play a key role in the analysis of XCF is
-\[D^{ijk}:=E^{ijk}-E^{jik}.\]
-The tensor $D^{ijk}$ satisfies
-\begin{align}
-D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
-V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
-\end{align}
-
 \begin{lemma}
-\label{codazzi}
+\label{lem:volume_monotonicity}
 
-The tensor $O_{ij}=V_{ij}\sqrt{\det P}$ satisfies
-\begin{align}
-|D^{ijk}|_V^2=\frac{1}{\det P}|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2
-\end{align}
-In particular, $\frac{d}{dt}\int \sqrt{\det P}d\mu=0$ if and only if $\nabla_k O_{ij}$ is fully symmetric.
+Under the cross curvature flow of negative sectional curvature,
+\[
+\frac{d}{dt}\int \sqrt{\det P}d\mu \geq 0
+\]
+In particular, \(\partial_t \int \sqrt{\det P}d\mu = 0\) if and only if \(\nabla \obstensor\) is Codazzi.
 \end{lemma}
 
 \begin{proof}
-Using the definition we calculate
-\begin{align}
-T^{kij}=&-P^{kl}P^{im}P^{jn}\nabla_l V_{mn}=-P^{kl}P^{im}P^{jn}\nabla_l (e^{-\frac{1}{2}u}O_{mn})\\
-=&-\frac{1}{\sqrt{\det P}}P^{kl}P^{im}P^{jn}\nabla_l O_{mn}+\frac{1}{2}P^{ij}T^k.
-\end{align}
-Thus we obtain
-\begin{align*}
-T^{kij}-T^{ikj}=&\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)+\frac{1}{2}(P^{ij}T^k-P^{kj}T^i).
-\end{align*}
-This implies
-\begin{align}
-D^{kij}&=\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)\\
-|D^{ijk}|_V^2\det P&=|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2.
-\end{align}
-To prove the last claim of the lemma, recall from \cite[page 6]{MR2055396} that
+Recall from \cite[page 6]{MR2055396} that
 \begin{align}
 \frac{d}{dt}\int \sqrt{\det P}d\mu=\frac{1}{4}\int |D^{ijk}|_V^2\sqrt{\det P}d\mu.
 \end{align}
+Now apply \Cref{lem:cubicform_codazzi}.
 \end{proof}
 
-\subsection{Homogeneous Spaces}
-\label{subsec:xcf_homogeneous}
+\subsection{Special Solutions}
+\label{subsec:xcf_special}
 
 
-{\color{red} Need to mention the results here.}
+{\color{red} List results for homogeneous spaces here and also the torus result, particularly as relating to Thurston.}
 
 \subsection{The General Case}
 \label{subsec:xcf_general}

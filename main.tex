@@ -193,7 +193,7 @@ denotes the Kulkarni-Nomizu product. Note that
 
 The symmetries of \(\Rm\) imply that
 \[
-\Rm(X\wedge Y, Z \wedge W) = \Rm(X, Y, W, Z)
+\Rm(X\wedge Y, Z \wedge W) = \Rm(X, Y, Z, W)
 \]
 is a well defined, symmetric bilinear form on \(TM \wedge TM\) inducing the (self-adjoint) curvature operator \(\opRm : TM \wedge TM \to TM \wedge TM\) determined by,
 \[
@@ -201,7 +201,7 @@ g(\opRm(X\wedge Y), Z \wedge W) = \Rm(X\wedge Y, Z \wedge W).
 \]
 The sectional curvatures may then be expressed as
 \[
-K(X \wedge Y) = \frac{\Rm(X \wedge Y, X \wedge Y)}{\abs{X \wedge Y}^2}.
+K(X \wedge Y) = -\frac{\Rm(X \wedge Y, X \wedge Y)}{\abs{X \wedge Y}^2}.
 \]
 
 We define the Ricci curvature
@@ -238,7 +238,15 @@ The Ricci decomposition of the curvature tensor can be written in terms of the t
 &= -\frac{1}{n-2} \left(\Ric - \frac{R}{2(n-1)} g\right) \owedge g + W \\
 &= -\frac{1}{n-2} \left(\Ein  -\frac{1}{n-1} \Tr_g \Ein g\right) \owedge g + W
 \end{align*}
-where \(W = \Rm + \Sch \owedge g\) is the Weyl tensor. Note the first term in the sum on the right hand side of each line further decomposes into irreducible components but we don't need that here.
+where \(W = \Rm + \Sch \owedge g\) is the Weyl tensor, and the Kulkarni-Nomizu product of symmetric bilinear forms \(A, B\) is defined as
+\[
+\begin{split}
+A \owedge B (X, Y, Z, W) &= A \owedge B (X \wedge Y, Z \wedge W) \\
+&= A(X, Z) B(Y, W) + A(Y, W) B(X, Z) \\
+&\quad - A(X, W) B(Y, Z) - A(Y, Z) B(W, W).
+\end{split}
+\]
+Note the first term in the sum on the right hand side of the Ricci decomposition further decomposes into irreducible components but we don't need that here.
 
 \subsection{Extrinsic Geometry Conventions}
 \label{subsec:notation_extrinsic}
@@ -319,29 +327,19 @@ Specialising to the case \(n = 3\), we have
 \Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
 \]
 Then the Ricci decomposition becomes
-\[
-\Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g G}{2} g \owedge g.
-\]
-Then we may express the sectional curvature through any of of \(\Sch, \Ric, \Ein\) as:
 \begin{equation}
-\label{eq:sectional}
-\begin{split}
-\abs{X \wedge Y} K(X \wedge Y) &= -2\Sch(X, Y) g(X, Y) + \Sch(X, X) g(Y, Y) + \Sch(Y, Y) g(X, X) \\
-&= -2\Ric(X, Y) g(X, Y) + \Ric(X, X) g(Y, Y) + \Ric(Y, Y) g(X, X) \\
-&\quad - \frac{\Sc}{2} \abs{X \wedge Y} \\
-&= -2\Ein(X, Y) g(X, Y) + \Ein(X, X) g(Y, Y) + \Ein(Y, Y) g(X, X) \\
-&\quad - \Tr_g \Ein \abs{X \wedge Y}.
-\end{split}
+\label{eq:ricci_decomp_3d}
+\Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g \Ein}{2} g \owedge g.
 \end{equation}
 
 \begin{lemma}
 \label{lem:eins_sectional}
 
-The eigenvalues, \(\lambda^{\Ein}_k\) of the Einstein tensor are the negatives of the \emph{principal sectional curvatures} (eigenvalues of \(\opRm\)):
+The eigenvalues, \(\lambda^{\Ein}_k\) of the Einstein tensor are the eigenvalues of the curvature operator, \(\opRm\):
 \[
-\opRm(E_i \wedge E_j) = -\lambda^{\Ein}_k E_i \wedge E_j
+\opRm(E_i \wedge E_j) = \lambda^{\Ein}_k E_i \wedge E_j
 \]
-where \(\{E_1, E_2, E_3\}\) is an orthonormal frame of eigenvectors for \(\Ein\) and \(i,j,k\) are distinct indices. Therefore,
+where \(\{E_1, E_2, E_3\}\) is an orthonormal frame of eigenvectors for \(\Ein\) and \(i,j,k\) are distinct indices. Therefore, the \emph{principal sectional curvatures} are the negatives of the eigenvalues \(\lambda^{\Ein}_k\):
 \[
 K(E_i \wedge E_j) = -\lambda^{\Ein}_k
 \]
@@ -349,21 +347,35 @@ and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive d
 \end{lemma}
 
 \begin{proof}
-If \(X, Y\) are orthonormal eigenvectors for \(\Ric\), then using equation \eqref{eq:sectional},
-\begin{align*}
-K(X \wedge Y) &= \lambda^{\Sch}(X) + \lambda^{\Sch}(Y) \\
-&= \lambda^{\Ric} (X) + \lambda^{\Ric} (Y) - \frac{\Sc}{2} \\
-&= \lambda^{\Ein} (X) + \lambda^{\Ein} (Y) - \Tr_g \Ein \\
-\end{align*}
-where \(\lambda^{\Sch}(X)\) denotes the eigenvalue of \(\Sch\) corresponding to \(X\) and likewise for \(\lambda^{\Ric}\) and \(\lambda^{\Ein}\). In particular, if \(\{E_1, E_2, E_3\}\) is an orthonormal basis of eigenvectors, then the trace is simply the sum of the corresponding eigenvalues, hence for distinct \(i,j,k\) we have
-\begin{align*}
-K(E_i \wedge E_j) &= \lambda^{\Sch}_i + \lambda^{\Sch}_j \\
-&= \lambda^{\Ric}_i  + \lambda^{\Ric}_j - \frac{1}{2} \sum_l \lambda^{\Ric}_l = \frac{1}{2}\left(\lambda^{\Ric}_i + \lambda^{\Ric}_j -\lambda^{\Ric}_k\right) \\
-&= \lambda^{\Ein}_i + \lambda^{\Ein}_j - \sum_l \lambda^{\Ein}_l = -\lambda^{\Ein}_k.
-\end{align*}
+If \(X, Y\) are orthonormal eigenvectors for \(\Ein\), then using equation \eqref{eq:ricci_decomp_3d},
+\[
+\begin{split}
+g(\opRm(E_i \wedge E_j), E_p \wedge E_q) &= -\Ein \owedge g (E_i \wedge E_j, E_p \wedge E_q) + \frac{\Tr_g \Ein}{2} g \owedge g (E_i \wedge E_j, E_p \wedge E_q) \\
+&= - \Ein(E_i, E_p) g(E_j, E_q) - g(E_i, E_p) \Ein(E_j, E_q) \\
+&\quad + \Ein(E_i, E_q) g(E_j, E_p) + g(E_i, E_q) \Ein(E_j, E_p) \\
+&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
+&= - \lambda^{\Ein}_i g(E_i, E_p) g(E_j, E_q) - \lambda^{\Ein}_j g(E_i, E_p) g(E_j, E_q) \\
+&\quad + \lambda^{\Ein}_i g(E_i, E_q) g(E_j, E_p) + \lambda^{\Ein}_j g(E_i, E_q) g(E_j, E_p) \\
+&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
+&= (\Tr_g \Ein - \lambda^{\Ein}_i - \lambda^{\Ein}_j) g(E_i \wedge E_j, E_p \wedge E_q) \\
+&= g(\lambda^{\Ein}_k E_i \wedge E_j, E_p \wedge E_q).
+\end{split}
+\]
+since \(\Tr_g \Ein = \lambda^E_i + \lambda^E_j + \lambda^{\Ein}_k\). Hence
+\[
+\opRm(E_i \wedge E_j) = \lambda^{\Ein}_k E_i \wedge E_j.
+\]
+
+The sectional curvatures then follow immediately,
+\[
+K (E_i \wedge E_j) = -\frac{g(\opRm(E_i \wedge E_j), E_j \wedge E_i)}{\abs{E_i \wedge E_j}^2} = -\lambda^{\Ein}_k.
+\]
 \end{proof}
 
+\begin{rem}
 For this reason, on three manifolds, the Einstein tensor holds special significance. Thus, although from the point of view of the curvature decomposition, it is more natural and simpler to work with \(\Sch\), from the point of view of sectional curvatures, it is more convenient to work with \(\Ein\). Of course the two are equivalent so we may choose whichever is more suited to our purposes which at present is to study negative sectional curvature so we work with \(\Ein\).
+\end{rem}
+
 
 \subsubsection{Extrinsic geometry}
 
@@ -392,9 +404,13 @@ and hence the tensor
 \[
 \obstensor := \sqrt{\det \opEin} \Ein^{-1} = A
 \]
-is Codazzi. Moreover,
+is Codazzi. Moreover, for distinct indices, \(i,j,k\),
 \[
-\opRm (E_i \wedge E_j) = -\kappa_i \kappa_j E_i \wedge E_j \Rightarrow K(E_i \wedge E_j) = -\kappa_i \kappa_j
+\lambda^{\Ein}_k = \kappa_i\kappa_j
+\]
+and hence
+\[
+\opRm (E_i \wedge E_j) = \kappa_i \kappa_j E_i \wedge E_j \Rightarrow K(E_i \wedge E_j) = -\kappa_i \kappa_j
 \]
 and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).
 \end{lemma}
@@ -403,12 +419,12 @@ and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive d
 Denoting the eigenvalues of \(\W\) (i.e. the principal curvatures) by \(\kappa_i\), and applying equation \eqref{eq:ein_extrinsic} and \Cref{lem:eins_sectional}, we have for distinct indices \(i,j\):
 \[
 \begin{split}
--K(E_i \wedge E_j) = \lambda^{\Ein}_k &= \Ein(E_k, E_k) = \kappa_k^2 - \kappa_k \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
+\lambda^{\Ein}_k &= \Ein(E_k, E_k) = \kappa_k^2 - \kappa_k \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
 &= - \kappa_k \kappa_i - \kappa_k \kappa_j + \kappa_k \kappa_i + \kappa_k \kappa_j + \kappa_i \kappa_j \\
 &= \kappa_i \kappa_j.
 \end{split}
 \]
-Thus we see that the sectional curvatures are minus the product of the corresponding principal curvatures and \(\Ein\) is positive definite if and only if all the \(\kappa_i\) have the same sign. This is true either if all are negative or all are positive. By changing orientation \(\nu \mapsto -\nu\) if necessary we assume that \(\kappa_i > 0\).
+Thus we see that the sectional curvatures, \(K(E_i \wedge E_j) = - \lambda^E_k = -\kappa_i\kappa_j\) are minus the product of the corresponding principal curvatures and \(\Ein\) is positive definite if and only if all the \(\kappa_i\) have the same sign. This is true either if all are negative or all are positive. By changing orientation \(\nu \mapsto -\nu\) if necessary we assume that \(\kappa_i > 0\).
 
 Furthermore, the Gauss curvature is \(K = \det \W = \kappa_i \kappa_j \kappa_k\) and when \(A\) is positive definite, \(\W^{-1}\) is well defined, simultaneously diagonalisable with \(\W\) with eigenvalues \(\kappa_i^{-1}\) and hence
 \[
@@ -464,13 +480,11 @@ The definition here makes sense in any dimension. In three dimensions, according
 
 There are two other equivalent ways to write the \emph{cross curvature tensor} \(\adj\Ein\) in three dimensions. The first makes sense in any dimension while the second is particular to three dimensions.
 
-{\color{red} I think I messed up a sign in my conventions somewhere}
-
 \begin{lemma}
 \label{eq:xcf_equiv}
 In three dimensions, we have
 \[
-\adj\Ein(X, Y) = -\frac{1}{2} \Ric_{\Ein} (X, Y) := -\frac{1}{2} \Tr Z \mapsto \Rm(\opEin(Z), X) Y
+\adj\Ein(X, Y) = \frac{1}{2} \Ric_{\Ein} (X, Y) := \frac{1}{2} \Tr Z \mapsto \Rm(\opEin(Z), X) Y
 \]
 \end{lemma}
 
@@ -483,9 +497,9 @@ where \(i,k,\ell\) are distinct indices. Thus
 \[
 \adj\Ein(E_i, E_j) = g(\lambda_k \lambda_{\ell} E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
 \]
-As in \Cref{lem:eins_sectional}, we have
+From \Cref{lem:eins_sectional}, we have
 \[
-\opRm(E_i \wedge E_j) = -\lambda_k E_i \wedge E_j.
+\opRm(E_i \wedge E_j) = \lambda_k E_i \wedge E_j.
 \]
 
 Then
@@ -493,16 +507,16 @@ Then
 \begin{split}
 \Ric_{\Ein}(E_i, E_j) &= \Tr Z \mapsto \Rm(\opEin(Z), E_i) E_j = \sum_{m=1}^3 \Rm(\opEin(E_m), E_i, E_j, E_m) \\
 &= \sum_{m=1}^3 \lambda_m g(\opRm(E_m \wedge E_i), E_m \wedge E_j) \\
-&= - \sum_{m=1}^3 \lambda_m \hat{\lambda}_{mi} g(E_m \wedge E_i, E_m \wedge E_j).
+&= \sum_{m=1}^3 \lambda_m \hat{\lambda}_{mi} g(E_m \wedge E_i, E_m \wedge E_j).
 \end{split}
 \]
 where \(\hat{\lambda}_{mi} = \lambda_k\) if \(m,i,k\) are distinct indices and is zero if \(m=i\). Now, if \(i = j\), and \(i, k, \ell\) are distinct indices, the sum is over \(m=k, \ell\) giving
 \[
-\Ric_{\Ein}(E_i, E_j) = -\left(\lambda_k \lambda_{\ell} + \lambda_{\ell} \lambda_k\right) = -2\lambda_k \lambda_{\ell}.
+\Ric_{\Ein}(E_i, E_j) = \left(\lambda_k \lambda_{\ell} + \lambda_{\ell} \lambda_k\right) = 2\lambda_k \lambda_{\ell}.
 \]
 On the other hand, if \(i \ne j\), then \(g(E_m \wedge E_i, E_m \wedge E_j) = 0\) and hence
 \[
--\frac{1}{2} \Ric_{\Ein}(E_i, E_j) =  \lambda_k \lambda_{\ell} \delta_{ij} = \adj\Ein(E_i, E_j)
+\frac{1}{2} \Ric_{\Ein}(E_i, E_j) =  \lambda_k \lambda_{\ell} \delta_{ij} = \adj\Ein(E_i, E_j)
 \]
 \end{proof}
 

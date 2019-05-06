@@ -529,37 +529,49 @@ On the other hand, if \(i \ne j\), then \(g(E_m \wedge E_i, E_m \wedge E_j) = 0\
 In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the same result is obtained by contracting with the measure \(\mu\).
 \end{rem}
 
-It is well known that the Einstein tensor is divergence free,
+For a symmetric bilinear form, let us write
 \[
-0 = \dive \Ein = \Tr_g \nabla \Ein = \Tr_g \nabla \Ric - \frac{1}{2} \Tr_g \nabla (\Sc g) = \dive \Ric - \frac{1}{2} \nabla \Sc
+\nabla B (X, Y, Z) = (\nabla_Z B) (X, Y) := \nabla_Z (B(X, Y)) - B(\nabla_Z X, Y) - B(X, \nabla_Z Y).
 \]
-which is precisely the contracted second Bianchi identity. A similar identity holds for the cross curvature tensor was given in \cite[Lemma 1]{MR2055396}:
+Then \(\nabla B\) is symmetric in the first two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\):
+\[
+(\Tr_g^{12} \nabla B) (Z) = \Tr [(\nabla B)_g^{12}(Z)] \text{ where } \nabla B(X, Y, Z) = g([(\nabla B)_g^{12}(Z)] (X), Y)
+\]
+and
+\[
+(\Tr_g^{13} \nabla B) (Y) = \Tr [(\nabla B)_g^{13}(Y)] \text{ where } \nabla B(X, Y, Z) = g([(\nabla B)_g^{13} (Y)] (X), Z).
+\]
+Note that since \(B\) is symmetric \(\Tr_g^{23} \nabla B = \Tr_g^{13} \nabla B\).
 
-{\color{red} Not at all happy with the notation in the following lemma!}
+We define the divergence,
+\[
+\dive B = \dive_g B = \Tr_g^{13} \nabla B = \Tr_g^{23} \nabla B
+\]
+by contracting the first (or equivalently the second) slot with third (differentiated) slot.
+
+With this definition, it is well known that the Einstein tensor is divergence free,
+\begin{equation}
+\label{eq:ein_divfree}
+0 = \dive_g \Ein = \Tr_g^{13} \nabla \Ein = \Tr_g^{13} \nabla \Ric - \frac{1}{2} \Tr_g^{13} \nabla (\Sc g) = \dive_g \Ric - \frac{1}{2} \nabla \Sc
+\end{equation}
+which is precisely the contracted second Bianchi identity.
+
+A similar identity holds for the cross curvature tensor was given in \cite[Lemma 1]{MR2055396}. For this instead of tracing with respect to \(g\) we trace with respect to \(\adj\Ein\) (which recall by \Cref{lem:eins_sectional} is positive definite, hence a metric, when \(g\) has negative sectional curvature) so defining
+\[
+\dive_{\adj\Ein} B = \Tr_{\adj\Ein}^{13} \nabla B \text{ where } \nabla B(X, Y, Z) = \adj\Ein([(\nabla B)_{\adj\Ein}^{13}(Y)] (X), Z).
+\]
+Similarly we may define \(\Tr_{\adj\Ein}^{12}\).
 
 \begin{lemma}
 \label{lem:xcf_hamilton_integrability}
 The cross curvature tensor satisfies
 \[
-\dive_{\adj\Ein} \adj\Ein = \frac{1}{2} \Tr_{\adj\Ein} \nabla \adj\Ein.
+\dive_{\adj\Ein} \adj\Ein = \frac{1}{2} \Tr^{12}_{\adj\Ein} \nabla \adj\Ein.
 \]
 \end{lemma}
 
-Here, \(\dive_{\adj\Ein} \adj\Ein\) is the trace of \(\nabla \adj\Ein\) with respect to \(\adj\Ein\) contracting the differentiated slot with one of the other slots (either choice gives the same result since \(\adj\Ein\) is symmetric), whereas \(\Tr_{\adj\Ein} \nabla\adj\Ein\) is the full contraction of the non differentiated slots with \(\adj\Ein\). In terms of indices,
-\[
-\begin{split}
-\left(\dive_{\adj\Ein} \adj\Ein\right)_m &= \adj\Ein^{ij} \nabla_i \adj\Ein_{jm}, \\
-\left(\Tr_{\adj\Ein} \nabla \adj\Ein\right)_m &= \adj\Ein^{ij} \nabla_m \adj\Ein_{ij},
-\end{split}
-\]
-where
-\[
-\adj\Ein^{ij} = k^{ir}k^{sj} \adj\Ein_{rs}
-\]
-is the full raising of \(\adj\Ein\) with respect to the metric.
-
 \begin{proof}
-{\color{red}Write or cite proof}
+{\color{red}Write proof}
 \end{proof}
 
 The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the cross curvature flow as described below in \Cref{rem:invariance_integrability}.

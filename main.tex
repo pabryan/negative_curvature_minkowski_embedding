@@ -464,25 +464,51 @@ The definition here makes sense in any dimension. In three dimensions, according
 
 There are two other equivalent ways to write the \emph{cross curvature tensor} \(\adj\Ein\) in three dimensions. The first makes sense in any dimension while the second is particular to three dimensions.
 
+{\color{red} I think I messed up a sign in my conventions somewhere}
+
 \begin{lemma}
 \label{eq:xcf_equiv}
 In three dimensions, we have
 \[
-\adj\Ein(X, Y) = \Ric_{\Ein} (X, Y) := \Tr Z \mapsto \Rm(\opEin(Z), X) Y
-\]
-and
-\[
-\adj\Ein = \frac{1}{8} \mu \ast \mu \ast \Rm \ast \Rm
-\]
-where the contraction,
-\[
-(\mu \ast \mu \ast \Rm \ast \Rm)_{ij} = \mu^{pqk}\mu^{rs\ell}\Rm_{i\ell pq} \Rm_{kjrs}
+\adj\Ein(X, Y) = -\frac{1}{2} \Ric_{\Ein} (X, Y) := -\frac{1}{2} \Tr Z \mapsto \Rm(\opEin(Z), X) Y
 \]
 \end{lemma}
 
 \begin{proof}
-{\color{red} Probably simplest in a o/n basis of eigenvectors for \(\Ric\)}
+In an orthonormal basis of eigenvectors \(E_1, E_2, E_3\) for \(\Ein\), with eigenvalues \(\lambda_1, \lambda_2, \lambda_3\), we have
+\[
+\adj\opEin (E_i) = \det\opEin \opEin^{-1}(E_i) = \lambda_i \lambda_k \lambda_{\ell} \frac{1}{\lambda_i} E_i = \lambda_k \lambda_{\ell} E_i
+\]
+where \(i,k,\ell\) are distinct indices. Thus
+\[
+\adj\Ein(E_i, E_j) = g(\lambda_k \lambda_{\ell} E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
+\]
+As in \Cref{lem:eins_sectional}, we have
+\[
+\opRm(E_i \wedge E_j) = -\lambda_k E_i \wedge E_j.
+\]
+
+Then
+\[
+\begin{split}
+\Ric_{\Ein}(E_i, E_j) &= \Tr Z \mapsto \Rm(\opEin(Z), E_i) E_j = \sum_{m=1}^3 \Rm(\opEin(E_m), E_i, E_j, E_m) \\
+&= \sum_{m=1}^3 \lambda_m g(\opRm(E_m \wedge E_i), E_m \wedge E_j) \\
+&= - \sum_{m=1}^3 \lambda_m \hat{\lambda}_{mi} g(E_m \wedge E_i, E_m \wedge E_j).
+\end{split}
+\]
+where \(\hat{\lambda}_{mi} = \lambda_k\) if \(m,i,k\) are distinct indices and is zero if \(m=i\). Now, if \(i = j\), and \(i, k, \ell\) are distinct indices, the sum is over \(m=k, \ell\) giving
+\[
+\Ric_{\Ein}(E_i, E_j) = -\left(\lambda_k \lambda_{\ell} + \lambda_{\ell} \lambda_k\right) = -2\lambda_k \lambda_{\ell}.
+\]
+On the other hand, if \(i \ne j\), then \(g(E_m \wedge E_i, E_m \wedge E_j) = 0\) and hence
+\[
+-\frac{1}{2} \Ric_{\Ein}(E_i, E_j) =  \lambda_k \lambda_{\ell} \delta_{ij} = \adj\Ein(E_i, E_j)
+\]
 \end{proof}
+
+\begin{rem}
+In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the same result is obtained by contracting with the measure \(\mu\).
+\end{rem}
 
 It is well known that the Einstein tensor is divergence free,
 \[

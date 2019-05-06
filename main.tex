@@ -477,8 +477,17 @@ The definition here makes sense in any dimension. In three dimensions, according
 \[
 \adj\Ein = \det \Ein \Ein^{-1}.
 \]
+In an orthonormal basis of eigenvectors \(E_1, E_2, E_3\) for \(\Ein\), with eigenvalues \(\lambda_1, \lambda_2, \lambda_3\), we have for distinct indices, \(i, k, \ell\),
+\[
+\adj\opEin (E_i) = \det\opEin \opEin^{-1}(E_i) = \lambda_i \lambda_k \lambda_{\ell} \frac{1}{\lambda_i} E_i = \lambda_k \lambda_{\ell} E_i
+\]
+where \(i,k,\ell\) are distinct indices. Thus
+\[
+\adj\Ein(E_i, E_j) = g(\lambda_k \lambda_{\ell} E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
+\]
+The tensor \(\adj\Ein\) is referred to as the \emph{cross curvature tensor}. The origin of the name is that the \(i\)'th eigenvalue of \(\adj\Ein\) is the ``cross terms'' \(\lambda_k \lambda_{\ell}\) of the remaining eigenvalues.
 
-There are two other equivalent ways to write the \emph{cross curvature tensor} \(\adj\Ein\) in three dimensions. The first makes sense in any dimension while the second is particular to three dimensions.
+There is an equivalent ways to write \(\adj\Ein\) in three dimensions. In fact, both these definitions make sense in any dimension, however it is only in three dimensions that they coincide.
 
 \begin{lemma}
 \label{eq:xcf_equiv}
@@ -489,15 +498,11 @@ In three dimensions, we have
 \end{lemma}
 
 \begin{proof}
-In an orthonormal basis of eigenvectors \(E_1, E_2, E_3\) for \(\Ein\), with eigenvalues \(\lambda_1, \lambda_2, \lambda_3\), we have
+As noted above,
 \[
-\adj\opEin (E_i) = \det\opEin \opEin^{-1}(E_i) = \lambda_i \lambda_k \lambda_{\ell} \frac{1}{\lambda_i} E_i = \lambda_k \lambda_{\ell} E_i
+\adj\Ein(E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
 \]
-where \(i,k,\ell\) are distinct indices. Thus
-\[
-\adj\Ein(E_i, E_j) = g(\lambda_k \lambda_{\ell} E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
-\]
-From \Cref{lem:eins_sectional}, we have
+On the other hand, from \Cref{lem:eins_sectional}, we have
 \[
 \opRm(E_i \wedge E_j) = \lambda_k E_i \wedge E_j.
 \]

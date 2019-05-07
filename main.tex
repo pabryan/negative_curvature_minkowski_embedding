@@ -544,23 +544,18 @@ In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the
 
 For a symmetric bilinear form, let us write
 \[
-\nabla B (X, Y, Z) = (\nabla_Z B) (X, Y) := \nabla_Z (B(X, Y)) - B(\nabla_Z X, Y) - B(X, \nabla_Z Y).
+\nabla B (X, Y, Z) = (\nabla_X B) (Y, Z) := \nabla_X (B(Y, Z)) - B(\nabla_X Y, Z) - B(Y, \nabla_X Z).
 \]
-Then \(\nabla B\) is symmetric in the first two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\):
+Then \(\nabla B\) is symmetric in the last two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\): contracting the first and second slots (or equivalently the first and third by symmetry) and contracting the second and third slots. Fixing \(X\) and then we may write the bilinear form \((\nabla B)_X (Y, Z) := \nabla B (X, Y, Z)\) as \((\nabla B)_X (Y, Z) = g((\nabla B)^{\sharp}_X (Z), Y)\) and define
 \[
-(\Tr_g^{12} \nabla B) (Z) = \Tr [(\nabla B)_g^{12}(Z)] \text{ where } \nabla B(X, Y, Z) = g([(\nabla B)_g^{12}(Z)] (X), Y)
+(\Tr_g^{23} \nabla B) (X) = \Tr (\nabla B)^{\sharp}_X.
 \]
-and
-\[
-(\Tr_g^{13} \nabla B) (Y) = \Tr [(\nabla B)_g^{13}(Y)] \text{ where } \nabla B(X, Y, Z) = g([(\nabla B)_g^{13} (Y)] (X), Z).
-\]
-Note that since \(B\) is symmetric \(\Tr_g^{23} \nabla B = \Tr_g^{13} \nabla B\).
+Similarly we may define \(\Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B\).
 
 We define the divergence,
 \[
-\dive B = \dive_g B = \Tr_g^{13} \nabla B = \Tr_g^{23} \nabla B
+\dive B = \dive_g B = \Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B.
 \]
-by contracting the first (or equivalently the second) slot with third (differentiated) slot.
 
 With this definition, it is well known that the Einstein tensor is divergence free,
 \begin{equation}

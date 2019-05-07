@@ -150,15 +150,33 @@ It is an open problem as to whether the Cross Curvature Flow deforms arbitrary n
 \subsection{Geometrisation of Two Manfolds}
 \label{sec:geometrisation_2d}
 
-In the case of compact two-manifolds, the situation is completely understood. In this case, there is only one sectional curvature, the Gauss curvature \(K\) equal to half the scalar curvature \(R\). By the Gauss-Bonnet theorem, if \(K < 0\), \(0 < \int_N K d\mu = 2\pi(1-\lambda)\) where \(\lambda\) is the genus and hence \(\lambda > 1\). By the uniformisation theorem, all compact surfaces are classified by genus and moreover, each such surface admits a metric of constant Gauss curvature. Thus all compact surfaces of genus \(\lambda > 1\) admit a metric of constant negative sectional curvature, while the surfaces of genus \(\lambda = 0, 1\) do not even admit metrics of everywhere negative sectional curvature.
+In the case of closed two-manifolds, the situation is completely understood. In this case, there is only one sectional curvature, the Gauss curvature \(K\) equal to half the scalar curvature \(R\). By the Gauss-Bonnet theorem,
+\[
+\int_N K d\mu = 2\pi(1-\lambda)
+\]
+where \(\lambda \in \N\) is the genus. Consequently, only genus zero surfaces admit a metric of constant positive Gauss curvature, only genus one surfaces admit a metric of constant zero Gauss curvature and only genus two or greater surfaces admit a metric of constant negative curvature. In fact, the uniformisation theorem implies all closed surfaces are classified up to diffeomorphism by genus and each such surface admits a metric of constant Gauss curvature. We then immediately see that if \(M\) admits a metric of strictly negative sectional curvature, then it is hyperbolic (admits a constant negative sectional curvature metric), and likewise if \(M\) admits a metric of strictly positive sectional curvature the it is elliptic (admits a constant positive sectional curvature metric). More generally, hyperbolic surfaces are precisely those surfaces admitting a metric with negative average Gauss curvature and similarly for elliptic and parabolic (admits a constant zero sectional curvature metric).
 
-On the other hand, these hyperbolic surfaces (those with equipped with the constant negative sectional curvature metric) are precisely those presented as \(\H^2/\Gamma\) where \(\Gamma\) is a Fuschian subgroup of the isometry group \(G_{\H} = \text{PSL}(2, \R)\) of \(\H^2\). Then since all compact surfaces \(N\) with metrics \(k\) of strictly negative sectional curvature admit a constant curvature metric, all such surfaces are topologically quotients \(\H^2/\Gamma\). The lifted metric \(g = \pi^{\ast} k\) is then invariant under \(\Gamma\). Thus the deck transformation group of the Riemannian cover \((\H^2, g) \to (N = \H^2/\Gamma, k)\) is precisely the Fuschian subgroup \(\Gamma\) which is a subgroup of \(G_{\H}\). That is, the constant curvature metric is invariant under the deck transformation group \(\Gamma\) as in \Cref{lem:const_neg} and hence the homotopy \(h(t) = t g + (1-t)g_{\H}\) descends to the quotient \(N = M/\Gamma\) giving a homotopy \(k(t) = t k + (1-t)k_{\H}\) from \(k\) to the constant curvature metric \(k_{\H}\).
+Here then we see that the hyperbolic surfaces , with infinitely many diffeomorphism classes comprise the largest class of closed surfaces, and indeed there is only one class in positive and zero curvature respectively. These hyperbolic surfaces are precisely those presented as \(\H^2/\Gamma\) where \(\Gamma\) is a Fuschian subgroup of the isometry group \(G_{\H} = \text{PSL}(2, \R)\) of \(\H^2\). Since all compact surfaces \(M\) with metrics \(g\) of strictly negative sectional curvature admit a constant curvature metric, all such surfaces are topologically quotients \(\H^2/\Gamma\). The lifted metric \(k = \pi^{\ast} g\) is then invariant under \(\Gamma\). Thus the deck transformation group of the Riemannian cover \((\H^2, k) \to (N = \H^2/\Gamma, g)\) is precisely the Fuschian subgroup \(\Gamma\) which is a subgroup of \(G_{\H}\). That is, the constant curvature metric is invariant under the deck transformation group \(\Gamma\) as in \Cref{lem:const_neg} and hence the homotopy \(h(t) = t k + (1-t)k_{\H}\) descends to the quotient \(N = M/\Gamma\) giving a homotopy \(g(t) = t g + (1-t)g_{\H}\) from \(g\) to a constant curvature metric \(g_{\H}\).
 
 \subsection{Thurston's Geometrisation of Three Manfolds}
 \label{sec:geometrisation_3d}
 
-{\color{red} Three dimensional version. See \cite{MR705527} for an excellent exposition.}
+The three dimensional case is more complicated than the two dimensional case, but is almost completely understood thanks to Perleman's successful completion \cite{2003math......7245P,2003math......3109P,2002math.....11159P} of Hamilton's program based on the Ricci flow \cite{Hamilton:/1982} to solve the Poincar\'e and Thurston geometrisation conjectures \cite{MR648524}. The remaining piece of the puzzle is the structure of hyperbolic, closed three manifolds. We include here a brief description and refer the reader to \cite{MR705527} and \cite{MR1435975} for in depth discussions of geometrisation and \cite{MR3186136,MR2334563,MR2460872} for expositions of the Hamilton-Perleman proof. Unless explicitly stated otherwise, the results described here may be found in these references.
 
+The geometrisation conjecture may be stated as follows:
+
+\begin{thm}[Thurston Geometrisation]
+Every closed three manifold decomposes as a connected sum of prime manifolds, each of which may be cut along tori so that the interior of the resulting manifolds each admits a unique geometric structure of with finite volume from among a possible eight types.
+\end{thm}
+
+A prime manifold is simply a manifold that cannot be written as a non-trivial connected sum. The decomposition into prime manifolds was given by \cite{MR0142125}. To say that \(M\) admits a geometry is to say that \(M\) is covered by the geometry, and the classification into eight types of finite volume geometric structures was given by Thurston. Finally the remaining part of the theorem, that such a decomposition of prime manifolds exists was proven by Hamilton and Perleman using the Ricci flow. The eight geometries are
+\[
+\R^3, \S^3, \H^3, \S^2 \times \R, \H^2 \times \R, \widetilde{SL}_2(\R), \operatorname{Nil}, \operatorname{Solv}.
+\]
+
+For the non-hyperbolic geometries, in the case of \(\operatorname{Solv}\) these are precisely torus and Klein bottle bundles over \(S^1\) or the union of two twisted \(1\)-bundles over the torus or Klein bottle. The remaining six non-hyperbolic geometries are all Seifert Fibre bundles, completely determined by the Euler characteristic of the base space, \(\chi\) and the Euler number of the bundle, \(e\).
+
+The only remaining case then is the hyperbolic case.
 
 \section{Basic Geometry Conventions}
 \label{sec:notation}

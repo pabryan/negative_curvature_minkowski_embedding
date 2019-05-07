@@ -22,18 +22,15 @@ We consider the problem of embedding negatively curved three-manifolds into Mink
 
 \section{Introduction}
 \label{sec:intro}
-
 Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi\colon (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that
 \[
 (M/G, \bar{g}) \underset{\simeq}{\to} (N, k)
 \]
 is an isometry
 and the quotient map \(M \to M/G\) is just \(\pi\) under this identification. Then \((M/G, \bar{g})\) is a compact Riemannian quotient and we say \((M, g)\) is a co-compact Riemannian manifold.
-
 \begin{rem}
 The map \(\pi^{\ast}\) establishes an isomorphism of metrics on \(N\) with metrics on \(M\) invariant under the action of \(G\). Note also that all geometric invariants such as curvature are invariant under \(G\).
 \end{rem}
-
 Now, since \((N, k)\) has strictly negative sectional curvature, so does \((M, g)\) hence by the Cartan-Hadamard theorem, \(M \simeq \R^3\) is diffeomorphic to \(\R^3\) via the exponential map. In particular we may equip \(M\) with the hyperbolic metric, \(g_{\H}\) of constant, negative sectional curvature equal to \(-1\). Let us write \(G_{\H}\) for the isometry group of \((M, g_{\H})\).
 
 On \(M\), there is a simple, smooth homotopy from \(g\) to \(g_{\H}\):
@@ -41,7 +38,6 @@ On \(M\), there is a simple, smooth homotopy from \(g\) to \(g_{\H}\):
 h(t) = tg + (1-t)g_{\H}, \quad t \in [0, 1].
 \]
 This gives rise to the following lemma:
-
 \begin{lemma}
 \label{lem:const_neg}
 Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. Then the following statements are equivalent:
@@ -53,11 +49,7 @@ Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. T
 \item \label{enum:homo_deck} Every \(G\)-invariant metric \(g\) on \(M\) is smoothly homotopic to \(g_{\H}\) via a smooth \(G\)-invariant homotopy.
 \end{enumerate}
 \end{lemma}
-
 \begin{proof}
-
-
-
 
 (i)\(\Rightarrow\)(ii)
 The pullback of a constant curvature metric is the hyperbolic one, which is then \(G\)-invariant.
@@ -73,34 +65,24 @@ For any given \(g\), \(h\) defined as above is the desired homotopy.
 
 (v)\(\Rightarrow\)(i)
 Apply (v) to the pullback of \(k\) and push forward the resulting homotopy to \(N\).
-
-
 \end{proof}
-
 \begin{rem}
 In condition \ref{enum:subgroup}, to say that \(G_{\H}\) is a sub-group of \(G\) here is via the concrete realisation (representation) of both groups acting on \(M\): the inclusion the inclusion map \(\iota : G_{\H} \to G\) is compatible with the actions of \(G_{\H}\) and \(G\) on \(M\) so that \(\iota(\varphi) \cdot x = \varphi \cdot x\) for every \(\varphi \in G_{\H}\) and \(x \in M\). Thus it is not enough for \(G_{\H}\) to be isomorphic to a subgroup of \(G\) - the isomorphism must also be compatible with the actions.
 \end{rem}
-
 The question of whether the conditions of \Cref{lem:const_neg} are satisfied are not easy to check but the lemma affords us with several possible approaches to the problem. Here we prove the following theorem giving a \emph{sufficient} condition for when \((N, k)\) admits a metric of constant, negative sectional curvature.
-
 \begin{thm}[Integrability and constant negative sectional curvature]
 \label{thm:intg_const_curv}
 Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\obstensor = \sqrt{\det \Ein} \Ein^{-1}\) is \emph{Codazzi}. Then \(N\) admits a metric of constant, negative sectional curvature.
 \end{thm}
-
 Here \(\Ein = \Ric - \tfrac{\Sc}{2}k\) denotes the Einstein tensor. Writing \(\Ein(X, Y) = k(\opEin(X), Y)\) we define \(\det \Ein = \det \opEin\) and \(\Ein^{-1}(X, Y) = k(\opEin^{-1} (X), Y)\) whenever \(\opEin\) is invertible. To say that \(\obstensor\) is Codazzi means that the three-tensor \(\nabla \obstensor\) is totally symmetric.
-
 \begin{rem}
 Note that by \Cref{lem:eins_sectional} below, in three dimensions, \(k\) has strictly negative sectional curvature if and only if \(\Ein\) is strictly positive definite. In that case, we see that \(\opEin\) is a strictly positive-definite endomorphism and in particular invertible. Thus \(\Ein\) and \(\obstensor\) are well defined.
 \end{rem}
-
 The theorem is in fact a corollary of the simple \Cref{thm:intg_embed} and \cite[Theorem 1.1]{MR3344442} which says that \(N\) may be deformed to the one-sheeted hyperbolid at infinity by the Gauss curvature flow.
-
 \begin{thm}[Integrability implies isometric embeddability]
 \label{thm:intg_embed}
 Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\obstensor = \sqrt{\det \Ein} \Ein^{-1}\) is Codazzi (integrability condition) if and only if the Riemannian universal cover \((M, g = \pi^{\ast} k)\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
 \end{thm}
-
 \begin{proof}
 If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \obstensor\), hence \(\obstensor\) is Codazzi.
 
@@ -113,11 +95,9 @@ for \(F\). See for example \cite{MR1713298}[Theorem 7] or a similar argument in 
 
 Since \((M, g)\) is the universal cover of \((N, k)\) with strictly negative sectional curvature, \(M\) is diffeomorphic to \(\R^3\) by the Cartan-Hadamard theorem and we can globally integrate to obtain \(F\).
 \end{proof}
-
 \begin{rem}
 Necessarily, the embedding of \((M, g)\) is as a co-compact, spacelike hypersurface (i.e. the metric, \(g\) induced by the Lorentzian metric is positive definite). Since there are no compact, spacelike hypersurfaces in Minkowksi space, it is not possible to isometrically embed \((N, k)\).
 \end{rem}
-
 \begin{proof}
 [Proof of \Cref{thm:intg_const_curv}]
 
@@ -139,11 +119,9 @@ At the initial time, we have \(\varphi^{\ast} g_0 = g_0\) for every \(\varphi \i
 \]
 That is \(g_t\) and \(\bar{g}_t\) both solve the Cross Curvature Flow with the same initial condition, hence by uniqueness of solutions (\cite{MR2055396,MR2207496}, \Cref{thm:xcf_existence_uniqueness} and \Cref{subsec:xcf_existence_uniqueness} below), \(g_t = \bar{g}_t = \varphi^{\ast} g_t\) and the flow is invariant under the action of \(G\).
 \end{proof}
-
 \begin{rem}
 It is an open problem as to whether the Cross Curvature Flow deforms arbitrary negatively curved metrics to the constant curvature metric. A positive result would mean the integrability assumption in \Cref{thm:intg_const_curv} could be dropped. The cross curvature flow is discussed below in \Cref{sec:xcf}.
 \end{rem}
-
 \section{Geometrisation Of Three Manifolds}
 \label{sec:geometrisation}
 
@@ -180,10 +158,8 @@ The only remaining case then is the hyperbolic case.
 
 \section{Basic Geometry Conventions}
 \label{sec:notation}
-
 \subsection{Intrinsic Geometry Conventions}
 \label{subsec:notation_intrinsic}
-
 Given a metric \(g\), let \(\nabla = \nabla^g\) denote the Levi-Civita connection. The superscript will be dropped when the metric is clear from context. Let \(\inpr{\cdot}{\cdot}\) denote the inner-product on Minkowski space and \(D\) the corresponding Levi-Civita connection. Our conventions for the curvature tensor is
 \[
 \Rm(X, Y) Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z
@@ -234,7 +210,7 @@ where \(\opRic\) is the self-adjoint endomorphism defined by \(\Ric(X, Y) = g(\o
 
 The Einstein tensor is defined by
 \[
-\Ein = \Ric - \frac{\Sc}{2} g
+\Ein = \Ric - \frac{\Sc}{2} g.
 \]
 We also have the Schouten tensor defined when \(n \geq 3\),
 \[
@@ -265,10 +241,8 @@ A \owedge B (X, Y, Z, W) &= A \owedge B (X \wedge Y, Z \wedge W) \\
 \end{split}
 \]
 Note the first term in the sum on the right hand side of the Ricci decomposition further decomposes into irreducible components but we don't need that here.
-
 \subsection{Extrinsic Geometry Conventions}
 \label{subsec:notation_extrinsic}
-
 For an immersion \(F : M^n \to \R^{n,1}\) with \(M\) oriented, we define the second fundamental form by
 \[
 D_{F_{\ast} X} F_{\ast} Y = F_{\ast} \nabla_X Y + h(X, Y).
@@ -288,7 +262,6 @@ A(X, Y) = -\inpr{D_{F_{\ast} X} F_{\ast} Y}{\nu} = \inpr{F_{\ast} Y}{D_{F_{\ast}
 and \(\W = F_{\ast}^{-1} \circ D\nu \circ F_{\ast}: TM \to TM\) denotes the Weingarten map.
 
 The basic equations of hypersurfaces (Gauss equation) in Minkowski space are
-
 \begin{equation}
 \label{eq:gauss}
 \begin{split}
@@ -297,7 +270,6 @@ The basic equations of hypersurfaces (Gauss equation) in Minkowski space are
 \Sc &= \|A\|^2 - H^2.
 \end{split}
 \end{equation}
-
 The Codazzi-Mainardi equation is of particular importance in relation to the integrability condition in \Cref{thm:intg_const_curv}. It reads
 \begin{equation}
 \label{eq:codazzi}
@@ -306,13 +278,10 @@ The Codazzi-Mainardi equation is of particular importance in relation to the int
 Of course, since \(A\) is already symmetric, \(\nabla A\) is automatically symmetric in the last two slots hence the Codazzi-Mainardi equation implies \(\nabla A\) becomes fully symmetric in all three slots.
 
 Let us round out this section with a simple lemma showing spacelike hypersurfaces, \(M\) are graphs over the \(y^{n+1} = 0\) spacelike hyperplane. This simply follows because \(M\) has a timelike normal vector field, \(\nu\) so that \(\inpr{\nu}{e_{n+1}}\) has a fixed sign. We give the proof for completeness.
-
 \begin{lemma}
 \label{lem:graph}
-
 Let \(M^n \to \R^{n,1}\) be an immersed, spacelike hypersurface. Then \(M^n\) is embedded as a graph over the \(y^{n+1} = 0\) hyperplane.
 \end{lemma}
-
 \begin{proof}
 Take any local parametrisation \(\varphi : U \subset \R^n \to \R^{n,1}\) of \(M\). For any non-zero \(X \in TU\) write
 \[
@@ -322,24 +291,20 @@ with \(\bar{X} = \bar{X}^a \partial_a = \varphi^a_i X^i \partial_a \in \text{spa
 \[
 0 < g(X, X) = \inpr{\bar{X} + X^{n+1} e_{n+1}}{\bar{X} + X^{n+1} e_{n+1}} = \|\bar{X}\|_{\R^n}^2 - (X^{n+1})^2.
 \]
-
-Letting \(\pi(y^1, \cdots, y^n, y^{n+1}) = (y^1, \cdots, y^n)\) denote the orthogonal projection onto the \(y^{n+1} = 0\) hyperplane we have \(\pi \circ \varphi (x) = (\varphi^1(x), \cdots, \varphi^n(x))\) satisfies for \(X \ne 0\),
+Letting \(\pi(y^1, \ldots, y^n, y^{n+1}) = (y^1, \ldots, y^n)\) denote the orthogonal projection onto the \(y^{n+1} = 0\) hyperplane we have \(\pi \circ \varphi (x) = (\varphi^1(x), \ldots, \varphi^n(x))\) satisfies for \(X \ne 0\),
 \[
 \|d(\pi \circ \varphi) \cdot X\|_{\R^n}^2 = \|\bar{X}\|_{\R^n}^2  > (X^{n+1})^2 \geq 0
 \]
 so that \(d(\pi \circ \varphi)\) is non-singular. By the inverse function theorem, locally \(\pi \circ \varphi\) is invertible and we find that
 \[
-\varphi \circ (\pi \circ \varphi)^{-1} (y^1, \cdots, y^n) = (y^1, \cdots, y^n, \varphi^{n+1} \circ (\pi \circ \varphi)^{-1} (y_1, \cdots, y_n))
+\varphi \circ (\pi \circ \varphi)^{-1} (y^1, \ldots, y^n) = (y^1, \ldots, y^n, \varphi^{n+1} \circ (\pi \circ \varphi)^{-1} (y_1, \ldots, y_n))
 \]
 expresses \(M\) locally as a graph of the function \(\varphi^{n+1} \circ (\pi \circ \varphi)^{-1}\) over the \(y^{n+1} = 0\) plane. But this is true locally everywhere and since graphs are unique, \(M\) is globally a graph and hence also embedded.
 \end{proof}
-
-
 \subsection{The Three Dimensional Case}
 \label{subsec:notation_threedim}
 
 \subsubsection{Intrinsic geometry}
-
 Specialising to the case \(n = 3\), we have
 \[
 \Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
@@ -349,21 +314,18 @@ Then the Ricci decomposition becomes
 \label{eq:ricci_decomp_3d}
 \Rm = -\Sch \owedge g = -\Ric \owedge g + \frac{R}{4} g \owedge g = -\Ein \owedge g + \frac{\Tr_g \Ein}{2} g \owedge g.
 \end{equation}
-
 \begin{lemma}
 \label{lem:eins_sectional}
-
 The eigenvalues, \(\lambda^{\Ein}_k\) of the Einstein tensor are the eigenvalues of the curvature operator, \(\opRm\):
 \[
 \opRm(E_i \wedge E_j) = \lambda^{\Ein}_k E_i \wedge E_j
-\]
+,\]
 where \(\{E_1, E_2, E_3\}\) is an orthonormal frame of eigenvectors for \(\Ein\) and \(i,j,k\) are distinct indices. Therefore, the \emph{principal sectional curvatures} are the negatives of the eigenvalues \(\lambda^{\Ein}_k\):
 \[
 K(E_i \wedge E_j) = -\lambda^{\Ein}_k
 \]
 and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite.
 \end{lemma}
-
 \begin{proof}
 If \(X, Y\) are orthonormal eigenvectors for \(\Ein\), then using equation \eqref{eq:ricci_decomp_3d},
 \[
@@ -383,7 +345,6 @@ since \(\Tr_g \Ein = \lambda^E_i + \lambda^E_j + \lambda^{\Ein}_k\). Hence
 \[
 \opRm(E_i \wedge E_j) = \lambda^{\Ein}_k E_i \wedge E_j.
 \]
-
 The sectional curvatures then follow immediately,
 \[
 K (E_i \wedge E_j) = -\frac{g(\opRm(E_i \wedge E_j), E_j \wedge E_i)}{\abs{E_i \wedge E_j}^2} = -\lambda^{\Ein}_k.
@@ -391,7 +352,6 @@ K (E_i \wedge E_j) = -\frac{g(\opRm(E_i \wedge E_j), E_j \wedge E_i)}{\abs{E_i \
 \end{proof}
 
 \subsubsection{Extrinsic geometry}
-
 The change of perspective from \(\Sch\) to \(\Ein\) is also quite useful when considering hypersurfaces in \(\R^{3,1}\). Recall the Gauss equation \eqref{eq:gauss} gave us
 \[
 \Ric(X, Y) = g(\W^2(X) - H \W(X), Y), \quad \Sc = \|A\|^2 - H^2.
@@ -405,10 +365,8 @@ is simultaneously diagonalisable with \(\W\) and hence so too \(\Ein\) is simult
 \label{eq:ein_extrinsic}
 \Ein (X, Y) = g(\W^2(X), Y) - H A(X, Y) - \frac{\|A\|^2 - H^2}{2} g (X, Y).
 \end{equation}
-
 \begin{lemma}
 \label{lem:ein_W}
-
 We have
 \[
 \W = \sqrt{\det \opEin} \opEin^{-1}
@@ -427,7 +385,6 @@ and hence
 \]
 and \(g\) has negative sectional curvature if and only if \(\Ein\) is positive definite if and only if \(A\) is positive definite (that is \(M\) embeds as a locally convex hypersurface).
 \end{lemma}
-
 \begin{proof}
 Denoting the eigenvalues of \(\W\) (i.e. the principal curvatures) by \(\kappa_i\), and applying equation \eqref{eq:ein_extrinsic} and \Cref{lem:eins_sectional}, we have for distinct indices \(i,j\):
 \[
@@ -457,14 +414,11 @@ we see that in fact \(\W\) is itself intrinsic! Therefore, defining \(\Ein^{-1}(
 \]
 and hence \(\obstensor\) is Codazzi since by the Codazzi-Mainardi equations, \(A\) is Codazzi.
 \end{proof}
-
 \begin{rem}
 We see a strong rigidity statement that the \emph{extrinsic geometry} of embedded, spacelike hypersurfaces is completely determined by the \emph{intrinsic geometry}. Then the extrinsic condition of local convexity is equivalent to the intrinsic condition of negative sectional curvature.
 \end{rem}
-
 \section{The Cross Curvature Flow}
 \label{sec:xcf}
-
 \subsection{Definition And Basic Properties Of  The Flow}
 \label{subsec:xcf_defn}
 
@@ -477,7 +431,6 @@ k_0 &= k
 \end{cases}
 \end{equation}
 where \(k_0\) has negative sectional curvature. When \(k_0\) has positive sectional curvature, we take instead \(\partial_t k = -2\adj\Ein\) though in this article we will not be concerned with this case.
-
 \begin{rem}
 Let \(\pi : M \to N\) be the universal cover, and \(g_t = \pi^{\ast} k_t\). Similarly to the proof of \Cref{thm:intg_const_curv}, we then have
 \[
@@ -501,7 +454,6 @@ where \(i,k,\ell\) are distinct indices. Thus
 The tensor \(\adj\Ein\) is referred to as the \emph{cross curvature tensor}. The origin of the name is that the \(i\)'th eigenvalue of \(\adj\Ein\) is the ``cross terms'' \(\lambda_k \lambda_{\ell}\) of the remaining eigenvalues.
 
 There is an equivalent ways to write \(\adj\Ein\) in three dimensions. In fact, both these definitions make sense in any dimension, however it is only in three dimensions that they coincide.
-
 \begin{lemma}
 \label{eq:xcf_equiv}
 In three dimensions, we have
@@ -509,7 +461,6 @@ In three dimensions, we have
 \adj\Ein(X, Y) = \frac{1}{2} \Ric_{\Ein} (X, Y) := \frac{1}{2} \Tr Z \mapsto \Rm(\opEin(Z), X) Y
 \]
 \end{lemma}
-
 \begin{proof}
 As noted above,
 \[
@@ -519,7 +470,6 @@ On the other hand, from \Cref{lem:eins_sectional}, we have
 \[
 \opRm(E_i \wedge E_j) = \lambda_k E_i \wedge E_j.
 \]
-
 Then
 \[
 \begin{split}
@@ -537,7 +487,6 @@ On the other hand, if \(i \ne j\), then \(g(E_m \wedge E_i, E_m \wedge E_j) = 0\
 \frac{1}{2} \Ric_{\Ein}(E_i, E_j) =  \lambda_k \lambda_{\ell} \delta_{ij} = \adj\Ein(E_i, E_j)
 \]
 \end{proof}
-
 \begin{rem}
 In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the same result is obtained by contracting with the measure \(\mu\).
 \end{rem}
@@ -569,7 +518,6 @@ A similar identity holds for the cross curvature tensor was given in \cite[Lemma
 \dive_{\adj\Ein} B = \Tr_{\adj\Ein}^{13} \nabla B \text{ where } \nabla B(X, Y, Z) = \adj\Ein([(\nabla B)_{\adj\Ein}^{13}(Y)] (X), Z).
 \]
 Similarly we may define \(\Tr_{\adj\Ein}^{12}\).
-
 \begin{lemma}
 \label{lem:xcf_hamilton_integrability}
 The cross curvature tensor satisfies
@@ -577,11 +525,9 @@ The cross curvature tensor satisfies
 \dive_{\adj\Ein} \adj\Ein = \frac{1}{2} \Tr^{12}_{\adj\Ein} \nabla \adj\Ein.
 \]
 \end{lemma}
-
 \begin{proof}
 {\color{red}Write proof}
 \end{proof}
-
 The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the cross curvature flow as described below in \Cref{rem:invariance_integrability}.
 
 Before moving on, note that we may write the map \(g \mapsto \adj\Ein(g)\) as
@@ -600,14 +546,12 @@ Similarly, the adjugate \(\adj_g B = g(\adj\op{B} \cdot, \cdot)\) is a \emph{non
 \[
 (\adj \circ \Grav)_g = \adj_g \circ \Grav_g.
 \]
-
 It will be convenient to write \(\adj\Ein\) in the form,
 \begin{equation}
 \label{eq:adjein_op}
 \adj\Ein (g) = F(g, \Ric(g)) \text{ where } F(k, B) = (\adj \circ \opGrav)_k (B).
 \end{equation}
 In particular, \(\adj\Ein\) depends to zero order in the \(k=g\) variable and to second order through the \(B = \Ric\) variable in \(F(k, B)\).
-
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
 
@@ -620,11 +564,8 @@ For the Ricci flow, \cite{Hamilton:/1982} dealt with this issue by employing the
 For the Ricci flow, \cite{MR697987} gave an alternative proof to short time existence and uniqueness. Then, \cite{MR2207496} adapted this proof to the Cross Curvature Flow. The method is essentially a gauge-fixing argument whereby the diffeomorphism class is fixed in such a way to produce a new flow, referred to as the DeTurck flow, which is strictly parabolic and then standard arguments apply to give existence and uniqueness of the DeTurck flow. Existence of the original flow is then easily obtained, but there is an extra step required for uniqueness which was omitted in \cite{MR2207496}. Here we outline the complete proof.
 
 The standard theory gives that strictly parabolic, linear equations with smooth coefficients can be uniquely solved (e.g. by a contraction mapping) for smooth solutions given initial smooth data. Then the non-linear equation will be uniquely solvable on some small time interval if the linearisation is strictly parabolic by appealing to the implicit function theorem. Writing the solution as \(g_t = \varphi_t(g_0)\), the semi-group property of the solution \(g_{t_1 + t_2} = \varphi_{t_1 + t_2} (g_0) = \varphi_{t_2} (\varphi_{t_1} (g_0))\) then ensures there is a maximal time interval \([0, T)\) (possibly with \(T = \infty\)) on which the solution is defined. We take all this as given and focus only on showing first that the cross curvature flow is not strictly parabolic, then showing strict parabolicity of the DeTurck flow, and finally proving that this leads to existence and uniqueness of the cross curvature flow.
-
-
 \begin{thm}
 \label{thm:xcf_existence_uniqueness}
-
 Given any initial smooth metric \(g\) of negative sectional curvature on a closed three-manifold \(N\), there exists a unique solution \(g_t\) to the Cross Curvature Flow,
 \[
 \begin{cases}
@@ -634,12 +575,9 @@ g_0 &= g.
 \]
 defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty\).
 \end{thm}
-
 To prove the theorem, recalling the formulation \(\adj\Ein = (\adj\circ\opGrav)_g (\Ric(g))\) in equation \eqref{eq:adjein_op}, we first compute the linearisation of the operator \(\adj \circ \opGrav\). Since we will evaluate this operator at \(S = \opRic(g)\) where \(g\) has negative sectional curvature, which by \Cref{lem:eins_sectional} implies \(\Ein\) is positive definite, we may assume \(\opGrav(S) = \opEin\) is invertible, and hence \(\adj \opGrav(S) = \det(\opGrav(S)) \opGrav(S)^{-1}\).
-
 \begin{lemma}
 \label{lem:dadjG}
-
 Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearsiation of \(\adj \circ \opGrav\) at \(S\) is given by
 \[
 (\adj \circ \opGrav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
@@ -649,11 +587,9 @@ where
 (\adj \circ \opGrav)'_S \cdot T := \partial_u|_{u=0} (\adj \circ \opGrav) (S + uT).
 \]
 \end{lemma}
-
 \begin{proof}
 {\color{red} To write up}
 \end{proof}
-
 Recall that by \Cref{lem:eins_sectional}, \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. Then for \(\xi \in T^{\ast} M\), we define,
 \[
 \|\xi\|_{\Ein}^2 = \Ein(\xi^{\sharp}, \xi^{\sharp})
@@ -667,7 +603,6 @@ We can also trace bilinear forms with respect to \(\Ein\), by first defining \(\
 \Tr_{\Ein} \xi \otimes \eta = \Ein(\xi^{\sharp}, \eta^{\sharp})
 \]
 and extending by bilinearity.
-
 \begin{rem}
 Apart from \(\sharp_{\Ein}\), these constructions rely also on metric raising by \(g\). In particular,
 \[
@@ -675,7 +610,6 @@ Apart from \(\sharp_{\Ein}\), these constructions rely also on metric raising by
 \]
 where the right hand side is what we would obtain by extending \(\Ein\) from a metric on \(TM\) to a metric on \(T^{\ast} M\) in the usual way. In particular, written in terms of indices, \(\Ein^{ij} = g^{ik}g^{\ell j} \Ein_{k\ell}\) is not the inverse matrix of \(E_{ij}\).
 \end{rem}
-
 Next we compute the principal symbol of the cross curvature tensor at a metric of negative sectional curvature. Recall that for a nonlinear, second order differential operator \(D : E \to F\) acting on vector bundles \(E, F\) over \(M\), we define
 \begin{equation}
 \label{eq:symbol}
@@ -697,16 +631,13 @@ For a natural (e.g. invariant under change of basis) and not necessarily linear 
 \label{eq:chain_rule}
 \sigma_{\xi} [f(L))] (u) = f'_{D(u)} \circ \sigma_{\xi}[L] (u).
 \end{equation}
-
 \begin{lemma}
 \label{lem:xcf_symbol}
-
 The principal symbol of the cross curvature tensor is,
 \[
 \sigma_{\xi} [\adj\Ein_g] (V) = \abs{\xi}^2_{\Ein} - 2 \Sym \xi \otimes V(\sharp_{\Ein}\xi, \cdot) + \Tr_{\Ein} V \xi \otimes \xi.
 \]
 \end{lemma}
-
 \begin{proof}
 Making use of the chain rule \eqref{eq:chain_rule} and the formulation, \(\adj\Ein = F(g, \Ric(r)) = \adj\Ein_g(\Ric(g))\) in \eqref{eq:adjein_op} we obtain
 \[
@@ -727,82 +658,66 @@ According to \cite[Section 5.1]{MR2265040}, the linearisation of \(\Ric\) is
 
 {\color{red} Need to put it all together now}
 \end{proof}
-
 \begin{rem}
 \label{rem:invariance_integrability}
-
 We see that as with any geometric evolution equation, that the cross curvature flow is only weakly parabolic. However, the degeneracy results solely from the diffeomorphism invariance and using DeTurck's method this is easily dealt with.
 
 Let us also now note that the Hamilton integrability condition from \Cref{lem:xcf_hamilton_integrability} and the diffeomorphism invariance are closely related. {\color{red} Describe this}
 \end{rem}
-
 \begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
-
-{\color{red} Show how to construct DeTurck flow and that it's strictly parabolic. Show how to obtain uniqueness by the analogue of harmonic map heat flow.}
+{\color{red} Show how to construct DeTurck flow and that it is strictly parabolic. Show how to obtain uniqueness by the analogue of harmonic map heat flow.}
 \end{proof}
-
 \subsection{Basic Evolution Equations}
 \label{subsec:xcf_evolution}
-
-{\color{red} Give the evolution equations and definitions necessary for later}
-
-We also write
+We start by defining \(V_{ij}=(\Ein^{-1})^{kl}g_{ik}g_{lj}\)
+and
 \begin{align}
- u&=\log\det P,\quad
-O_{ij}=V_{ij}\sqrt{\det P},\\
-T^{kij}&=P^{kl}\nabla_l P^{ij},\quad T^i=V_{jk}T^{ijk}=P^{ij}\nabla_ju.
+ u&=\log\det \mathcal{E},\quad
+\mathcal{O}_{ij}=\sqrt{\det \mathcal{E}}V_{ij},\\
+T^{kij}&=\Ein^{kl}\nabla_l \Ein^{ij},\quad T^i=V_{jk}T^{ijk}=\Ein^{ij}\nabla_ju.
 \end{align}
-We have
+For some tensor $L^{ijk}$ whose traces with respect to $V_{kl}$ are zero, we have
 \begin{align}
-    T^{ijk}-T^{jik}&=E^{ijk}-E^{jik}+\frac{1}{2}\left(P^{jk}T^i-P^{ik}T^j\right),
+    T^{ijk}-T^{jik}&=L^{ijk}-L^{jik}+\frac{1}{2}\left(T^i\Ein^{jk}-T^j\Ein^{ik}\right).
 \end{align}
-for some tensor $E^{ijk}$ whose trace with respect to $V_{kl}$ is zero.
-
-An important tensor that will play a key role in the analysis of XCF is
-\[D^{ijk}:=E^{ijk}-E^{jik}.\]
-The tensor $D^{ijk}$ satisfies
+The Devil tensor is defined by
+\[D^{ijk}=L^{ijk}-L^{jik}\]
+and it satisfies
 \begin{align}
 D^{ijk}=&-D^{jik},\quad D^{ijk}+D^{kij}+D^{jki}=0\\
 V_{ij}D^{ijk}=&V_{ik}D^{ijk}=V_{jk}D^{ijk}=0.
 \end{align}
-
 \begin{lemma}
 \label{lem:cubicform_codazzi}
-
-The tensor $O_{ij}=V_{ij}\sqrt{\det P}$ satisfies
+We have the following identity.
 \begin{align}
-|D^{ijk}|_V^2=\frac{1}{\det P}|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2
+|D^{ijk}|_V^2=\frac{1}{\det \mathcal{E}}|\nabla_i\mathcal{O}_{jk}-\nabla_j\mathcal{O}_{ik}|_E^2.
 \end{align}
 \end{lemma}
-
 \begin{proof}
 Using the definition we calculate
 \begin{align}
-T^{kij}=&-P^{kl}P^{im}P^{jn}\nabla_l V_{mn}=-P^{kl}P^{im}P^{jn}\nabla_l (e^{-\frac{1}{2}u}O_{mn})\\
-=&-\frac{1}{\sqrt{\det P}}P^{kl}P^{im}P^{jn}\nabla_l O_{mn}+\frac{1}{2}P^{ij}T^k.
+T^{kij}=&-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l V_{mn}=-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l (e^{-\frac{1}{2}u}\mathcal{O}_{mn})\\
+=&-\frac{1}{\sqrt{\det \mathcal{E}}}\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l \mathcal{O}_{mn}+\frac{1}{2}T^k\Ein^{ij}.
 \end{align}
 Thus we obtain
 \begin{align*}
-T^{kij}-T^{ikj}=&\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)+\frac{1}{2}(P^{ij}T^k-P^{kj}T^i).
+T^{kij}-T^{ikj}=&\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det \mathcal{E}}}\left(\nabla_m \mathcal{O}_{ln}-\nabla_l \mathcal{O}_{mn}\right)+\frac{1}{2}(T^k\Ein^{ij}-T^i\Ein^{kj}).
 \end{align*}
-This implies
+Hence we have the identities
 \begin{align}
-D^{kij}&=\frac{P^{kl}P^{im}P^{jn}}{\sqrt{\det P}}\left(\nabla_m O_{ln}-\nabla_l O_{mn}\right)\\
-|D^{ijk}|_V^2\det P&=|\nabla_iO_{jk}-\nabla_jO_{ik}|_P^2.
+D^{kij}&=\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det \mathcal{E}}}\left(\nabla_m \mathcal{O}_{ln}-\nabla_l \mathcal{O}_{mn}\right)\\
+|D^{ijk}|_V^2\det \mathcal{E}&=|\nabla_i\mathcal{O}_{jk}-\nabla_j\mathcal{O}_{ik}|_E^2.
 \end{align}
 \end{proof}
-
 \subsection{Preserving Negative Curvature}
 \label{subsec:xcf_preserving}
-
 \begin{lemma}
 The cross curvature flow preserves negative sectional curvature up to the first singular time.
 \end{lemma}
-
 \begin{proof}
 {\color{red} Sketch of details referring to Hamilton/Chow computations.}
 \end{proof}
-
 \subsection{Stability Of The Hyperbolic Metric}
 \label{subsec:xcf_stability}
 
@@ -810,20 +725,15 @@ The cross curvature flow preserves negative sectional curvature up to the first 
 
 \subsection{Integrability And Embeddibility}
 \label{subsec:xcf_gcf}
-
 \begin{lemma}
 \label{lem:xcf_gcf}
-
 The induced metric under the Gauss Curvature Flow in Minkowski space evolves by Cross Curvature Flow.
 \end{lemma}
-
 \begin{proof}
 {\color{red} This just follows by \(\partial_t g = -K h\) and \Cref{lem:ein_W}}
 \end{proof}
-
 \begin{thm}
 \label{thm:xcf_integrable_convergence}
-
 Under the integrability condition, the Cross Curvature Flow smoothly converges to a hyperbolic metric.
 \end{thm}
 
@@ -831,49 +741,83 @@ Under the integrability condition, the Cross Curvature Flow smoothly converges t
 
 \subsection{Solitons And The Harnack Inequality}
 \label{subsec:xcf_solitons}
-
 Solitons are fixed points of the flow modulo scaling and diffeomorphism. As such, they are the expected limits (up to rescaling) of the flow. Unlike other flows such as the Ricci Flow, solitons for the Cross Curvature Flow are very rigid.
-
 \begin{lemma}
 The only solitons to the Cross Curvature Flow are constant curvature metrics.
 \end{lemma}
-
 \begin{proof}
-
+By definition, a solution to the cross curvature flow is a soliton if there exists a vector field $W$ and $\lambda\in \mathbb{R}$ such that at some time
+\begin{equation}\label{soliton 0}
+2\lambda g_{ij}=2\sigma_{ij}+\nabla_iW_j+\nabla_jW_i,
+\end{equation}
+where \begin{equation}
+\sigma_{ij}:=-\frac{1}{2}\Ein^{kl}\Rm_{ikjl}
+\end{equation}
+For an expanding soliton, (\ref{soliton 0}) holds with $\lambda=\frac{1}{4t}.$ By straightforward calculations
+\begin{align}\label{trace}
+\lambda \Tr_g \Ein=3\det \mathcal{E}+\Ein^{ij}\nabla_iW_j.
+\end{align}
+and
+\begin{align}\label{equ00}
+\lambda \nabla_l \Tr_g \Ein=3\nabla_l\det \mathcal{E}+\nabla_l \Ein^{ij}\nabla_iW_j+\Ein^{ij}\nabla^2_{i,l}W_j+2\sigma_l^mW_m.
+\end{align}
+Now using 
+\begin{align}\label{eq: soliton derv}
+2\nabla_l\sigma_{ij}+\nabla^2_{l,i}W_j+\nabla^2_{l,j}W_i=0
+\end{align}
+we derive
+\begin{align}
+\lambda \nabla_l \Tr_g \Ein&=3\nabla_l\det \mathcal{E}+(\lambda g_{ij}-\sigma_{ij})\nabla_l \Ein^{ij}+\Ein^{ij}\nabla^2_{i,l}W_j+2\sigma_l^mW_m\nonumber\\
+&=3\nabla_l\det \mathcal{E}+\lambda \nabla_l \Tr_g \Ein-\sigma_{ij}\nabla_l \Ein^{ij}+\Ein^{ij}(-2\nabla_i\sigma_{lj}-\nabla^2_{i,j}W_l)+2\sigma_l^mW_m.
+\end{align}
+Dividing both sides by $\det \mathcal{E}$ yields
+\begin{align}
+3\nabla_lu-V_{ij}\nabla_l \Ein^{ij}-\frac{\Ein^{ij}}{\det \mathcal{E}}\nabla_l\sigma_{ij}-\frac{1}{\det \mathcal{E}}(\Box W_l-2\sigma_l^kW_k)=0,
+\end{align}
+where \(\Box:=\Ein^{ij}\nabla^{i,j}.\)
+Now in view of the identities
+\begin{equation}\label{eq0}
+\frac{\Ein^{ij}}{\det \mathcal{E}}\nabla_l\sigma_{ij}=2\nabla_lu,\quad V_{ij}\nabla_l\Ein^{ij}=\nabla_lu
+\end{equation}
+we arrive at
+\begin{align}
+\Box W_l-2h_l^kW_k=0\Rightarrow W^l\Box W_l-2\sigma_l^kW_kW^l=0.
+\end{align}
+The second identity reads
+\begin{align}\label{soliton equation for W}
+\Box \frac{1}{2}|W|_g^2-\Ein^{kl}g^{ij}\nabla_kW_i\nabla_lW_j-2\sigma^{kl}W_kW_l=0.
+\end{align}
+By Lemma 1 of \cite{MR2055396}, $\nabla_i\Ein^{ij}=0.$ Therefore, $\int \Box fd\mu=0$ for any smooth function $f$ on $M$.
+Now integrating (\ref{soliton equation for W}) against $d\mu_{M}$ and taking into account that $\Ein_{ij}$ and $\sigma_{ij}$ are both positive definite proves that $W\equiv0$. Hence, by (\ref{soliton 0}),
+\[(\det \mathcal{E})^2=\frac{\det \sigma_{ij}}{\det g_{ij}}=\lambda ^3\Rightarrow \det \mathcal{E}=\lambda^{\frac{3}{2}}.\]
+Moreover, in view of (\ref{trace}), we have $3\det \mathcal{E}=\lambda \Tr_g \Ein$ and finally \[3(\det \mathcal{E})^{\frac{1}{3}}=\Tr_g \Ein.\] Thus the metric has constant negative curvature.
 \end{proof}
-
 There is a Harnack inequality for integrable solutions of the cross curvature flow.
-
 \begin{lemma}
 \label{lem:harnack}
-
 The following Li-Yau-Hamilton Harnack inequality holds for the cross curvature flow,
 \[
-\partial_t \sqrt{\det \Ein}
+\partial_t \sqrt{\det \mathcal{E}}-\frac{1}{\sqrt{\det \mathcal{E}}}\Ein^{ij}\nabla_i\sqrt{\det \mathcal{E}}\nabla_j\sqrt{\det \mathcal{E}}+\frac{3}{4t}\sqrt{\det \mathcal{E}}\geq0.
 \]
 \end{lemma}
-
 \begin{proof}
 {\color{red}Use embedding and BIS4.}
 \end{proof}
-
 \subsection{Volume Monotonicity}
 \label{subsec:xcf_volume}
 
 \begin{lemma}
 \label{lem:volume_monotonicity}
-
 Under the cross curvature flow of negative sectional curvature,
 \[
-\frac{d}{dt}\int \sqrt{\det P}d\mu \geq 0
+\frac{d}{dt}\int \sqrt{\det \mathcal{E}}d\mu \geq 0.
 \]
-In particular, \(\partial_t \int \sqrt{\det P}d\mu = 0\) if and only if \(\nabla \obstensor\) is Codazzi.
+In particular, \(\frac{d}{dt} \int \sqrt{\det \mathcal{E}}d\mu = 0\) if and only if \(\nabla \obstensor\) is Codazzi.
 \end{lemma}
-
 \begin{proof}
 Recall from \cite[page 6]{MR2055396} that
 \begin{align}
-\frac{d}{dt}\int \sqrt{\det P}d\mu=\frac{1}{4}\int |D^{ijk}|_V^2\sqrt{\det P}d\mu.
+\frac{d}{dt}\int \sqrt{\det \mathcal{E}}d\mu=\frac{1}{4}\int |D^{ijk}|_V^2\sqrt{\det \mathcal{E}}d\mu.
 \end{align}
 Now apply \Cref{lem:cubicform_codazzi}.
 \end{proof}

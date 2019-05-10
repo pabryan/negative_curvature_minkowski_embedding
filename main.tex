@@ -494,13 +494,11 @@ For a symmetric bilinear form, let us write
 \[
 \nabla B (X, Y, Z) = (\nabla_X B) (Y, Z) := \nabla_X (B(Y, Z)) - B(\nabla_X Y, Z) - B(Y, \nabla_X Z).
 \]
-Then \(\nabla B\) is symmetric in the last two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\): contracting the first and second slots (or equivalently the first and third by symmetry) and contracting the second and third slots. Fixing \(X\) and then we may write the bilinear form \((\nabla B)_X (Y, Z) := \nabla B (X, Y, Z)\) as \((\nabla B)_X (Y, Z) = g((\nabla B)^{\sharp}_X (Z), Y)\) and define
+Then \(\nabla B\) is symmetric in the last two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\): contracting the first and second slots (or equivalently the first and third by symmetry) and contracting the second and third slots. Fixing \(X\) and then we may write the bilinear form \((\nabla B)_X (Y, Z) := \nabla B (X, Y, Z)\) as \((\nabla B_X) (Y, Z) = g(\nabla B^{\sharp}_X (Z), Y)\) and define
 \[
-(\Tr_g^{23} \nabla B) (X) = \Tr (\nabla B)^{\sharp}_X.
+\Tr_g^{23} \nabla B (X) = \Tr \nabla B^{\sharp}_X.
 \]
-Similarly we may define \(\Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B\).
-
-We define the divergence,
+Similarly we may define \(\Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B\). We define the divergence,
 \[
 \dive B = \dive_g B = \Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B.
 \]
@@ -514,14 +512,14 @@ which is precisely the contracted second Bianchi identity.
 
 A similar identity holds for the cross curvature tensor was given in \cite[Lemma 1]{MR2055396}. For this instead of tracing with respect to \(g\) we trace with respect to \(\adj\Ein\) (which recall by \Cref{lem:eins_sectional} is positive definite, hence a metric, when \(g\) has negative sectional curvature) so defining
 \[
-\dive_{\adj\Ein} B = \Tr_{\adj\Ein}^{13} \nabla B \text{ where } \nabla B(X, Y, Z) = \adj\Ein([(\nabla B)_{\adj\Ein}^{13}(Y)] (X), Z).
+\dive_{\Ein} B = \Tr_{\Ein}^{13} \nabla B = \Tr \sharp_{\Ein}^2 \nabla B \text{ where } \nabla B(X, Y, Z) = \Ein((\sharp_{\Ein}^2 \nabla B (Y)) (X), Z).
 \]
-Similarly we may define \(\Tr_{\adj\Ein}^{12}\).
+Similarly we may define \(\Tr_{\Ein}^{12}\).
 \begin{lemma}
 \label{lem:xcf_hamilton_integrability}
 The cross curvature tensor satisfies
 \[
-\dive_{\adj\Ein} \adj\Ein = \frac{1}{2} \Tr^{12}_{\adj\Ein} \nabla \adj\Ein.
+\dive_{\Ein} \adj\Ein = \frac{1}{2} \Tr^{12}_{\Ein} \nabla \adj\Ein.
 \]
 \end{lemma}
 \begin{proof}

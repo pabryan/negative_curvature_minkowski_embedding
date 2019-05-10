@@ -673,42 +673,42 @@ and
 \begin{align}
 u&=\log\det\Ein,\quad
 \Ob_{ij}=\sqrt{\det\Ein}V_{ij},\\
-\mathrm{T}^{kij}&=\Ein^{kl}\nabla_l \Ein^{ij},\quad \mathrm{T}^i=V_{jk}\mathrm{T}^{ijk}=\Ein^{ij}\nabla_ju.
+\T^{kij}&=\Ein^{kl}\nabla_l \Ein^{ij},\quad \T^i=V_{jk}\T^{ijk}=\Ein^{ij}\nabla_ju.
 \end{align}
 For some tensor $\mathrm{L}^{ijk}$ whose traces with respect to $V_{kl}$ are zero, we have
 \begin{align}
-\mathrm{T}^{ijk}-\mathrm{T}^{jik}&=\mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\mathrm{T}^i\Ein^{jk}-\mathrm{T}^j\Ein^{ik}\right).
+\T^{ijk}-\T^{jik}&=\mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right).
 \end{align}
 The Devil tensor is defined by
-\[\mathrm{D}^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik}\]
+\[\Dv^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik}\]
 and it satisfies interesting identities such as
 \begin{align}
-\mathrm{D}^{ijk}=&-\mathrm{D}^{jik},\quad \mathrm{D}^{ijk}+\mathrm{D}^{kij}+\mathrm{D}^{jki}=0,\\
-V_{ij}\mathrm{D}^{ijk}=&V_{ik}\mathrm{D}^{ijk}=V_{jk}\mathrm{D}^{ijk}=0,\\
-V_{ij}\nabla_k\mathrm{D}^{kij}=&\frac{1}{2}|\mathrm{D}^{ijk}|_V^2.
+\Dv^{ijk}=&-\Dv^{jik},\quad \Dv^{ijk}+\Dv^{kij}+\Dv^{jki}=0,\\
+V_{ij}\Dv^{ijk}=&V_{ik}\Dv^{ijk}=V_{jk}\Dv^{ijk}=0,\\
+V_{ij}\nabla_k\Dv^{kij}=&\frac{1}{2}|\Dv^{ijk}|_V^2.
 \end{align}
 \begin{lemma}
 \label{lem:cubicform_codazzi}
 We have the following identity.
 \begin{align}
-|\mathrm{D}^{ijk}|_V^2=\frac{1}{\det\Ein}|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
+|\Dv^{ijk}|_V^2=\frac{1}{\det\Ein}|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
 \end{align}
-In particular, \(\mathrm{D}\equiv 0\) if and only if \(\Ob\) is Codazzi.
+In particular, \(\Dv\equiv 0\) if and only if \(\Ob\) is Codazzi.
 \end{lemma}
 \begin{proof}
 Using the definition we calculate
 \begin{align}
-\mathrm{T}^{kij}=&-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l V_{mn}=-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l (e^{-\frac{1}{2}u}\Ob_{mn})\\
-=&-\frac{1}{\sqrt{\det\Ein}}\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l \Ob_{mn}+\frac{1}{2}\mathrm{T}^k\Ein^{ij}.
+\T^{kij}=&-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l V_{mn}=-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l (e^{-\frac{1}{2}u}\Ob_{mn})\\
+=&-\frac{1}{\sqrt{\det\Ein}}\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l \Ob_{mn}+\frac{1}{2}\T^k\Ein^{ij}.
 \end{align}
 Thus we obtain
 \begin{align*}
-\mathrm{T}^{kij}-\mathrm{T}^{ikj}=&\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\Ein}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)+\frac{1}{2}(\mathrm{T}^k\Ein^{ij}-\mathrm{T}^i\Ein^{kj}).
+\T^{kij}-\T^{ikj}=&\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\Ein}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)+\frac{1}{2}(\T^k\Ein^{ij}-\T^i\Ein^{kj}).
 \end{align*}
 Hence we have the identities
 \begin{align}
-\mathrm{D}^{kij}&=\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\Ein}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)\\
-|\mathrm{D}^{ijk}|_V^2\det\Ein&=|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
+\Dv^{kij}&=\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\Ein}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)\\
+|\Dv^{ijk}|_V^2\det\Ein&=|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
 \end{align}
 \end{proof}
 \subsection{Preserving Negative Curvature}
@@ -818,15 +818,15 @@ is non-decreasing. Moreover, \(\frac{d}{dt} I(M_t)= 0\) if and only if \(\Ob\) i
 \begin{proof}
 By \cite[Proposition 9]{MR2055396}, we have
 \begin{align}
-(\partial_t-\Box)(\det\Ein)^\eta=(\frac{\eta}{2}|\mathrm{D}^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\mathrm{T}^i|^2_V-2\eta\mathrm{H})(\det\Ein)^\eta,
+(\partial_t-\Box)(\det\Ein)^\eta=(\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V-2\eta\mathrm{H})(\det\Ein)^\eta,
 \end{align}
 where $\mathrm{H}=\operatorname{Tr}_g\sigma.$ Therefore, we have the identity
 \begin{align}
-\frac{d}{dt}\int(\det\Ein)^\eta d\mu=\int (\frac{\eta}{2}|\mathrm{D}^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\mathrm{T}^i|^2_V+(1-2\eta)\mathrm{H})(\det\Ein)^\eta d\mu.
+\frac{d}{dt}\int(\det\Ein)^\eta d\mu=\int (\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V+(1-2\eta)\mathrm{H})(\det\Ein)^\eta d\mu.
 \end{align}
 In particular, for $\eta=\frac{1}{2}$ we obtain
 \begin{align}
-\frac{d}{dt}I(M_t)=\frac{1}{4}\int |\mathrm{D}^{ijk}|_V^2\sqrt{\det\Ein}d\mu.
+\frac{d}{dt}I(M_t)=\frac{1}{4}\int |\Dv^{ijk}|_V^2\sqrt{\det\Ein}d\mu.
 \end{align}
 Now apply \Cref{lem:cubicform_codazzi} and \Cref{thm:intg_embed}.
 \end{proof}

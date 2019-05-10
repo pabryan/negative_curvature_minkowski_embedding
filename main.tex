@@ -15,7 +15,7 @@
 \keywords{Negative curvature, embedding, Minkowski, space-like}
 
 \begin{abstract}
-We consider the problem of embedding negatively curved three-manifolds into Minkowksi space.
+We consider the problem of embedding negatively curved three-manifolds into Minkowski space.
 \end{abstract}
 
 \maketitle
@@ -85,10 +85,10 @@ Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative secti
 \begin{proof}
 If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \Ob\), hence \(\Ob\) is Codazzi.
 
-Conversely, suppose \(\Ob\) is Codazzi and let \(\Ob\) be such that \(\Ob(X, Y) = g(\Ob(X), Y)\). Then \(\Ob\) being Codazzi is precisely the integrability condition required to locally integrate the over-determined system
+Conversely, suppose \(\Ob\) is Codazzi and let \(\mathcal{O}\) be such that \(\Ob(X, Y) = g(\mathcal{O}(X), Y)\). Then \(\Ob\) being Codazzi is precisely the integrability condition required to locally integrate the over-determined system
 \begin{align*}
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
-\W(F) &= \Ob
+\W(F) &= \mathcal{O}
 \end{align*}
 for \(F\). See for example \cite{MR1713298}[Theorem 7] or a similar argument in \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
 
@@ -575,7 +575,7 @@ defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty
 To prove the theorem, recalling the formulation \(\adj\Ein = (\adj\circ\opGrav)_g (\Ric(g))\) in equation \eqref{eq:adjein_op}, we first compute the linearisation of the operator \(\adj \circ \opGrav\). Since we will evaluate this operator at \(S = \opRic(g)\) where \(g\) has negative sectional curvature, which by \Cref{lem:eins_sectional} implies \(\Ein\) is positive definite, we may assume \(\opGrav(S) = \opEin\) is invertible, and hence \(\adj \opGrav(S) = \det(\opGrav(S)) \opGrav(S)^{-1}\).
 \begin{lemma}
 \label{lem:dadjG}
-Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearsiation of \(\adj \circ \opGrav\) at \(S\) is given by
+Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearisation of \(\adj \circ \opGrav\) at \(S\) is given by
 \[
 (\adj \circ \opGrav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
 \]
@@ -673,7 +673,7 @@ u&=\log\det\Ein,\quad
 \Ob_{ij}=\sqrt{\det\Ein}V_{ij},\\
 \T^{kij}&=\Ein^{kl}\nabla_l \Ein^{ij},\quad \T^i=V_{jk}\T^{ijk}=\Ein^{ij}\nabla_ju.
 \end{align}
-For some tensor $\mathrm{L}^{ijk}$ whose traces with respect to $V_{kl}$ are zero, we have
+For some tensor $\mathrm{L}^{ijk}$ whose traces with respect to $V_{kl}$ are zero, we have the following irreducible decomposition of $\T^{ijk}:$
 \begin{align}
 \T^{ijk}-\T^{jik}&=\mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right).
 \end{align}
@@ -711,18 +711,31 @@ Hence we have the identities
 \end{proof}
 \subsection{Preserving Negative Curvature}
 \label{subsec:xcf_preserving}
-\begin{lemma}
-The XCF preserves negative sectional curvature up to the first singular time.
-\end{lemma}
+\begin{prop}
+Let $T^{\ast}$ be the maximal time of smooth existence of XCF and $T\leq T^{\ast}$ a time with the property
+\begin{equation}\label{Singularity}\inf_{t\in[0,T)}\min_{M_t}\det \Ein(t,\cdot)=0
+\end{equation}
+then $T=T^\ast$. In particular, the sectional curvatures remain negative as long as the solution is smooth.
+\end{prop}
 \begin{proof}
-{\color{red} Sketch of details referring to Hamilton/Chow computations.}
+The proof is due to \cite{MR2055396}. It is argued by contradiction.
+Without loss of generality we may assume that $T<T^\ast$ is the first time with that property. Define 
+\[m(t)=\min_{M}\log \det \Ein,\]
+then $m$ is Lipschitz, differentiable almost everywhere in time and satisfies
+\[\frac{d}{dt} m\geq -2\max_{M}\mathrm{H}(t,\cdot),\]
+cf. \cite[Proposition 9]{MR2055396}. Denote the eigenvalues of $(\Ein_{ij})$ by 
+\[0<a\leq b\leq c\]
+and suppose that $c$ is uniformly bounded on $[0,T]$. Then $\mathrm{H}$ is also uniformly bounded and hence
+\[\frac{d}{dt}m\geq -C\] for some large constant $C$. By the fundamental theorem of calculus $m$ is bounded away from $-\infty$ and hence
+\[\log a+\log b+\log c>-\infty\]
+throughout $[0,T]$, which in turn also holds for $\log a$. This contradicts the assumption \eqref{Singularity}. Hence $c$ must blow up at $T$ and the proof is complete.
 \end{proof}
 \subsection{Stability Of The Hyperbolic Metric}
 \label{subsec:xcf_stability}
 
 {\color{red} Refer to \cite{MR2448593}.}
 
-\subsection{Integrability And Embeddibility}
+\subsection{Integrability And Embeddability}
 \label{subsec:xcf_gcf}
 \begin{lemma}
 \label{lem:xcf_gcf}
@@ -786,7 +799,7 @@ The second identity reads
 \begin{align}\label{soliton equation for W}
 \Box \frac{1}{2}|W|^2-\Ein^{kl}g^{ij}\nabla_kW_i\nabla_lW_j-2\sigma^{kl}W_kW_l=0.
 \end{align}
-By \cite{MR2055396}[Lemma 1], $\nabla_i\Ein^{ij}=0.$ Therefore, $\int \Box fd\mu=0$ for any smooth function $f$ on $M$.
+By \cite[Lemma 1]{MR2055396}, $\nabla_i\Ein^{ij}=0.$ Therefore, $\int \Box fd\mu=0$ for any smooth function $f$ on $M$.
 Now integrating (\ref{soliton equation for W}) against $d\mu$ and taking into account that $\Ein_{ij}$ and $\sigma_{ij}$ are both positive definite proves that $W\equiv0$. Hence, by (\ref{soliton 0}),
 \[(\det\Ein)^2=\frac{\det \sigma_{ij}}{\det g_{ij}}=\lambda ^3\Rightarrow \det\Ein=\lambda^{\frac{3}{2}}.\]
 Moreover, in view of (\ref{trace}), we have $3\det\Ein=\lambda \Tr_g \Ein$ and finally \[3(\det\Ein)^{\frac{1}{3}}=\Tr_g \Ein.\] Thus the metric has constant negative curvature.

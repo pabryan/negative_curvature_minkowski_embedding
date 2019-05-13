@@ -20,8 +20,10 @@ We consider the problem of embedding negatively curved three-manifolds into Mink
 
 \maketitle
 
+
 \section{Introduction}
 \label{sec:intro}
+
 Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi\colon (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that
 \[
 (M/G, \bar{g}) \underset{\simeq}{\to} (N, k)
@@ -85,10 +87,10 @@ Let \((N, k)\) be a compact Riemannian three-manifold of strictly negative secti
 \begin{proof}
 If \((M, g)\) embeds isometrically into \(\R^{3,1}\) then by the Codazzi-Mainardi equation \eqref{eq:codazzi}, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} below gives \(A = \Ob\), hence \(\Ob\) is Codazzi.
 
-Conversely, suppose \(\Ob\) is Codazzi and let \(\mathcal{O}\) be such that \(\Ob(X, Y) = g(\mathcal{O}(X), Y)\). Then \(\Ob\) being Codazzi is precisely the integrability condition required to locally integrate the over-determined system
+Conversely, suppose \(\Ob\) is Codazzi and let \(\opOb\) be such that \(\Ob(X, Y) = g(\opOb(X), Y)\). Then \(\Ob\) being Codazzi is precisely the integrability condition required to locally integrate the over-determined system
 \begin{align*}
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
-\W(F) &= \mathcal{O}
+\W(F) &= \opOb
 \end{align*}
 for \(F\). See for example \cite{MR1713298}[Theorem 7] or a similar argument in \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
 
@@ -151,21 +153,24 @@ A prime manifold is simply a manifold that cannot be written as a non-trivial co
 \R^3, \S^3, \H^3, \S^2 \times \R, \H^2 \times \R, \widetilde{SL}_2(\R), \operatorname{Nil}, \operatorname{Solv}.
 \]
 
-For the non-hyperbolic geometries, in the case of \(\operatorname{Solv}\) these are precisely torus and Klein bottle bundles over \(S^1\) or the union of two twisted \(1\)-bundles over the torus or Klein bottle. The remaining six non-hyperbolic geometries are all Seifert Fibre bundles, completely determined by the Euler characteristic of the base space, \(\chi\) and the Euler number of the bundle, \(e\).
+In the case of \(\operatorname{Solv}\) these are precisely torus and Klein bottle bundles over \(S^1\) or the union of two twisted \(1\)-bundles over the torus or Klein bottle. The remaining six non-hyperbolic geometries are all Seifert Fibre bundles, completely determined by the Euler characteristic of the base space, \(\chi\) and the Euler number of the bundle, \(e\).
 
-The only remaining case then is the hyperbolic case.
+The only remaining case then is the hyperbolic case and this as yet has no classification. Of particular relevance here is the question of whether each negatively curved metric is homotopic to a constant negative curvature metric.
 
 \section{Basic Geometry Conventions}
 \label{sec:notation}
 \subsection{Intrinsic Geometry Conventions}
 \label{subsec:notation_intrinsic}
-Given a metric \(g\), let \(\nabla = \nabla^g\) denote the Levi-Civita connection. The superscript will be dropped when the metric is clear from context. Let \(\inpr{\cdot}{\cdot}\) denote the inner-product on Minkowski space and \(D\) the corresponding Levi-Civita connection. Our conventions for the curvature tensor is
+
+\subsubsection{Curvature Conventions}
+\label{subsubsec:notation_intrinsic_curvature}
+
+Given a metric \(g\), let \(\nabla\) denote the Levi-Civita connection. Our conventions for the curvature tensor are
 \[
-\Rm(X, Y) Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z
-\]
-and
-\[
-\Rm(X, Y, Z, W) = g(\Rm(X, Y) Z, W).
+\begin{split}
+\Rm(X, Y) Z &= \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]} Z, \\
+\Rm(X, Y, Z, W) &= g(\Rm(X, Y) Z, W).
+\end{split}
 \]
 The sectional curvature is then
 \[
@@ -175,22 +180,14 @@ and \(g\) has constant sectional curvature \(K_0\) if and only if (note the minu
 \[
 \Rm = -\frac{K}{2} g \owedge g
 \]
-where
-\[
-\frac{1}{2} g \owedge g (X, Y, Z, W) = g(X, Z) g (Y, W) - g(X, W) g(Y, Z)
-\]
-denotes the Kulkarni-Nomizu product. Note that
+where \(g \owedge g\) denotes the Kulkarni-Nomizu product. Note that
 \[
 \frac{1}{2} g \owedge g (X, Y, Y, X) = -\abs{X \wedge Y}_g^2.
 \]
 
-The symmetries of \(\Rm\) imply that
+Th curvature operator is the symmetric endomorphism \(\opRm : TM \wedge TM \to TM \wedge TM\) defined by
 \[
-\Rm(X\wedge Y, Z \wedge W) = \Rm(X, Y, Z, W)
-\]
-is a well defined, symmetric bilinear form on \(TM \wedge TM\) inducing the (self-adjoint) curvature operator \(\opRm : TM \wedge TM \to TM \wedge TM\) determined by,
-\[
-g(\opRm(X\wedge Y), Z \wedge W) = \Rm(X\wedge Y, Z \wedge W).
+g(\opRm(X\wedge Y), Z \wedge W) = \Rm(X\wedge Y, Z \wedge W) = \Rm(X, Y, Z, W).
 \]
 The sectional curvatures may then be expressed as
 \[
@@ -231,18 +228,70 @@ The Ricci decomposition of the curvature tensor can be written in terms of the t
 &= -\frac{1}{n-2} \left(\Ric - \frac{R}{2(n-1)} g\right) \owedge g + \Wy \\
 &= -\frac{1}{n-2} \left(\Ein  -\frac{1}{n-1} \Tr_g \Ein g\right) \owedge g + \Wy
 \end{align*}
-where \(\Wy = \Rm + \Sch \owedge g\) is the Weyl tensor, and the Kulkarni-Nomizu product of symmetric bilinear forms \(A, B\) is defined as
+where \(\Wy = \Rm + \Sch \owedge g\) is the Weyl tensor. Note the first term in the sum on the right hand side of the Ricci decomposition further decomposes into irreducible components but we don't need that here.
+
+\subsubsection{Covariant Derivative And Contraction Conventions}
+\label{subsubsec:notation_intrinsic_covariant}
+
+For any tensor \(T \in \Gamma(T^p_q M)\) we define,
 \[
 \begin{split}
-A \owedge B (X, Y, Z, W) &= A \owedge B (X \wedge Y, Z \wedge W) \\
-&= A(X, Z) B(Y, W) + A(Y, W) B(X, Z) \\
-&\quad - A(X, W) B(Y, Z) - A(Y, Z) B(W, W).
+\nabla T (X; \omega^1, \dots, \omega^p, Y^1, \dots, Y^q) &= (\nabla _X T) (\omega^1, \dots, \omega^p, Y^1, \dots, Y^q) \\
+&= \partial_X \left[T(\omega^1, \dots, \omega^p, Y^1, \dots, Y^q)\right] \\
+&\quad - \sum_{j=1}^p T(\omega^1, \dots, \nabla_X \omega^j, \dots, \omega^p, Y^1, \dots, Y^q) \\
+&\quad - \sum_{i=1}^q T(\omega^1, \dots, \dots, \omega^p, Y^1, \dots, \nabla_X Y^i, \dots, Y^q).
 \end{split}
 \]
-Note the first term in the sum on the right hand side of the Ricci decomposition further decomposes into irreducible components but we don't need that here.
+In particular, for a symmetric bilinear form \(B\) we have
+\[
+\nabla B (X; Y, Z) = \partial_X [B(Y, Z)] - B(\nabla_X Y, Z) - B(Y, \nabla_X Z)
+\]
+and \(\nabla B\) is symmetric in the last two slots. If \(\nabla B\) is symmetric in the first two slots, then it is fully symmetric and we call \(B\) a \emph{Codazzi} tensor.
+
+Second (and more generally higher) derivatives are the simply
+\[
+\nabla^2_{X,Y} T = \nabla (\nabla T) (X, Y;, \dots) = \nabla_X \nabla_Y T(\dots) - \nabla_{\nabla_X Y} T (\cdots)
+\]
+and the Ricci identity is
+\[
+\nabla^2_{X,Y} - \nabla^2_{Y,X} = \Rm_{X,Y}.
+\]
+
+We will need to take traces of \(\nabla B\) for \(B\) a symmetric bilinear form. For this we need to raise an index. Fixing \(X\) we may write the bilinear form \((\nabla B)_X (Y, Z) := \nabla B (X, Y, Z)\) as \((\nabla B_X) (Y, Z) = g(\nabla B^{\sharp}_X (Z), Y)\) and define
+\[
+\Tr_g^{23} \nabla B (X) = \Tr \nabla B^{\sharp}_X.
+\]
+Similarly we may define \(\Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B\). We define the divergence,
+\[
+\dive B = \dive_g B = \Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B.
+\]
+
+When \(\Ein\) is positive-definite, it is a metric so we may define \(\sharp_{\Ein} \nabla B_X\) by
+\[
+\nabla B(X, Y, Z) = \Ein(\sharp_{\Ein} \nabla B_X (Y), Z).
+\]
+We then define traces and the divergence with respect to \(\Ein\)
+\[
+\dive_{\Ein} B (X) = \Tr^{12}_{\Ein} B (X) = \Tr \sharp_{\Ein} \nabla B_X.
+\]
+Then for \(\xi \in T^{\ast} M\), we also define,
+\[
+\|\xi\|_{\Ein}^2 = \Ein(\xi^{\sharp}, \xi^{\sharp})
+\]
+where \(\xi^{\sharp}\) is the metric raising defined by \(\xi(X) = g(\xi^{\sharp}, X)\) for any \(X \in TM\). We can also raise using \(\Ein\) and so define \(\sharp_{\Ein} \xi\) by
+\[
+\xi(X) = \Ein(\sharp_{\Ein} \xi, X).
+\]
+Then we can trace bilinear forms with respect to \(\Ein\), by first defining \(\Tr_{\Ein^{\sharp}}\) on simple bilinear forms \(\xi \otimes \eta\):
+\[
+\Tr_{\Ein^{\sharp}} \xi \otimes \eta = \Ein^{\sharp} (\xi, \eta) := \Ein(\xi^{\sharp}, \eta^{\sharp})
+\]
+and extending by bilinearity. Here \(\Ein^{\sharp}\) is the \(g\) raising of \(\Ein\) and not the extension of \(\Ein\) to a metric on \(T^{\ast} M\). With respect to indices, \(\Ein^{ij} = g^{ik}g^{j\ell}\Ein_{k\ell}\) is not the inverse matrix of \(\Ein_{ij}\).
+
 \subsection{Extrinsic Geometry Conventions}
 \label{subsec:notation_extrinsic}
-For an immersion \(F : M^n \to \R^{n,1}\) with \(M\) oriented, we define the second fundamental form by
+
+Let \(\inpr{\cdot}{\cdot}\) denote the inner-product on Minkowski space and \(D\) the corresponding Levi-Civita connection. For an immersion \(F : M^n \to \R^{n,1}\) with \(M\) oriented, we define the second fundamental form by
 \[
 D_{F_{\ast} X} F_{\ast} Y = F_{\ast} \nabla_X Y + h(X, Y).
 \]
@@ -306,7 +355,7 @@ expresses \(M\) locally as a graph of the function \(\varphi^{n+1} \circ (\pi \c
 \subsubsection{Intrinsic geometry}
 Specialising to the case \(n = 3\), we have
 \[
-\Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad W = 0.
+\Sch = \Ric - \frac{R}{4} g \quad \text{and} \quad \Wy = 0.
 \]
 Then the Ricci decomposition becomes
 \begin{equation}
@@ -490,20 +539,8 @@ On the other hand, if \(i \ne j\), then \(g(E_m \wedge E_i, E_m \wedge E_j) = 0\
 In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the same result is obtained by contracting with the measure \(\mu\).
 \end{rem}
 
-For a symmetric bilinear form, let us write
-\[
-\nabla B (X, Y, Z) = (\nabla_X B) (Y, Z) := \nabla_X (B(Y, Z)) - B(\nabla_X Y, Z) - B(Y, \nabla_X Z).
-\]
-Then \(\nabla B\) is symmetric in the last two slots but not generally in all three - that is, \(B\) is not generally Codazzi. We then have two ways we may trace \(\nabla B\) using \(g\): contracting the first and second slots (or equivalently the first and third by symmetry) and contracting the second and third slots. Fixing \(X\) and then we may write the bilinear form \((\nabla B)_X (Y, Z) := \nabla B (X, Y, Z)\) as \((\nabla B_X) (Y, Z) = g(\nabla B^{\sharp}_X (Z), Y)\) and define
-\[
-\Tr_g^{23} \nabla B (X) = \Tr \nabla B^{\sharp}_X.
-\]
-Similarly we may define \(\Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B\). We define the divergence,
-\[
-\dive B = \dive_g B = \Tr_g^{12} \nabla B = \Tr_g^{13} \nabla B.
-\]
 
-With this definition, it is well known that the Einstein tensor is divergence free,
+It is well known that the Einstein tensor is divergence free,
 \begin{equation}
 \label{eq:ein_divfree}
 0 = \dive_g \Ein = \Tr_g^{13} \nabla \Ein = \Tr_g^{13} \nabla \Ric - \frac{1}{2} \Tr_g^{13} \nabla (\Sc g) = \dive_g \Ric - \frac{1}{2} \nabla \Sc
@@ -523,44 +560,17 @@ The cross curvature tensor satisfies
 \]
 \end{lemma}
 \begin{proof}
-{\color{red}Write proof}
+See \cite[Lemma 1]{MR2055396}
 \end{proof}
 The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. \Cref{lem:xcf_hamilton_integrability} serves a similar purpose for the XCF as described below in \Cref{rem:invariance_integrability}.
 
-Before moving on, note that we may write the map \(g \mapsto \adj\Ein(g)\) as
-\[
-\adj\Ein(g) = \adj_g \circ \Grav_g \circ \Ric (g) = (\adj \circ \opGrav)_g (\Ric(g))
-\]
-where for a bilinear form \(B\) on a finite dimensional vector space with an inner product \(g\) we define the \emph{gravitation linear map}
-\[
-\Grav_g(B) (\cdot, \cdot) = g(\opGrav(\op{B}) \cdot, \cdot) = g\left(\left[\op{B} - \frac{1}{2} \Tr\op{B} \Id\right] \cdot, \cdot\right) = B - \frac{1}{2} \Tr_g B g
-\]
-where
-\[
-B(\cdot, \cdot) = g(\op{B} \cdot, \cdot).
-\]
-Similarly, the adjugate \(\adj_g B = g(\adj\op{B} \cdot, \cdot)\) is a \emph{non linear} function taking bilinear forms to bilinear forms. The construction respects compositions in the sense that
-\[
-(\adj \circ \Grav)_g = \adj_g \circ \Grav_g.
-\]
-It will be convenient to write \(\adj\Ein\) in the form,
-\begin{equation}
-\label{eq:adjein_op}
-\adj\Ein (g) = F(g, \Ric(g)) \text{ where } F(k, B) = (\adj \circ \opGrav)_k (B).
-\end{equation}
-In particular, \(\adj\Ein\) depends to zero order in the \(k=g\) variable and to second order through the \(B = \Ric\) variable in \(F(k, B)\).
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
 
-{\color{red} Probably cut this to a single paragraph}
+The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. As a result the flow is degenerate parabolic and the standard theory must be modified to take this into account. For the Ricci flow, \cite{Hamilton:/1982} dealt with this issue by employing the Nash-Moser inverse function theorem (see for example \cite{MR656198}) and similarly for the XCF \cite{MR2055396}. However, as pointed out by \cite{MR2207496}, whilst this method is well suited to the Ricci flow which enjoys a first order integrability condition, the integrability condition for the XCF is second order. The question of whether the technique in \cite{Hamilton:/1982} applies is certainly of interest, remaining (as far as we know) an open question in general.
 
-The question of short time existence and uniqueness of solutions to geometric, parabolic equations on vector bundles raises some issues not seen in the standard theory on \(\R^n\). The most pressing issue is that the geometric invariance of the problem leads to degeneracies in the principal symbol. As a result the flow is degenerate parabolic and the standard theory must be modified to take this into account.
+But there is another approach to short time existence and uniqueness known as the DeTurck Trick, that also has the advantage of simplicity in comparison with the Nash-Moser approach. For the Ricci flow, \cite{MR697987} gave an alternative proof to short time existence and uniqueness by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. \cite{MR2207496} adapted this approach to the XCF easily obtaining existence, but neglecting to give the uniqueness part. We outline the details, filling in the missing uniqueness below.
 
-For the Ricci flow, \cite{Hamilton:/1982} dealt with this issue by employing the Nash-Moser inverse function theorem (see for example \cite{MR656198}) and similarly for the XCF \cite{MR2055396}. However, as pointed out by \cite{MR2207496}, whilst this method is well suited to the Ricci flow which enjoys a first order integrability condition, the integrability condition for the XCF is second order. The question of whether the technique in \cite{Hamilton:/1982} applies is certainly of interest, remaining (as far as we know) an open question in general. But there is another approach to short time existence and uniqueness that also has the advantage of simplicity in comparison with the Nash-Moser approach.
-
-For the Ricci flow, \cite{MR697987} gave an alternative proof to short time existence and uniqueness. Then, \cite{MR2207496} adapted this proof to the XCF. The method is essentially a gauge-fixing argument whereby the diffeomorphism class is fixed in such a way to produce a new flow, referred to as the DeTurck flow, which is strictly parabolic and then standard arguments apply to give existence and uniqueness of the DeTurck flow. Existence of the original flow is then easily obtained, but there is an extra step required for uniqueness which was omitted in \cite{MR2207496}. Here we outline the complete proof.
-
-The standard theory gives that strictly parabolic, linear equations with smooth coefficients can be uniquely solved (e.g. by a contraction mapping) for smooth solutions given initial smooth data. Then the non-linear equation will be uniquely solvable on some small time interval if the linearisation is strictly parabolic by appealing to the implicit function theorem. Writing the solution as \(g_t = \varphi_t(g_0)\), the semi-group property of the solution \(g_{t_1 + t_2} = \varphi_{t_1 + t_2} (g_0) = \varphi_{t_2} (\varphi_{t_1} (g_0))\) then ensures there is a maximal time interval \([0, T)\) (possibly with \(T = \infty\)) on which the solution is defined. We take all this as given and focus only on showing first that the XCF is not strictly parabolic, then showing strict parabolicity of the DeTurck flow, and finally proving that this leads to existence and uniqueness of the XCF.
 \begin{thm}
 \label{thm:xcf_existence_uniqueness}
 Given any initial smooth metric \(g\) of negative sectional curvature on a closed three-manifold \(N\), there exists a unique solution \(g_t\) to the XCF,
@@ -572,62 +582,25 @@ g_0 &= g.
 \]
 defined on a maximal time interval \([0, T)\) for some \(T > 0\) or \(T = \infty\).
 \end{thm}
-To prove the theorem, recalling the formulation \(\adj\Ein = (\adj\circ\opGrav)_g (\Ric(g))\) in equation \eqref{eq:adjein_op}, we first compute the linearisation of the operator \(\adj \circ \opGrav\). Since we will evaluate this operator at \(S = \opRic(g)\) where \(g\) has negative sectional curvature, which by \Cref{lem:eins_sectional} implies \(\Ein\) is positive definite, we may assume \(\opGrav(S) = \opEin\) is invertible, and hence \(\adj \opGrav(S) = \det(\opGrav(S)) \opGrav(S)^{-1}\).
-\begin{lemma}
-\label{lem:dadjG}
-Let \(S : V \to V\) be an isomorphism of vector spaces. Then the linearisation of \(\adj \circ \opGrav\) at \(S\) is given by
-\[
-(\adj \circ \opGrav)'_S \cdot T  = \left[\Tr(\adj\opGrav(S) \opGrav(T))\Id - \adj\opGrav(S) \opGrav(T)\right] \opGrav(S)^{-1}
-\]
-where
-\[
-(\adj \circ \opGrav)'_S \cdot T := \partial_u|_{u=0} (\adj \circ \opGrav) (S + uT).
-\]
-\end{lemma}
-\begin{proof}
-{\color{red} To write up}
-\end{proof}
-Recall that by \Cref{lem:eins_sectional}, \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. Then for \(\xi \in T^{\ast} M\), we define,
-\[
-\|\xi\|_{\Ein}^2 = \Ein(\xi^{\sharp}, \xi^{\sharp})
-\]
-where \(\xi^{\sharp}\) is the metric raising defined by \(\xi(X) = g(\xi^{\sharp}, X)\) for any \(X \in TM\) (with the same base point of \(\xi\), \(x = \pi_{T^{\ast}M} (\xi) = \pi_{TM} (X)\)). We can also raise using \(\Ein\) and so define \(\sharp_{\Ein} \xi\) by
-\[
-\xi(X) = \Ein(\sharp_{\Ein} \xi, X).
-\]
-We can also trace bilinear forms with respect to \(\Ein\), by first defining \(\Tr_{\Ein}\) on simple bilinear forms \(\xi \otimes \eta\):
-\[
-\Tr_{\Ein} \xi \otimes \eta = \Ein(\xi^{\sharp}, \eta^{\sharp})
-\]
-and extending by bilinearity.
-\begin{rem}
-Apart from \(\sharp_{\Ein}\), these constructions rely also on metric raising by \(g\). In particular,
-\[
-\abs{\xi}^2_{\Ein} \ne \Ein(\sharp_{\Ein} (\xi), \sharp_{\Ein} (\xi))
-\]
-where the right hand side is what we would obtain by extending \(\Ein\) from a metric on \(TM\) to a metric on \(T^{\ast} M\) in the usual way. In particular, written in terms of indices, \(\Ein^{ij} = g^{ik}g^{\ell j} \Ein_{k\ell}\) is not the inverse matrix of \(E_{ij}\).
-\end{rem}
-Next we compute the principal symbol of the cross curvature tensor at a metric of negative sectional curvature. Recall that for a nonlinear, second order differential operator \(D : E \to F\) acting on vector bundles \(E, F\) over \(M\), we define
+
+To prove the theorem, we first compute the principal symbol of the cross curvature tensor. Recall that for a nonlinear, second order differential operator \(D : E \to F\) acting on vector bundles \(E, F\) over \(M\), we define
 \begin{equation}
 \label{eq:symbol}
 \sigma_{\xi} [D_s] = \sigma_{\xi} [D'_s]
 \end{equation}
-where \(s, u \in \Gamma(E)\) are sections of \(E\) and
+where \(s \in \Gamma(E)\) is a section of \(E\) and
 \[
 D'_s (u) = \partial_w|_{w=0} D(s + w u)
 \]
-is the linearisation of \(D\) around \(s\). Recall also that the principal symbol, \(\sigma_{\xi} [D'_s]\) of \(D'_s\) is obtained by replacing second order derivatives by components of \(\xi\), and may be conveniently computed by
+is the linearisation of \(D\) around \(s\) acting on sections \(u \in \Gamma(E)\). Recall also that the principal symbol, \(\sigma_{\xi} [D'_s]\) of \(D'_s\) is obtained by replacing second order derivatives by components of \(\xi\), and may be conveniently computed by
 \begin{equation}
 \label{eq:symbol_compute}
 \sigma_{\xi} [D'_s] (u) = \lim_{w\to \infty} \left[w^{-2} e^{-w\varphi(x)} D'_s (e^{w\varphi(x)} u)(x)\right]
 \end{equation}
 where \(\varphi\) is any smooth function satisfying \(d\varphi_x = \xi\) and \(x = \pi_{T^{\ast}M} (\xi)\).
 
-For a natural (e.g. invariant under change of basis) and not necessarily linear map, \(f : V \to V\) and a linear differential operator \(L\), we also have the following chain rule,
-\begin{equation}
-\label{eq:chain_rule}
-\sigma_{\xi} [f(L))] (u) = f'_{D(u)} \circ \sigma_{\xi}[L] (u).
-\end{equation}
+Recall that by \Cref{lem:eins_sectional}, \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. We may thus raise and lower indices using \(\Ein\) as well as take traces with \(\Ein\).
+
 \begin{lemma}
 \label{lem:xcf_symbol}
 The principal symbol of the cross curvature tensor is,
@@ -636,34 +609,20 @@ The principal symbol of the cross curvature tensor is,
 \]
 \end{lemma}
 \begin{proof}
-Making use of the chain rule \eqref{eq:chain_rule} and the formulation, \(\adj\Ein = F(g, \Ric(r)) = \adj\Ein_g(\Ric(g))\) in \eqref{eq:adjein_op} we obtain
-\[
-\sigma_{\xi} [\adj\Ein_g] (V) = f'_{\Ric(g)} \circ \sigma_{\xi} [\Ric_g] (V).
-\]
-where
-\[
-f(B) = \adj\Ein_g (B) = g(\adj \circ \opGrav \op{B} \cdot, \cdot).
-\]
-\Cref{lem:dadjG} gives that,
-\[
-f'_B (C) = g(\left[\Tr(\adj\opGrav(\op{B}) \opGrav(\op{C}))\Id - \adj\opGrav(\op{B}) \opGrav(\op{C})\right] \opGrav(\op{B})^{-1}
-\]
-According to \cite[Section 5.1]{MR2265040}, the linearisation of \(\Ric\) is
-\[
-\sigma_{\xi} [\Ric_g] (V) = \abs{\xi}^2 V - 2 \Sym \xi \otimes V(\xi^{\sharp}, \cdot) + \Tr_g V \xi \otimes \xi.
-\]
-
-{\color{red} Need to put it all together now}
+See \cite[Lemma 4]{MR2055396} and \cite[Theorem 1]{MR2207496}.
 \end{proof}
+
 \begin{rem}
 \label{rem:invariance_integrability}
 We see that as with any geometric evolution equation, that the XCF is only weakly parabolic. However, the degeneracy results solely from the diffeomorphism invariance and using DeTurck's method this is easily dealt with.
 
 Let us also now note that the Hamilton integrability condition from \Cref{lem:xcf_hamilton_integrability} and the diffeomorphism invariance are closely related. {\color{red} Describe this}
 \end{rem}
+
 \begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
 {\color{red} Show how to construct DeTurck flow and that it is strictly parabolic. Show how to obtain uniqueness by the analogue of harmonic map heat flow.}
 \end{proof}
+
 \subsection{Basic Equations}
 \label{subsec:xcf_eq}
 We start by defining \(V_{ij}=(\Ein^{-1})^{kl}g_{ik}g_{lj}\)

@@ -24,6 +24,8 @@ We consider the problem of embedding negatively curved three-manifolds into Mink
 \section{Introduction}
 \label{sec:intro}
 
+
+
 Let \((N, k)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi\colon (M, g) \to (N, k)\) be the Riemannian universal cover so that \(\pi : M \to N\) is a covering map with \(M\) simply connected and \(g = \pi^{\ast} k\). Let \(G\) denote the Deck transformation group of the cover and observe that \(g\) is invariant under \(G\). That is, \(G \leq \text{Diff}(M)\) is a group of diffeomorphisms of \(M\) and \(\varphi^{\ast} g = g\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((M, g)\). Then \(g\) induces a metric \(\bar{g}\) on the quotient \(M/G\) such that
 \[
 (M/G, \bar{g}) \underset{\simeq}{\to} (N, k)
@@ -56,7 +58,7 @@ Let \((N, k)\) be a compact manifold of strictly negative sectional curvature. T
 \end{lemma}
 
 \begin{proof}
-(i)\(\Rightarrow\)(ii)
+(i)\(\Rightarrow\)(ii) 
 The pullback of a constant curvature metric is the hyperbolic one, which is then \(G\)-invariant.
 
 (ii)\(\Rightarrow\)(iii)
@@ -270,7 +272,7 @@ and \(\nabla B\) is symmetric in the last two slots. If \(\nabla B\) is symmetri
 
 Second (and more generally higher) derivatives are the simply
 \[
-\nabla^2_{X,Y} T = \nabla (\nabla T) (X, Y;, \dots) = \nabla_X \nabla_Y T(\dots) - \nabla_{\nabla_X Y} T (\cdots)
+\nabla^2_{X,Y} T = \nabla (\nabla T) (X, Y; \dots) = \nabla_X \nabla_Y T(\cdots) - \nabla_{\nabla_X Y} T (\cdots)
 \]
 and the Ricci identity is
 \[
@@ -698,11 +700,11 @@ then $T=T^\ast$. In particular, the sectional curvatures remain negative as long
 \end{prop}
 \begin{proof}
 The proof is due to \cite{MR2055396}. It is argued by contradiction.
-Without loss of generality we may assume that $T<T^\ast$ is the first time with that property. Define 
+Without loss of generality we may assume that $T<T^\ast$ is the first time with that property. Define
 \[m(t)=\min_{M}\log \det \Ein,\]
 then $m$ is Lipschitz, differentiable almost everywhere in time and satisfies
 \[\frac{d}{dt} m\geq -2\max_{M}\mathrm{H}(t,\cdot),\]
-cf. \cite[Proposition 9]{MR2055396}. Denote the eigenvalues of $(\Ein_{ij})$ by 
+cf. \cite[Proposition 9]{MR2055396}. Denote the eigenvalues of $(\Ein_{ij})$ by
 \[0<a\leq b\leq c\]
 and suppose that $c$ is uniformly bounded on $[0,T]$. Then $\mathrm{H}$ is also uniformly bounded and hence
 \[\frac{d}{dt}m\geq -C\] for some large constant $C$. By the fundamental theorem of calculus $m$ is bounded away from $-\infty$ and hence

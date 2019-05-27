@@ -430,6 +430,77 @@ Existence now follows easily since the DeTurck XCF \eqref{eq:dtxcf} is uniformly
 For uniqueness, more work is required, but note that the vector field \(W\) is the same as that used for Ricci flow. Thus the same proof as for Ricci flow applies and we may appeal to \cite[Section 6]{MR1375255}. In the formulation used here, \(\varphi_t\) solves the harmonic map heat flow \((M, \bar{g}) \to (M, g_0)\). See \cite[Section 5.2]{MR2265040} and \cite[Sections 3.3, 3.4]{MR2061425} for details.
 \end{proof}
 
+\subsection{Comparison Of XCF And Ricci Flow}
+\label{sec:xcf_rf}
+
+We  make a few remarks about how the XCF relates to the Ricci flow and especially to the original existence and uniqueness approach of \cite{Hamilton:/1982} based on the Nash-Moser inverse function theorem (see e.g. \cite{MR656198}). In particular, we observe that the DeTurck XCF introduced in \cite{MR2207496} uses the integrability condition from the Ricci flow rather than the integrability condition for the XCF, yet still yields a satisfactory result.
+
+The first observation is a duality between the Ricci tensor and the Cross Curvature tensor.
+
+\begin{lemma}[{\cite[Lemma 2]{MR2055396}}]
+In any dimension, the identify map \(\iota : M \to M\) is a harmonic map \((M, g) \to (M, \pm \Ric)\) with \(+\) if \(\Ric > 0\) and \(-\) if \(\Ric < 0\). In three dimensions with negative sectional curvature, \(\iota\) is a harmonic map \((M, \adj\Ein) \to (M, g)\).
+\end{lemma}
+
+It is well known that the Einstein tensor is divergence free,
+\[
+\dive_g \Ein = 0
+\]
+which is precisely the contracted second Bianchi identity. As a consequence, a similar identity holds for the Cross Curvature tensor.
+
+\begin{lemma}[{\cite[Lemma 1]{MR2055396}}]
+\label{lem:xcf_hamilton_integrability}
+
+The cross curvature tensor satisfies
+\[
+\dive_{\Ein} \adj\Ein = \frac{1}{2} \Tr^{23}_{\Ein} \nabla \adj\Ein.
+\]
+\end{lemma}
+
+Here we define the three tensor \(\nabla \adj\Ein(X, Y, Z) = (\nabla_X \adj\Ein) (Y, Z)\) and the divergence \(\dive \nabla \adj\Ein = \Tr^{12}_{\Ein} \nabla \adj\Ein\) is the trace in the first two slots with respect to \(\Ein^{\sharp}\) so that the differentiated slot is contracted with the first non-differentiated slot.
+
+The contracted second Bianchi identity served as an integrability condition used for the original short time existence and uniqueness for the Ricci flow in \cite{Hamilton:/1982}. That is, defining, \(M_g (B) = \dive_g \left(B - \tfrac{1}{2} \Tr_g B\right)\) we have
+\[
+M_g (\Ric(g)) = \dive_g(\Ein(g)) = 0.
+\]
+Notice that \(M_g\) depends on the Levi-Civita connection \(\nabla^g\) so that \(M_g\) depends on \(g\) to first order. Then the existence and uniqueness theory established in \cite{Hamilton:/1982} may be applied. For the XCF, we have \(L_g(B) = \dive_{\Ein(g)} B - \frac{1}{2} \Tr_{\Ein(g)}^{23} \nabla^g B\) and
+\[
+L_g(\adj\Ein(g)) = 0
+\]
+by \Cref{lem:xcf_hamilton_integrability}. Now \(L_g\) depends on \(\Ein(g)\) which is second order in \(g\) but the theory in \cite{Hamilton:/1982} only applies to first order integrability conditions and hence may not be applied to the XCF.
+
+Now recall the symobl of the DeTurck XCF \eqref{eq:dtxcf_symbol},
+\[
+\sigma_{\xi} [\dtxcf_g] (V) = \abs{\xi}^2_{\Ein}V + 2 \Sym \xi \otimes V(\sharp \xi - \sharp_{\Ein}\xi, \cdot) + \left(\Tr_{\Ein} V - \Tr_g V\right) \xi \otimes \xi.
+\]
+
+For the Ricci flow, the DeTurck Ricci flow is defined to be
+\[
+\partial_t g = -2\Ric (g) + \Lie_{W} g =: \dtrf (g)
+\]
+with
+\[
+W = g_0^{-1} M_g(g_0)^{\sharp} = g_0^{-1} \dive \left(\Grav(g_0)\right)^{\sharp}.
+\]
+Note that this is precisely the \(W\) used in the proof of \Cref{thm:xcf_existence_uniqueness} above (see \eqref{eq:dtxcf_symbol}). In fact, this \(W\) is adapted to the Ricci flow since the symbol for the Ricci flow is
+\[
+\sigma_{\xi} [-2\Ric_g] (V) = \abs{\xi}^2_{g}V - 2 \Sym \xi \otimes V(\sharp \xi, \cdot) + \Tr_g V \xi \otimes \xi.
+\]
+Then for the DeTurck Ricci flow, the last two terms cancel and the symbol for the DeTurck Ricci flow becomes
+\[
+\sigma_{\xi} [\dtrf_g] (V) = \abs{\xi}_g^2 V
+\]
+which is clearly uniformly elliptic.
+
+For the XCF, the analogous approach would be to use \Cref{lem:xcf_hamilton_integrability} and define
+\[
+W = g_0^{-1} \left(\dive_{\Ein(g)} g_0 - \tfrac{1}{2} \Tr^{23} \nabla g_0\right)^{\sharp}
+\]
+with the aim of cancelling the last two terms of the symbol \(\sigma_{\xi}[\adj\Ein_g]\). This is \emph{not} the approach taken by \cite{MR2207496} described in \Cref{thm:xcf_existence_uniqueness} above. Rather, the \(W\) from the Ricci flow is used. Even though this choice does not result in cancelling the last two terms, the result is still uniformly parabolic since the diagonal terms are still positive and the remaining terms are all above the diagonal as shown in the proof of \Cref{thm:xcf_existence_uniqueness}. This presumably is a consequence of the fact that \(\adj\Ein(g) = (\adj \circ \Grav) (\Ric(g))\) so that the symbol satisfies
+\[
+\sigma_{\xi}[\xcf_g] = (\adj \circ \Grav)'_{\Ric(g)} \cdot \sigma_{\xi} [\Ric_g].
+\]
+Then \(\ker \sigma_{\xi}[\xcf_g] = \ker \sigma_{\xi} [\Ric_g]\) and the symbol of \(\Lie_W g\) does not map into the range of \(\ker \sigma_{\xi}[\xcf_g]\). Another way to look at the situation is to note that the only difference in the symbol for XCF is the use of \(\Ein\) to take traces here rather than \(g\) for the Ricci flow. The alternative formulation of the Cross Curvature tensor in \Cref{lem:xcf_equiv} already suggests this close connection since the Cross Curvature tensor differs from the Ricci tensor only in the insertion of \(\opEin\) into \(\Rm\) before tracing.
+
 \subsection{Identities For Non Integrable Solutions}
 \label{subsec:xcf_nonintg}
 

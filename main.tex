@@ -358,9 +358,8 @@ so that
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
 
-The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. As a result the flow is degenerate parabolic and the standard theory must be modified to take this into account. For the Ricci flow, \cite{Hamilton:/1982} dealt with this issue by employing the Nash-Moser inverse function theorem (see for example \cite{MR656198}) and similarly for the XCF \cite{MR2055396}. However, as pointed out by \cite{MR2207496}, whilst this method is well suited to the Ricci flow which enjoys a first order integrability condition, the integrability condition for the XCF is second order. The question of whether the technique in \cite{Hamilton:/1982} applies is certainly of interest, remaining (as far as we know) an open question in general.
+The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. For the Ricci flow, \cite{MR697987} described a method to deal with this degeneracy by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. \cite{MR2207496} then adapted this approach to the XCF.
 
-But there is another approach to short time existence and uniqueness known as the DeTurck Trick, that also has the advantage of simplicity in comparison with the Nash-Moser approach. For the Ricci flow, \cite{MR697987} gave an alternative proof to short time existence and uniqueness by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. \cite{MR2207496} adapted this approach to the XCF to easily obtain existence. However, he is omitting the proof of uniqueness and to the opinion of the authors it remained a bit unclear why Buckland's gauge fixing leads to a valid argument for uniqueness. Below we will fill in this detail including its relation to the harmonic map heat flow as in \cite{MR1375255}. Anyhow also XCF enjoys the following result.
 \begin{thm}[{\cite[Lemma 4]{MR2055396}}; {\cite[Theorem 1]{MR2207496}}]
 \label{thm:xcf_existence_uniqueness}
 Given any initial smooth metric \(g\) of negative sectional curvature on a closed three-manifold \(N\), there exists a unique solution \(g_t\) to the XCF,
@@ -384,21 +383,51 @@ D'_s (u) = \partial_w|_{w=0} D(s + w u)
 \]
 is the linearisation of \(D\) around \(s\) acting on sections \(u \in \Gamma(E)\). Recall that the principal symbol, \(\sigma_{\xi} [D'_s]\) of \(D'_s\) is obtained by replacing second order derivatives in \(D'_s (u)\) by components of \(\xi\).
 
-Recall that \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. We may thus raise and lower indices using \(\Ein\) as well as take traces with \(\Ein\). However, rather than using \(\Ein\) directly to raise indices we use the metric raising of \(\Ein^{\sharp}\) defined on one-forms by \(\Ein^{\sharp} (\alpha, \beta) = E(\alpha^{\sharp}, \beta^{\sharp})\). Using the equivalent formulation of the Cross Curvature Tensor in \Cref{lem:xcf_equiv}, a straightforward computation yields:
+Recall that \(\Ein\) is positive definite when \(g\) has negative sectional curvature, hence \(\Ein\) is itself a metric. We may thus raise and lower indices using \(\Ein\) as well as take traces with \(\Ein\). However, rather than using \(\Ein\) directly to raise indices we use the metric raising of \(\Ein^{\sharp}\) defined on one-forms by \(\Ein^{\sharp} (\alpha, \beta) = E(\alpha^{\sharp}, \beta^{\sharp})\). The symbol may be conveniently computed using the equivalent formulation of the Cross Curvature tensor in \Cref{lem:xcf_equiv}.
 
-\begin{lemma}
+\begin{lemma}[{\cite[Lemma 4]{MR2055396}; \cite[Theorem 1]{MR2207496}}]
 \label{lem:xcf_symbol}
 The principal symbol of the cross curvature tensor is,
 \[
 \sigma_{\xi} [\adj\Ein_g] (V) = \abs{\xi}^2_{\Ein}V - 2 \Sym \xi \otimes V(\sharp_{\Ein}\xi, \cdot) + \Tr_{\Ein} V \xi \otimes \xi.
 \]
 \end{lemma}
-\begin{proof}
-See \cite[Lemma 4]{MR2055396} and \cite[Theorem 1]{MR2207496}.
-\end{proof}
+
+The degeneracy of the XCF is manifested in the second two terms. If they were absent, then the symbol would simply be \(V \mapsto \abs{\xi}^2_{\Ein} V\) which is clearly elliptic. However, the presence of the second two terms means that the symbol has a kernel and is hence not elliptic. This is what the DeTurck approach aims to address.
 
 \begin{proof}[Proof of \Cref{thm:xcf_existence_uniqueness}]
-{\color{red} Indicate why the standard harmonic map heat flow approach works to prove Thm. 3.4}
+We define the DeTurck XCF,
+\begin{equation}
+\label{eq:dtxcf}
+\partial_t g = \adj\Ein (g) + \Lie_W g =: \dtxcf
+\end{equation}
+where
+\[
+W = g_0^{-1} \dive \left(\Grav(g_0)\right)^{\sharp}.
+\]
+Then the symbol is
+\begin{equation}
+\label{eq:dtxcf_symbol}
+\sigma_{\xi} [\dtxcf_g] (V) = \abs{\xi}^2_{\Ein}V + 2 \Sym \xi \otimes V(\sharp \xi - \sharp_{\Ein}\xi, \cdot) + \left(\Tr_{\Ein} V - \Tr_g V\right) \xi \otimes \xi.
+\end{equation}
+The computation of the symbol of \(\Lie_W g\) is well known and is the same as that used for the Ricci flow. See \cite[Sections 3.3, 3.4]{MR2061425} and \cite[Chapter 5]{MR2265040}.
+
+That \(\sigma_{\xi}[\dtxcf_g]\) is elliptic is not readily apparent, however as in \cite{MR2207496}, taking a basis \(\{e_1 = \xi, e_2, e_3\}\) we have
+\[
+\sigma_{\xi} [\dtxcf_g] = \begin{pmatrix}
+1 & 0 & 0 & \Ein^{22}-1 & \Ein^{33}-1 & \Ein^{23} \\
+0 & 1 & 0 & -\Ein^{12} & 0 & -\Ein^{13} \\
+0 & 0 & 1 & 0 & -\Ein^{13} & -\Ein^{13} \\
+0 & 0 & 0 & \Ein^{11} & 0 & 0 \\
+0 & 0 & 0 & 0 & \Ein^{11} & 0 \\
+0 & 0 & 0 & 0 & 0 & \Ein^{11} \\
+\end{pmatrix}.
+\]
+Here \(\Ein^{ij} = \Ein(e_i^{\sharp}, e_j^{\sharp})\) so that \(\Ein^{11} = \Ein(\xi^{\sharp}, \xi^{\sharp}) \geq \min\{\lambda_i\} \abs{\xi}^2\) for \(\xi \ne 0\) and where \(\lambda_i\) are the eigenvalues of \(\Ein\). Uniform ellipticity is thus assured.
+
+Existence now follows easily since the DeTurck XCF \eqref{eq:dtxcf} is uniformly parabolic hence unique solutions exist given any smooth initial data. Then if \(\bar{g}\) denotes the solution, \(g = \varphi_t^{\ast} \bar{g}\) solves the XCF where \(\varphi_t\) is the flow of \(W\).
+
+For uniqueness, more work is required, but note that the vector field \(W\) is the same as that used for Ricci flow. Thus the same proof as for Ricci flow applies and we may appeal to \cite[Section 6]{MR1375255}. In the formulation used here, \(\varphi_t\) solves the harmonic map heat flow \((M, \bar{g}) \to (M, g_0)\). See \cite[Section 5.2]{MR2265040} and \cite[Sections 3.3, 3.4]{MR2061425} for details.
 \end{proof}
 
 \subsection{Identities For Non Integrable Solutions}

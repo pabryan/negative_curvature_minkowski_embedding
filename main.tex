@@ -565,11 +565,13 @@ Hence we have the identities
 
 The following results support \Cref{conj:chow_hamilton} that the XCF deforms arbitrary negatively curved metrics to a hyperbolic metric.
 
-Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \Ein \to 0\), then a singularity must occur. This is the basis of the following:
+Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \Ein \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\).
 
 \begin{prop}[{\cite[p. 8]{MR2055396}}]
 Let $T$ be the maximal time of smooth existence of XCF. Then \(\det \Ein > 0\) on \([0, T)\) and hence the sectional curvatures remain negative as long as the solution is smooth.
 \end{prop}
+
+Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \Ein = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \Ein\) has a positive lower bound.
 
 The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow should evolve negative curvature metrics to a hyperbolic metric. Note that by the arithmetic-geometric mean inequality applied to the eigenvalues of \(\Ein\), \(\tfrac{1}{3} \Tr_g \Ein \geq (\det \Ein)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature.
 

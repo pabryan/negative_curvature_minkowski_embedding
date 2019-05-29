@@ -436,24 +436,23 @@ One might try a similar approach for XCF, defining an appropriate \(W\) to cance
 \subsection{Basic Identities And Evolution Equations}
 \label{subsec:xcf_identities}
 
-The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). Since there are many traces and swapping slots in what follows, it is more convenient to use index notation.
+Now we give some fundamental identities and evolution equations for the study of the XCF. Since there are many traces and swapping slots in what follows, it is convenient to use index notation.
 
-For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)). Let us also define
-\[
+The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)). Let us also define
+\begin{equation}
+\label{eq:T}
 \T^{kij} = \Ein^{kl}\nabla_l \Ein^{ij}, \quad \T^i = V_{jk}\T^{ijk} = \Ein^{ij}\nabla_j \ln\det\opEin.
-\]
-We have the following \(O(3)\) irreducible decomposition of $\T^{ijk}$ with respect to the metric \(V\):
+\end{equation}
+From the irreducible decomposition of $\T^{ijk}$ under the action of \(O(3)\) via the metric \(V\) we have (\cite[p. 6]{MR2055396}),
 \[
-\T^{ijk}-\T^{jik} = \mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right)
+\T^{ijk}-\T^{jik} = \mathrm{L}^{ijk}-\mathrm{L}^{jik} + \frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right)
 \]
-where the traces of $\mathrm{L}^{ijk}$ with respect to $V$ are zero.
-
-The Devil tensor is defined by
+where the traces of $\mathrm{L}^{ijk}$ with respect to $V$ are zero. The Devil tensor is defined by
 \begin{equation}
 \label{eq:devil}
-\Dv^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik}
+\Dv^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik} = \T^{ijk}-\T^{jik} - \frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right).
 \end{equation}
-which satisfies the curvature-like identities
+It satisfies the curvature-like identities,
 \[
 \Dv^{ijk} = -\Dv^{jik},\quad \Dv^{ijk}+\Dv^{kij}+\Dv^{jki} = 0,
 \]
@@ -493,20 +492,43 @@ and hence
 \]
 \end{proof}
 
+To round out this section, let us point out some evolution equations. Define the operator,
+\begin{equation}
+\label{eq:box}
+\Box = \Tr_{\Ein^{\sharp}} \nabla^2 = \Ein^{ij} \nabla^2_{ij}.
+\end{equation}
+It is uniformly elliptic for each fixed \(t\) on any time interval \([0, \tau]\) on which \(\Ein > 0\).
+
+We have
+\begin{equation}
+\label{eq:dtEin}
+\partial_t \Ein^{ij} = \Box \Ein^{ij} - \nabla_{\ell} \Ein^{ki} \nabla_k \Ein^{\ell j} - 4 \det \opEin g^{ij}.
+\end{equation}
+and
+\begin{equation}
+\label{eq:dtdetEin}
+\partial_t \det \opEin = \Box \det \opEin - \frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 + \frac{1}{2}\abs{D^{ijk}}_V^2 - 2\Tr\opEin.
+\end{equation}
+Equation \eqref{eq:dtEin} is obtained by combining \cite[Lemma 1(a)]{MR2055396} (a variant of the contracted second Bianchi identity) with \cite[Lemma 5]{MR2055396} giving the evolution of \(\Ein\). Equation \eqref{eq:dtdetEin} is then obtained from \eqref{eq:dtEin} using \eqref{eq:T}.
+
+The maximum principle cannot be immediately applied to ensure positivity of \(\Ein\) (and hence negative sectional curvature) is preserved since the last term of each equation has the wrong sign. However, a slightly less direct approach using the evolution of \(\det \opEin\) effectively leads to the desired conclusion (\Cref{prop:negative_perserved}).
+
 \subsection{Towards Hyperbolic Convergence}
 \label{subsec:xcf_hyperbolic_convergence}
 
 The following results support \Cref{conj:chow_hamilton} that the XCF deforms arbitrary negatively curved metrics to a hyperbolic metric.
 
-Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \opEin \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\).
+Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \opEin \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\). A slight variation on the standard maximum principle applied to equation \eqref{eq:dtdetEin} yields:
 
 \begin{prop}[{\cite[p. 8]{MR2055396}}]
+\label{prop:negative_perserved}
+
 Let $T$ be the maximal time of smooth existence of XCF. Then \(\det \opEin > 0\) on \([0, T)\) and hence the sectional curvatures remain negative as long as the solution is smooth.
 \end{prop}
 
 Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \opEin = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \opEin\) has a positive lower bound.
 
-The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow should evolve negative curvature metrics to a hyperbolic metric. Note that by the arithmetic-geometric mean inequality applied to the eigenvalues of \(\Ein\), \(\tfrac{1}{3} \Tr_g \Ein \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature.
+The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow should evolve negative curvature metrics to a hyperbolic metric. Note that by the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
@@ -581,9 +603,9 @@ is non-decreasing. Moreover, \(\frac{d}{dt} I(M_t)= 0\) if and only if \(\Ob\) i
 \begin{proof}
 By \cite[Proposition 9]{MR2055396}, we have
 \[
-(\partial_t-\Box)(\det\opEin)^\eta = \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V-2\eta\Tr\opEin\right)(\det\opEin)^\eta,
+(\partial_t - \Box) (\det\opEin)^\eta = \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V - 2\eta\Tr\opEin\right)(\det\opEin)^\eta,
 \]
-Integrating by parts gives the identity
+where \(\Box\) is defined in \eqref{eq:box}. Integrating by parts gives the identity
 \[
 \frac{d}{dt}\int(\det\opEin)^\eta d\mu = \int \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V + (1-2\eta)\Tr\opEin\right)(\det\opEin)^\eta d\mu.
 \]

@@ -436,58 +436,61 @@ One might try a similar approach for XCF, defining an appropriate \(W\) to cance
 \subsection{Basic Identities And Evolution Equations}
 \label{subsec:xcf_identities}
 
-The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}).
+The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). Since there are many traces and swapping slots in what follows, it is more convenient to use index notation.
 
-We start by defining \(V_{ij}=(\Ein^{-1})^{kl}g_{ik}g_{lj}\)
-and
-\begin{align}
-u&=\log\det\opEin,\quad
-\Ob_{ij}=\sqrt{\det\opEin}V_{ij},\\
-\T^{kij}&=\Ein^{kl}\nabla_l \Ein^{ij},\quad \T^i=V_{jk}\T^{ijk}=\Ein^{ij}\nabla_ju.
-\end{align}
-We have the following \(O(3)\) irreducible decomposition of $\T^{ijk}:$
-\begin{align}
-\T^{ijk}-\T^{jik}&=\mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right)
-\end{align}
-where the traces of $\mathrm{L}^{ijk}$ with respect to $V_{kl}$ are zero.
+For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)). Let us also define
+\[
+\T^{kij} = \Ein^{kl}\nabla_l \Ein^{ij}, \quad \T^i = V_{jk}\T^{ijk} = \Ein^{ij}\nabla_j \ln\det\opEin.
+\]
+We have the following \(O(3)\) irreducible decomposition of $\T^{ijk}$ with respect to the metric \(V\):
+\[
+\T^{ijk}-\T^{jik} = \mathrm{L}^{ijk}-\mathrm{L}^{jik}+\frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right)
+\]
+where the traces of $\mathrm{L}^{ijk}$ with respect to $V$ are zero.
 
 The Devil tensor is defined by
 \begin{equation}
 \label{eq:devil}
 \Dv^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik}
 \end{equation}
-and it satisfies interesting identities such as
-\begin{align}
-\Dv^{ijk}=&-\Dv^{jik},\quad \Dv^{ijk}+\Dv^{kij}+\Dv^{jki}=0,\\
+which satisfies the curvature-like identities
+\[
+\Dv^{ijk} = -\Dv^{jik},\quad \Dv^{ijk}+\Dv^{kij}+\Dv^{jki} = 0,
+\]
+and trace identities,
+\begin{align*}
 V_{ij}\Dv^{ijk}=&V_{ik}\Dv^{ijk}=V_{jk}\Dv^{ijk}=0,\\
 V_{ij}\nabla_k\Dv^{kij}=&\frac{1}{2}|\Dv^{ijk}|_V^2.
-\end{align}
+\end{align*}
 
 \begin{lemma}
 \label{lem:cubicform_codazzi}
 
 We have the following identity.
-\begin{align}
+\[
 |\Dv^{ijk}|_V^2=\frac{1}{\det\opEin}|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
-\end{align}
+\]
 In particular, \(\Dv\equiv 0\) if and only if \(\Ob\) is Codazzi.
 \end{lemma}
 
 \begin{proof}
 Using the definition we calculate
-\begin{align}
-\T^{kij}=&-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l V_{mn}=-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l (e^{-\frac{1}{2}u}\Ob_{mn})\\
+\begin{align*}
+\T^{kij}=&-\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l V_{mn} = -\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l \left(\frac{1}{\sqrt{\det\opEin}} \Ob_{mn}\right)\\
 =&-\frac{1}{\sqrt{\det\opEin}}\Ein^{kl}\Ein^{im}\Ein^{jn}\nabla_l \Ob_{mn}+\frac{1}{2}\T^k\Ein^{ij}.
-\end{align}
+\end{align*}
 Thus we obtain
 \begin{align*}
 \T^{kij}-\T^{ikj}=&\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\opEin}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)+\frac{1}{2}(\T^k\Ein^{ij}-\T^i\Ein^{kj}).
 \end{align*}
-Hence we have the identities
-\begin{align}
-\Dv^{kij}&=\frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\opEin}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)\\
-|\Dv^{ijk}|_V^2\det\opEin&=|\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
-\end{align}
+Then by definition,
+\[
+\Dv^{kij} = \frac{\Ein^{kl}\Ein^{im}\Ein^{jn}}{\sqrt{\det\opEin}}\left(\nabla_m \Ob_{ln}-\nabla_l \Ob_{mn}\right)
+\]
+and hence
+\[
+|\Dv^{ijk}|_V^2\det\opEin = |\nabla_i\Ob_{jk}-\nabla_j\Ob_{ik}|_{\Ein}^2.
+\]
 \end{proof}
 
 \subsection{Towards Hyperbolic Convergence}
@@ -577,17 +580,17 @@ is non-decreasing. Moreover, \(\frac{d}{dt} I(M_t)= 0\) if and only if \(\Ob\) i
 
 \begin{proof}
 By \cite[Proposition 9]{MR2055396}, we have
-\begin{align}
-(\partial_t-\Box)(\det\opEin)^\eta=(\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V-2\eta\mathrm{H})(\det\opEin)^\eta,
-\end{align}
-where $\mathrm{H}=\operatorname{Tr}_g\sigma.$ Therefore, we have the identity
-\begin{align}
-\frac{d}{dt}\int(\det\opEin)^\eta d\mu=\int (\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V+(1-2\eta)\mathrm{H})(\det\opEin)^\eta d\mu.
-\end{align}
+\[
+(\partial_t-\Box)(\det\opEin)^\eta = \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2+\frac{\eta}{2}(1-2\eta)|\T^i|^2_V-2\eta\Tr\opEin\right)(\det\opEin)^\eta,
+\]
+Integrating by parts gives the identity
+\[
+\frac{d}{dt}\int(\det\opEin)^\eta d\mu = \int \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V + (1-2\eta)\Tr\opEin\right)(\det\opEin)^\eta d\mu.
+\]
 In particular, for $\eta=\frac{1}{2}$ we obtain
-\begin{align}
-\frac{d}{dt}I(M_t)=\frac{1}{4}\int |\Dv^{ijk}|_V^2\sqrt{\det\opEin}d\mu
-\end{align}
+\[
+\frac{d}{dt}I(M_t) = \frac{1}{4}\int |\Dv^{ijk}|_V^2\sqrt{\det\opEin}d\mu
+\]
 and monotonicity follows. Now apply \Cref{lem:cubicform_codazzi} and \Cref{thm:intg_embed} to obtain the second part.
 \end{proof}
 

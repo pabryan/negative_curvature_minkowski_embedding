@@ -131,7 +131,7 @@ We define the Einstein tensor by
 
 We may write the Ricci decomposition of the curvature tensor in three dimensions in the form
 \[
-\Rm = -\Ein \owedge g + \frac{\Tr_g \Ein}{2} g \owedge g
+\Rm = -\Ein \owedge g + \frac{\Tr \opEin}{2} g \owedge g
 \]
 where \(\owedge\) denotes the Kulkarni-Nomizu product. The sectional curvatures are
 \[
@@ -145,7 +145,7 @@ The curvature operator \(\opRm\) is defined by
 Then from the Ricci decomposition, given an orthonormal basis of eigenvectors \(E_i\) for \(\Ein\) with eigenvalues \(\lambda_i\) we have
 \[
 \begin{split}
-g(\opRm(E_i \wedge E_j), E_p \wedge E_q) &= -\Ein \owedge g (E_i \wedge E_j, E_p \wedge E_q) + \frac{\Tr_g \Ein}{2} g \owedge g (E_i \wedge E_j, E_p \wedge E_q) \\
+g(\opRm(E_i \wedge E_j), E_p \wedge E_q) &= \left(-\Ein \owedge g + \frac{\Tr \opEin}{2} g \owedge g\right) (E_i \wedge E_j, E_p \wedge E_q) \\
 &= - \Ein(E_i, E_p) g(E_j, E_q) - g(E_i, E_p) \Ein(E_j, E_q) \\
 &\quad + \Ein(E_i, E_q) g(E_j, E_p) + g(E_i, E_q) \Ein(E_j, E_p) \\
 &\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
@@ -224,7 +224,7 @@ Now we may give an intrinsic characterisation of when \((\tilde{M}, \tilde{g})\)
 \begin{thm}[Integrability implies isometric embeddability]
 \label{thm:intg_embed}
 
-Let \((M, g)\) be a compact Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi if and only if the Riemannian universal cover \((\tilde{M}, \tilde{g})\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
+Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi if and only if the Riemannian universal cover \((\tilde{M}, \tilde{g})\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
 \end{thm}
 
 \begin{proof}
@@ -539,7 +539,7 @@ Let $T$ be the maximal time of smooth existence of XCF. Then \(\det \opEin > 0\)
 
 Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \opEin = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \opEin\) has a positive lower bound.
 
-The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow should evolve negative curvature metrics to a hyperbolic metric. Note that by the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
+The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
@@ -629,7 +629,7 @@ and monotonicity follows. Now apply \Cref{lem:cubicform_codazzi} and \Cref{thm:i
 
 \section*{Acknowledgments}
 
-Parts of this work were written while JS was enjoying the hospitality of the Department of Mathematics at Columbia University in New York, a visit which is funded by the "Deutsche Forschungsgemeinschaft" (DFG, German research foundation) within the research scholarship "Quermassintegral preserving local curvature flows", grant number SCHE 1879/3-1. JS would like to thank the DFG, Columbia University and especially Prof. Simon Brendle for their support. PB was supported by the ARC within the research grant “Analysis of fully non-linear geometric problems and differential equations”, number DE180100110.
+Parts of this work were written while JS enjoyed the hospitality of the Department of Mathematics at Columbia University in New York, a visit which is funded by the "Deutsche Forschungsgemeinschaft" (DFG, German research foundation) within the research scholarship "Quermassintegral preserving local curvature flows", grant number SCHE 1879/3-1. JS would like to thank the DFG, Columbia University and especially Prof. Simon Brendle for their support. PB was supported by the ARC within the research grant “Analysis of fully non-linear geometric problems and differential equations”, number DE180100110.
 
 
 \printbibliography

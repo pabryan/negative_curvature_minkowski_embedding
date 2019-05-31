@@ -61,7 +61,7 @@ A closed three-manifold admitting a metric of negative sectional curvature also 
 
 Thurston proved this result for atoroidal Haken manifolds, and the general result is a consequence of geometrisation as proven by Hamilton and Perelman. The route to hyperbolisation via geometrisation is quite indirect since the Ricci flow does not generally preserve negative curvature in dimensions greater than two and furthermore, singularities may form along the Ricci flow so that surgery is necessary. The decomposition obtained in \Cref{thm:geometrisation} is not unique so that the Ricci flow with surgery need not produce the hyperbolic geometry in the limit. \Cref{thm:hyperbolisation} is deduced a posteriori from the geometrisation conjecture rather than as a direct consequence the Ricci flow.
 
-Resolving \Cref{conj:chow_hamilton} by removing the integrability condition of \Cref{thm:intg_const_curv} would give a more direct proof of hyperbolisation, while strengthening the result to the statement that arbitrary negatively curved metrics are homotopic to a hyperbolic metric. Note that by the Mostow rigidity theorem \cite{MR0236383}, hyperbolic structures are classified by fundamental group and are essentially unique. That is, if the fundamental group \(\pi_1(M_1)\) of a closed hyperbolic manifold, \((M_1, g_1)\) is isomorphic to a \(\pi_1(M_2)\) for another hyperbolic manifold \((M_2, g_2)\), then in fact \((M_1, g_1)\) and \((M_2, g_2)\) are isometric. Equivalently, any homotopy equivalence of hyperbolic manifolds may in fact be homotopied to an isometry. Then \Cref{conj:chow_hamilton} would show that the space of negatively metrics on a hyperbolic three-manifold is contractible.
+Resolving \Cref{conj:chow_hamilton} by removing the integrability condition of \Cref{thm:intg_const_curv} would give a more direct proof of hyperbolisation, while strengthening the result to the statement that arbitrary negatively curved metrics are homotopic to a hyperbolic metric. Note that by the Mostow rigidity theorem \cite{MR0236383}, hyperbolic structures are classified by fundamental group and are essentially unique. That is, if the fundamental group \(\pi_1(M_1)\) of a closed hyperbolic manifold, \((M_1, g_1)\) is isomorphic to a \(\pi_1(M_2)\) for another hyperbolic manifold \((M_2, g_2)\), then in fact \((M_1, g_1)\) and \((M_2, g_2)\) are isometric. Equivalently, any homotopy equivalence of hyperbolic manifolds may in fact be homotopied to an isometry. Then \Cref{conj:chow_hamilton} would show that the space of negatively curved metrics on a hyperbolic three-manifold is contractible.
 
 \section{Embeddability and hyperbolic metrics}
 \label{sec:embed_intg}
@@ -94,7 +94,7 @@ Let \((M, g)\) be a compact manifold of strictly negative sectional curvature. T
 \end{lemma}
 
 \begin{proof}
-(i)\(\ \Rightarrow\ \)(ii) 
+(i)\(\ \Rightarrow\ \)(ii)
 The pullback of a constant curvature metric under the Riemannian covering $\pi$ is the hyperbolic one, which is thus \(G\)-invariant.
 
 (ii)\(\ \Rightarrow\ \)(iii)
@@ -127,7 +127,7 @@ Then the Ricci and scalar curvature are defined by
 where $\Tr$ is the trace of an endomorphism and $\Tr_{g}$ is the trace of a bilinear form with respect to the metric $g$.
 
 We define the Einstein tensor by
-\eq{\Ein=\Ric-\frac{\Sc}{2}g.} 
+\eq{\Ein=\Ric-\frac{\Sc}{2}g.}
 
 We may write the Ricci decomposition of the curvature tensor in three dimensions in the form
 \[
@@ -146,13 +146,13 @@ Then from the Ricci decomposition, given an orthonormal basis of eigenvectors \(
 \[
 \begin{split}
 g(\opRm(E_i \wedge E_j), E_p \wedge E_q) &= \left(-\Ein \owedge g + \frac{\Tr \opEin}{2} g \owedge g\right) (E_i \wedge E_j, E_p \wedge E_q) \\
-&= - \Ein(E_i, E_p) g(E_j, E_q) - g(E_i, E_p) \Ein(E_j, E_q) \\
-&\quad + \Ein(E_i, E_q) g(E_j, E_p) + g(E_i, E_q) \Ein(E_j, E_p) \\
-&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
-&= - \lambda_i g(E_i, E_p) g(E_j, E_q) - \lambda_j g(E_i, E_p) g(E_j, E_q) \\
-&\quad + \lambda_i g(E_i, E_q) g(E_j, E_p) + \lambda_j g(E_i, E_q) g(E_j, E_p) \\
-&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
-&= (\Tr_g \Ein - \lambda_i - \lambda_j) g(E_i \wedge E_j, E_p \wedge E_q) \\
+%&= - \Ein(E_i, E_p) g(E_j, E_q) - g(E_i, E_p) \Ein(E_j, E_q) \\
+%&\quad + \Ein(E_i, E_q) g(E_j, E_p) + g(E_i, E_q) \Ein(E_j, E_p) \\
+%&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
+%&= - \lambda_i g(E_i, E_p) g(E_j, E_q) - \lambda_j g(E_i, E_p) g(E_j, E_q) \\
+%&\quad + \lambda_i g(E_i, E_q) g(E_j, E_p) + \lambda_j g(E_i, E_q) g(E_j, E_p) \\
+%&\quad + \Tr_g \Ein g(E_i \wedge E_j, E_p \wedge E_q) \\
+%&= (\Tr_g \Ein - \lambda_i - \lambda_j) g(E_i \wedge E_j, E_p \wedge E_q) \\
 &= g(\lambda_k E_i \wedge E_j, E_p \wedge E_q).
 \end{split}
 \]
@@ -188,7 +188,7 @@ D_{F_{\ast} X} F_{\ast} Y = F_{\ast} \nabla_X Y + A(X,Y)\nu.
 We also define the Weingarten map via
 \[
 A(X, Y) =  g(\W(X), Y)
-\] 
+\]
 and write $H = \Tr_{g}A = \Tr \W$.
 
 The basic equations of hypersurfaces (Gauss equation) in Minkowski space are
@@ -203,7 +203,7 @@ The basic equations of hypersurfaces (Gauss equation) in Minkowski space are
 We can also relate the eigenvalues $\lambda_{i}$ of $\opEin$ with the principal curvatures $\kappa_{i}$ of the embedding. Namely, for distinct indices \(i,j,k\) we calculate with the help of \eqref{eq:gauss},
 \eq{
 \lambda_k & = \kappa_k^2 - \kappa_k \sum_l \kappa_l - \frac{\sum_l \kappa_l^2 - (\sum_l \kappa_l)^2}{2} \\
-&= - \kappa_k \kappa_i - \kappa_k \kappa_j + \kappa_k \kappa_i + \kappa_k \kappa_j + \kappa_i \kappa_j \\
+%&= - \kappa_k \kappa_i - \kappa_k \kappa_j + \kappa_k \kappa_i + \kappa_k \kappa_j + \kappa_i \kappa_j \\
 &= \kappa_i \kappa_j.
 }
 
@@ -235,7 +235,7 @@ Conversely, suppose \(\Ob\) is Codazzi. Since $\Ob$ solves the contracted Gauss 
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
 A(F) &= \Ob
 \end{align*}
-for \(F\). See for example \cite{MR1713298}[Theorem 7] for a similar argument in \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
+for \(F\). See for example \cite{MR1713298}[Theorem 7] and for a similar argument \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
 
 Since \((\tilde{M}, \tilde{g})\) is the universal cover of \((M, g)\) with strictly negative sectional curvature, \(\tilde{M}\) is diffeomorphic to \(\R^3\) by the Cartan-Hadamard theorem and we can globally integrate to obtain \(F\).
 \end{proof}
@@ -245,7 +245,7 @@ Since \((\tilde{M}, \tilde{g})\) is the universal cover of \((M, g)\) with stric
 
 By \Cref{thm:intg_embed} we may embed \((\tilde{M}, \tilde{g})\) into Minkowski space as a locally convex, co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the rescaled Gauss curvature flow deforms \((\tilde{M}, \tilde{g})\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus the flow provides a smooth homotopy from \((\tilde{M}, \tilde{g})\) to \((\tilde{M}, \tilde{g}_{\H})\).
 
-According to \cite[11. Application to the cross-curvature flow]{MR3344442} (see also \Cref{lem:xcf_gcf}), the induced metric \(\tilde{g}_t\) on \(\tilde{M}\) evolves by the Cross Curvature Flow introduced in \cite{MR2055396} (see also \Cref{lem:xcf_gcf} below):
+According to \cite[Section 11]{MR3344442} (see also \Cref{lem:xcf_gcf}), the induced metric \(\tilde{g}_t\) on \(\tilde{M}\) evolves by the Cross Curvature Flow introduced in \cite{MR2055396} (see also \Cref{lem:xcf_gcf} below):
 \[
 \begin{cases}
 \partial_t \tilde{g}_t &= 2\det E(\tilde{g}_{t}) E^{-1}(\tilde{g}_{t}) \\
@@ -304,7 +304,7 @@ where \(i,k,\ell\) are distinct indices. Thus
 \end{equation}
 The tensor \(\adj\Ein\) is referred to as the \emph{cross curvature tensor}. The origin of the name is that the \(i\)'th eigenvalue of \(\adj\Ein\) is the ``cross terms'' \(\lambda_k \lambda_{\ell}\) of the remaining eigenvalues.
 
-There is an equivalent ways to write \(\adj\Ein\) in three dimensions. In fact, both these definitions make sense in any dimension, however it is only in three dimensions that they coincide.
+There is an equivalent way to write \(\adj\Ein\) in three dimensions. In fact, both these definitions make sense in any dimension, however it is only in three dimensions that they coincide.
 \begin{lemma}
 \label{lem:xcf_equiv}
 
@@ -518,7 +518,7 @@ We have
 and
 \begin{equation}
 \label{eq:dtdetEin}
-\partial_t \det \opEin = \Box \det \opEin - \frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 + \frac{1}{2}\abs{D^{ijk}}_V^2 - 2\Tr\opEin.
+\partial_t \det \opEin = \Box \det \opEin -\left(\frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 - \frac{1}{2}\abs{D^{ijk}}_V^2 + 2\Tr\opEin\right)\det \opEin.
 \end{equation}
 Equation \eqref{eq:dtEin} is obtained by combining \cite[Lemma 1(a)]{MR2055396} (a variant of the contracted second Bianchi identity) with \cite[Lemma 5]{MR2055396} giving the evolution of \(\Ein\). Equation \eqref{eq:dtdetEin} is then obtained from \eqref{eq:dtEin} using \eqref{eq:T}.
 
@@ -544,7 +544,7 @@ The following monotonicity property supports \Cref{conj:chow_hamilton} that the 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
 Under the XCF
-\[J(M_t):=\int \frac{1}{3} Tr \opEin - (\det\opEin)^{\frac{1}{3}}d\mu\]
+\[J(M_t):=\int \frac{1}{3} \Tr \opEin - (\det\opEin)^{\frac{1}{3}}d\mu\]
 is non-increasing. Moreover, \(\frac{d}{dt}J(M_t) = 0\) if and only if $g$ has constant curvature.
 \end{thm}
 
@@ -589,7 +589,7 @@ Solitons are closely related to the Harnack inequality. They are fixed points of
 The only breathers, hence also solitons to the XCF are constant curvature metrics.
 \end{thm}
 
- This follows since Einstein volume is monotone non-decreasing (\Cref{thm:hyperbolicity}) and is strictly decreasing in non-constant sectional curvature. By the scaling of \(J\) then \(\lambda \leq 1\) with strict inequality in non-constant sectional curvature. On the other hand, the volume is monotone increasing,
+ This follows since $J$ is monotone non-decreasing (\Cref{thm:hyperbolicity}) and is strictly decreasing in non-constant sectional curvature. By the scaling of \(J\) then \(\lambda \leq 1\) with strict inequality in non-constant sectional curvature. On the other hand, the volume is monotone increasing,
 \[
 \partial_t \operatorname{Vol}_g (M) = \int_M \Tr_g \Ein d\mu > 0
 \]

@@ -23,11 +23,11 @@ This short note is a mostly expository article examining negatively curved three
 \section{Introduction}
 \label{sec:intro}
 
-In the early 1980's, \cite{MR648524} announced the Geometrisation Conjecture. At around the same time, \cite{Hamilton:/1982} introduced the Ricci flow. The Geometrisation Conjecture claimed that closed three-manifolds could be decomposed into pieces modelled on geometric structures of eight possible types, while the Ricci flow deformed metrics by their Ricci curvature. At that time, Thurston classified the possible geometric structures into the eight types and proved the Geometrisation Conjecture for Haken manifolds, while Hamilton obtained convergence to a constant sectional curvature metric provided the initial metric has positive Ricci curvature.
+In the early 1980's, Thurston announced the Geometrisation Conjecture \cite{MR648524}. At around the same time, Hamilton introduced the Ricci flow \cite{Hamilton:/1982}. The Geometrisation Conjecture claimed that closed three-manifolds could be decomposed into pieces modelled on geometric structures of eight possible types, while the Ricci flow deformed metrics by their Ricci curvature. At that time, Thurston classified the possible geometric structures into the eight types and proved the Geometrisation Conjecture for Haken manifolds, while Hamilton obtained convergence to a constant sectional curvature metric provided the initial metric has positive Ricci curvature.
 
 Needless to say, both these seminal works sparked off tremendous developments continuing to this day. A crowning achievement was Perelman's resolution of the Geometrisation Conjecture using the Ricci flow with surgery \cite{2003math......7245P,2003math......3109P,2002math.....11159P}. The legend goes that at the urging of Yau, Hamilton initiated a program to use the Ricci flow to prove the Geometrisation Conjecture. Roughly speaking, the Ricci flow  tends to smooth out irregularities in curvature, but singularities may occur. Hamilton outlined an approach to cut out the singularities with analytically controlled topological surgeries and continue the flow. Perelman proved that this process does indeed work, with only finitely many such surgeries required after which the remaining pieces converge to one of Thurston's eight model geometries. Tracing the process back provides the necessary decomposition to resolve the Geometrisation Conjecture.
 
-Of the eight geometries, essentially only the hyperbolic geometries are not fully understood. All the other seven cases may be enumerated in a similar fashion to the uniformisation of surfaces. Around the time Perelman was completing his work on the Ricci flow, \cite{MR2055396} introduced a new flow, the Cross Curvature Flow (XCF). This flow deforms initially negatively curved metrics (also positive but we won't focus on that case) by a fully nonlinear parabolic equation. The Ricci flow is to the heat equation as the XCF is to a Monge-Amper\'e equation. The aim of the XCF is to deform negatively curved metrics to hyperbolic metrics thus illuminating the structure of the eighth and least understood model geometry, namely the hyperbolic geometies.
+Of the eight geometries, essentially only the hyperbolic geometries are not fully understood. All the other seven cases may be enumerated in a similar fashion to the uniformisation of surfaces. Around the time Perelman was completing his work on the Ricci flow, Chow and Hamilton introduced a new flow, the Cross Curvature Flow (XCF) \cite{MR2055396}. This flow deforms initially negatively curved metrics (also positive but we won't focus on that case) by a fully nonlinear parabolic equation. The Ricci flow is to the heat equation as the XCF is to a Monge-Amper\'e equation. The aim of the XCF is to deform negatively curved metrics to hyperbolic metrics thus illuminating the structure of the eighth and least understood model geometry, namely the hyperbolic geometies.
 
 Here we will examine the status of this program, describing the known results to date and drawing together some observations made in the literature. We will touch on some of the difficulties faced in this program with the hope of reinvigorating the study of the XCF so that fresh insights may yield new results for this fascinating flow.
 
@@ -44,7 +44,7 @@ The geometrisation conjecture may be stated as follows:
 Every closed three manifold decomposes as a connected sum of prime manifolds, each of which may be cut along tori so that the interior of the resulting manifolds each admits a unique geometric structure of with finite volume from among a possible eight types.
 \end{thm}
 
-A prime manifold is simply a manifold that cannot be written as a non-trivial connected sum. The decomposition into prime manifolds was given by \cite{MR0142125}. To say that \(M\) admits a geometric structure is to say that \(M\) is diffeomorphic to \(X/\Gamma\) where \(X\) is a \(G\)-manifold for some Lie group \(G\) acting transitively on \(X\) with compact stabilisers, and \(\Gamma\) is a discrete subgroup of \(G\) acting freely on \(X\). The classification into eight types of finite volume geometric structures was given by Thurston. Finally the remaining part of the theorem, that such a decomposition of prime manifolds exists was proven by Hamilton and Perelman using the Ricci flow with surgery. The eight geometries are
+A prime manifold is simply a manifold that cannot be written as a non-trivial connected sum. The decomposition into prime manifolds was given in \cite{MR0142125}. To say that \(M\) admits a geometric structure is to say that \(M\) is diffeomorphic to \(X/\Gamma\) where \(X\) is a \(G\)-manifold for some Lie group \(G\) acting transitively on \(X\) with compact stabilisers, and \(\Gamma\) is a discrete subgroup of \(G\) acting freely on \(X\). The classification into eight types of finite volume geometric structures was given by Thurston. Finally the remaining part of the theorem, that such a decomposition of prime manifolds exists was proven by Hamilton and Perelman using the Ricci flow with surgery. The eight geometries are
 \[
 \R^3, \S^3, \H^3, \S^2 \times \R, \H^2 \times \R, \widetilde{SL}_2(\R), \operatorname{Nil}, \operatorname{Solv}.
 \]
@@ -227,7 +227,7 @@ Conversely, suppose \(\Ob\) is Codazzi. Since $\Ob$ solves the contracted Gauss 
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
 A(F) &= \Ob
 \end{align*}
-for \(F\). See for example \cite{MR1713298}[Theorem 7] and for a similar argument \cite{MR1013365}[Chapter VI.12, p. 146 and Theorem V, p.393].
+for \(F\). See for example \cite[Theorem 7]{MR1713298} and for a similar argument \cite[Chapter VI.12, p. 146 and Theorem V, p.393]{MR1013365}.
 
 Since \((\tilde{M}, \tilde{g})\) is the universal cover of \((M, g)\) with strictly negative sectional curvature, \(\tilde{M}\) is diffeomorphic to \(\R^3\) by the Cartan-Hadamard theorem and we can globally integrate to obtain \(F\).
 \end{proof}
@@ -255,7 +255,7 @@ The following conjecture suggests the integrability assumption in \Cref{thm:intg
 The XCF deforms arbitrary negatively curved metrics to a hyperbolic metric.
 \end{conj}
 
-Evidence for this conjecture includes convergence in the integrable case from \Cref{thm:intg_const_curv}, asymptotic stability of the hyperbolic metric under XCF (\cite{MR2448593}, \Cref{thm:hyperbolic_stability}, monotonicity of an integral quantity measuring the deviation from constant curvature (\cite{MR2055396}, \Cref{thm:hyperbolicity}) as well as some results for other special cases like long time existence for the \(2\pi\)-metric of Gromov and Thurston on solid tori, and locally homogeneous solutions \cite{}.
+Evidence for this conjecture includes convergence in the integrable case from \Cref{thm:intg_const_curv}, asymptotic stability of the hyperbolic metric under XCF (\cite{MR2448593} and \Cref{thm:hyperbolic_stability} below), monotonicity of an integral quantity measuring the deviation from constant curvature (\cite{MR2055396} and \Cref{thm:hyperbolicity} below).
 
 \section{The Cross Curvature Flow}
 \label{sec:xcf}
@@ -361,7 +361,7 @@ so that
 \subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
 
-The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. For the Ricci flow, \cite{MR697987} described a method to deal with this degeneracy by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. \cite{MR2207496} then adapted this approach to the XCF, while also pointing out a gap in the original proof of short time existence and uniqueness for XCF.
+The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. For the Ricci flow, DeTurck described a method to deal with this degeneracy by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow \cite{MR697987}. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. Buckland then adapted this approach to the XCF, while also pointing out a gap in the original proof of short time existence and uniqueness for XCF \cite{MR2207496} (see \Cref{rem:xcf_rf} below).
 
 \begin{thm}[{\cite[Lemma 4]{MR2055396}}; {\cite[Theorem 1]{MR2207496}}]
 \label{thm:xcf_existence_uniqueness}
@@ -414,11 +414,13 @@ Then the symbol is
 \end{equation}
 The computation of the symbol of \(\Lie_W g\) is well known and is the same as that used for the Ricci flow. See \cite{MR2207496}, \cite[Sections 3.3, 3.4]{MR2061425} or \cite[Chapter 5]{MR2265040}.
 
-That \(\sigma_{\xi}[\dtxcf_g]\) is uniformly elliptic is not readily apparent, but this is what \cite{MR2207496} shows. Existence now follows easily since the DeTurck XCF \eqref{eq:dtxcf} is uniformly parabolic hence unique solutions exist given any smooth initial data. Then if \(\bar{g}\) denotes the solution of the DeTurck XCF, \(g = \varphi_t^{\ast} \bar{g}\) solves the XCF where \(\varphi_t\) is the flow of \(W\).
+That \(\sigma_{\xi}[\dtxcf_g]\) is uniformly elliptic is not readily apparent, but this is what Buckland shows \cite{MR2207496}. Existence now follows easily since the DeTurck XCF \eqref{eq:dtxcf} is uniformly parabolic hence unique solutions exist given any smooth initial data. Then if \(\bar{g}\) denotes the solution of the DeTurck XCF, \(g = \varphi_t^{\ast} \bar{g}\) solves the XCF where \(\varphi_t\) is the flow of \(W\).
 
 For uniqueness, more work is required, but note that the vector field \(W\) is the same as that used for Ricci flow. Thus the same proof as for Ricci flow applies and we may appeal to \cite[Section 6]{MR1375255}. In the formulation used here, \(\varphi_t\) solves the harmonic map heat flow \((M, \bar{g}) \to (M, g_0)\). See \cite[Section 5.2]{MR2265040} and \cite[Sections 3.3, 3.4]{MR2061425} for details.
 
 \begin{rem}
+\label{rem:xcf_rf}
+
 For the Ricci flow, the DeTurck Ricci flow is defined to be
 \[
 \partial_t g = -2\Ric (g) + \Lie_{W} g =: \dtrf (g)
@@ -585,7 +587,7 @@ Any constant curvature metric is asymptotically stable under the XCF after suita
 \subsection{Harnack inequality And Solitons}
 \label{subsec:xcf_harnack_solitons}
 
-Differential Li-Yau-Hamilton Harnack inequalities have proved an indispensable tool in the study of curvature flows. For the XCF, \cite[p. 9]{MR2055396} remarked that it is hoped such an inequality holds. For integrable solutions of the XCF this is true. In general, the non-vanishing of the Devil Tensor \eqref{eq:devil} causes significant difficulties in obtaining a Harnack inequality. The evolution of the devil tensor is very complicated and it's not clear whether or not it is amenable to the  maximum principle.
+Differential Li-Yau-Hamilton Harnack inequalities have proved an indispensable tool in the study of curvature flows. For the XCF, \cite[p. 9]{MR2055396} remarked that it is hoped such an inequality holds. For integrable solutions of the XCF this is true by proving the analogous Harnack inequality for the corresponding solution of the embedded Gauss curvature flow. In general, the non-vanishing of the Devil Tensor \eqref{eq:devil} causes significant difficulties in obtaining a Harnack inequality. The evolution of the devil tensor is very complicated and it's not clear whether or not it is amenable to the  maximum principle.
 
 \begin{thm}(\cite[Section 6]{BIS4})
 \label{thm:harnack}

@@ -405,7 +405,7 @@ The proof of \Cref{thm:xcf_existence_uniqueness} makes us of the DeTurck XCF,
 \end{equation}
 where
 \[
-W = g_0^{-1} \dive \left(g_0 - \frac{1}{2}\Tr_g g_0\right)^{\sharp}.
+W = g_0^{-1} \dive_g \left(g_0 - \frac{1}{2}\Tr_g g_0\right)^{\sharp}.
 \]
 Then the symbol is
 \begin{equation}
@@ -431,17 +431,37 @@ Then for the DeTurck Ricci flow, the last two terms cancel and the symbol for th
 \[
 \sigma_{\xi} [\dtrf_g] (V) = \abs{\xi}_g^2 V
 \]
-which is clearly uniformly elliptic.
+which is clearly uniformly elliptic. The choice of \(W\) comes from the fact \(\dive_g \Ein = 0\) so that defining \(L_g(T) = \dive_g(T - \tfrac{1}{2} \Tr_g T)\), we have the integrability condition
+\[
+L_g(\Ric(g)) = \dive_g \Ein(g) = 0.
+\]
+Here \(g \mapsto L_g\) depends on \(g\) to first order, and computing the symbol of \(g \mapsto L_g(\Ric(g)\) also shows the degeneracy in the operator \(\Ric\). The original proof of short time existence and uniqueness for Ricci flow made use of this fact employing the Nash-Moser implicit function theorem. See \cite[Sections 4-6]{Hamilton:/1982}.
 
-One might try a similar approach for XCF, defining an appropriate \(W\) to cancel terms so that the symbol becomes \(V \mapsto |\xi|_{\Ein}^2 V\). Presumably such an approach works, with the appropriate replacement for the harmonic map heat flow to obtain uniqueness. As it turns \cite{MR2207496} showed that even though the terms in \eqref{eq:dtxcf_symbol} do not cancel, the result is still uniformly elliptic and uniqueness is obtained by the known result using the harmonic map heat flow as in the Ricci flow.
+One might try a similar approach for XCF, defining an appropriate \(W\) to cancel terms so that the symbol becomes \(V \mapsto |\xi|_{\Ein}^2 V\). Equation \eqref{eq:xcf_integ} below suggests the choice
+\[
+W = g_0^{-1}\left(\Ein^{ij} \nabla_i \adj \Grav(g_0)_{jk} - \frac{1}{2} \Ein^{ij} \nabla_k \adj\Grav(g_0)_{ij}\right)^{\sharp}
+\]
+where \(\Grav(g_0) = g_0 - \tfrac{1}{2} \Tr_g g_0\) is the Einstein gravity tensor. Presumably such an approach works, with the appropriate replacement for the harmonic map heat flow to obtain uniqueness. Note this equation also leads to the integrability equation
+\[
+L_g(\adj\Ein(g)) = 0
+\]
+where \(L_g(T) = \Ein^{ij} \nabla_i \adj \Grav(T)_{jk} - \frac{1}{2} \Ein^{ij} \nabla_k \adj\Grav(T)_{ij}\).
+
+\cite{MR2207496} observed that \(g \mapsto L_g\) is second order in \(g\) so that the argument in \cite[Sections 4-6]{Hamilton:/1982} cannot be applied. However, as we have seen, even though the terms in \eqref{eq:dtxcf_symbol} do not cancel, the DeTurck flow using \(W\) from the Ricci flow is still uniformly parabolic. Existence for XCF follows immediately, and uniqueness is obtained by the known result using the harmonic map heat flow as in the Ricci flow.
 \end{rem}
 
 \subsection{Basic Identities And Evolution Equations}
 \label{subsec:xcf_identities}
 
-Now we give some fundamental identities and evolution equations for the study of the XCF. Since there are many traces and swapping slots in what follows, it is convenient to use index notation.
+Now we give some fundamental identities and evolution equations for the study of the XCF. Since there are many traces and swapping slots in what follows, it is convenient to use index notation. For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)).
 
-The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)). Let us also define
+The first basic identity is an analogue for the Cross Curvature tensor of the fact that according to the contracted second Bianchi identity, \(\dive_g \Ein = 0\). It is fundamental in deriving various identities and is closely related to short time existence and uniqueness as discussed above. According to \cite[Lemma 1 (b)]{MR2055396},
+\begin{equation}
+\label{eq:xcf_integ}
+\Ein^{ij} \nabla_i \adj\Ein_{jk} = \frac{1}{2} \Ein^{ij} \nabla_k \adj\Ein_{ij}.
+\end{equation}
+
+The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). Let us define
 \begin{equation}
 \label{eq:T}
 \T^{kij} = \Ein^{kl}\nabla_l \Ein^{ij}, \quad \T^i = V_{jk}\T^{ijk} = \Ein^{ij}\nabla_j \ln\det\opEin.
@@ -512,7 +532,7 @@ and
 \label{eq:dtdetEin}
 \partial_t \det \opEin = \Box \det \opEin -\left(\frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 - \frac{1}{2}\abs{D^{ijk}}_V^2 + 2\Tr\opEin\right)\det \opEin.
 \end{equation}
-Equation \eqref{eq:dtEin} is obtained by combining \cite[Lemma 1(a)]{MR2055396} (a variant of the contracted second Bianchi identity) with \cite[Lemma 5]{MR2055396} giving the evolution of \(\Ein\). Equation \eqref{eq:dtdetEin} is then obtained from \eqref{eq:dtEin} using \eqref{eq:T}.
+Equation \eqref{eq:dtEin} is obtained by combining equation \eqref{eq:xcf_integ} (\cite[Lemma 1(a)]{MR2055396}) with \cite[Lemma 5]{MR2055396} giving the evolution of \(\Ein\). Equation \eqref{eq:dtdetEin} is then obtained from \eqref{eq:dtEin} using \eqref{eq:T}.
 
 The maximum principle cannot be immediately applied to ensure positivity of \(\Ein\) (and hence negative sectional curvature) is preserved since the last term of each equation has the wrong sign. However, a slightly less direct approach using the evolution of \(\det \opEin\) effectively leads to the desired conclusion (\Cref{prop:negative_perserved}).
 

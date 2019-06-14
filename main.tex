@@ -542,12 +542,29 @@ Equation \eqref{eq:dtEin} is obtained by combining equation \eqref{eq:xcf_integ}
 
 The maximum principle cannot be immediately applied to ensure positivity of \(\Ein\) (and hence negative sectional curvature) is preserved since the last term of each equation has the wrong sign. However, a slightly less direct approach using the evolution of \(\det \opEin\) effectively leads to the desired conclusion (\Cref{prop:negative_perserved}).
 
+The XCF expands negatively curved metrics as can be seen from the evolution of the volume:
+\begin{equation}
+\label{eq:dtvol}
+\partial_t \operatorname{Vol}_g (M) = \int_M \Tr_g \Ein d\mu > 0
+\end{equation}
+
+Such expansion is also apparent in the evolution of hyperbolic metrics.
+\begin{example}
+\label{eq:hyperbolic}
+
+Let \(g_0 = \tfrac{K_0}{2} g_0 \owedge g_0\) be a hyperbolic metric. Then the solution of the XCF is
+\[
+g(t) = \sqrt{4K_0^2 t + 1} g_0
+\]
+since scaling \(g_0\) by \(r\) results in \(\adj\Ein(g_t) = 1/r^3 \adj\Ein(g_0) = K_0^2/r^3 g_0\).
+\end{example}
+
+We see that up to scale, hyperbolic metrics are fixed points. In fact, they are the only fixed points up to scale and reparametrisation (i.e. solitons). See \Cref{subsec:xcf_harnack_solitons} below.
+
 \subsection{Towards Hyperbolic Convergence}
 \label{subsec:xcf_hyperbolic_convergence}
 
-The following results support \Cref{conj:chow_hamilton} that the XCF deforms arbitrary negatively curved metrics to a hyperbolic metric.
-
-Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \opEin \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\). A slight variation on the standard maximum principle applied to equation \eqref{eq:dtdetEin} yields:
+The following results support \Cref{conj:chow_hamilton} that the XCF deforms arbitrary negatively curved metrics to a hyperbolic metric. Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \opEin \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\).
 
 \begin{prop}[{\cite[p. 8]{MR2055396}}]
 \label{prop:negative_perserved}
@@ -555,9 +572,15 @@ Under the XCF, it is not so easy to prove directly that negative sectional curva
 Let $T$ be the maximal time of smooth existence of XCF. Then \(\det \opEin > 0\) on \([0, T)\) and hence the sectional curvatures remain negative as long as the solution is smooth.
 \end{prop}
 
+The proof follows from equation \eqref{eq:dtdetEin} by writing,
+\[
+\partial_t \ln \det \opEin = \Box \ln \det \opEin + \frac{1}{2}\abs{T^{ijk} - T^{jik}}_V^2- 2 \Tr \adj\opEin.
+\]
+The last term has the wrong sign to apply the maximum principle. However, \(\partial_t \min \ln \det\opEin \geq -2 \Tr \opEin\) at the minimum of \(\ln \det\opEin\). Then if \(\det\opEin \to 0\), \(\ln\det\opEin \to -\infty\) and hence \(\Tr \opEin \to \infty\). In other words one eigenvalue of \(\opEin\) goes to zero while another goes to \(\infty\).
+
 Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \opEin = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \opEin\) has a positive lower bound.
 
-The following monotonicity property supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
+The following monotonicity property also supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
@@ -607,11 +630,7 @@ Solitons are closely related to the Harnack inequality. They are fixed points of
 The only breathers, hence also solitons to the XCF are constant curvature metrics.
 \end{thm}
 
- This follows since $J$ is monotone non-decreasing (\Cref{thm:hyperbolicity}) and is strictly decreasing in non-constant sectional curvature. By the scaling of \(J\) then \(\lambda \leq 1\) with strict inequality in non-constant sectional curvature. On the other hand, the volume is monotone increasing,
-\[
-\partial_t \operatorname{Vol}_g (M) = \int_M \Tr_g \Ein d\mu > 0
-\]
-requiring \(\lambda \geq 1\) by scaling of \(\operatorname{Vol}\). Then \(\lambda = 1\) and \(\partial_t J = 0\) implying constant sectional curvature by the equality case of \Cref{thm:hyperbolicity}.
+This follows by recalling equation \eqref{eq:dtvol} which says that volume is strictly monotone increasing. Since volume scales like \(\lambda^{3/2}\), for a breather we must have \(\lambda > 1\). On the other hand, by \Cref{thm:hyperbolicity}, $J$ is monotone non-decreasing and is strictly decreasing in non-constant sectional curvature. Scaling gives \(J(t_0) = \sqrt{\lambda} J(0)\) so that if \(J\) strictly decreases we obtain the contradiction \(\lambda < 1\). Hence \(J(0) = 0\) and \(g_0\) is hyperbolic by the equality case of \Cref{thm:hyperbolicity} and hence \(g(t)\) is hyperbolic by uniqueness of solutions.
 
 The theorem further supports \Cref{conj:chow_hamilton} in that if a limiting metric exists it should be stationary for the flow (up to rescaling) and hence a soliton. Thus the only expected limits have constant curvature. A Harnack inequality for general solutions would further support the conjecture since it may be used to obtain improved smoothing estimates for the flow.
 

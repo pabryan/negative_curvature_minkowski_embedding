@@ -298,7 +298,7 @@ where \(i,k,\ell\) are distinct indices. Thus
 \label{eq:cross_curvature}
 \adj\Ein(E_i, E_j) = g(\lambda_k \lambda_{\ell} E_i, E_j) = \lambda_k \lambda_{\ell} \delta_{ij}.
 \end{equation}
-The tensor \(\adj\Ein\) is referred to as the \emph{cross curvature tensor}. The origin of the name is that the \(i\)'th eigenvalue of \(\adj\Ein\) is the ``cross terms'' \(\lambda_k \lambda_{\ell}\) of the remaining eigenvalues.
+The tensor \(\adj\Ein\) is referred to as the \emph{cross curvature tensor}. The origin of the name is that the \(i\)'th eigenvalue of \(\adj\Ein\) is the ``cross term'' \(\lambda_k \lambda_{\ell}\) of the remaining eigenvalues.
 
 There is an equivalent way to write \(\adj\Ein\) in three dimensions. In fact, both these definitions make sense in any dimension, however it is only in three dimensions that they coincide.
 \begin{lemma}
@@ -338,7 +338,7 @@ In \cite[Lemma 3]{MR2055396} and \cite[Equation (3)]{MR2207496}, essentially the
 
 In the case of integrable (and hence isometrically embeddable) solutions of XCF, we have the following observation of Ben Andrews.
 
-\begin{lemma}[{\cite[Section 11]{MR3344442}}]
+\begin{lemma}[{\cite[Section 12]{MR3344442}}]
 \label{lem:xcf_gcf}
 The induced metric under the Gauss Curvature Flow of convex, spacelike, co-compact hypersurfaces in Minkowski space evolves by XCF.
 \end{lemma}
@@ -536,19 +536,18 @@ We have
 and
 \begin{equation}
 \label{eq:dtdetEin}
-\partial_t \det \opEin = \Box \det \opEin -\left(\frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 - \frac{1}{2}\abs{D^{ijk}}_V^2 + 2\Tr\opEin\right)\det \opEin.
+\partial_t \det \opEin = \Box \det \opEin -\left(\frac{1}{2(\det\opEin)^2} \abs{\Ein^{ij} \nabla_j \det \opEin}^2 - \frac{1}{2}\abs{\mathrm{D}^{ijk}}_V^2 + 2\mathrm{H}\right)\det \opEin.
 \end{equation}
+Here $\mathrm{H}=\Tr_g\adj\Ein.$ 
 Equation \eqref{eq:dtEin} is obtained by combining equation \eqref{eq:xcf_integ} (\cite[Lemma 1(a)]{MR2055396}) with \cite[Lemma 5]{MR2055396} giving the evolution of \(\Ein\). Equation \eqref{eq:dtdetEin} is then obtained from \eqref{eq:dtEin} using \eqref{eq:T}.
 
 The maximum principle cannot be immediately applied to ensure positivity of \(\Ein\) (and hence negative sectional curvature) is preserved since the last term of each equation has the wrong sign. However, a slightly less direct approach using the evolution of \(\det \opEin\) effectively leads to the desired conclusion (\Cref{prop:negative_perserved}).
 
-The XCF expands negatively curved metrics as can be seen from the evolution of the volume:
+The XCF expands negatively curved metrics as it can be seen from the evolution of the volume:
 \begin{equation}
 \label{eq:dtvol}
-\partial_t \operatorname{Vol}_g (M) = \int_M \Tr_g \Ein d\mu > 0
-\end{equation}
-
-Such expansion is also apparent in the evolution of hyperbolic metrics.
+\frac{d}{dt} \operatorname{Vol}_g (M) = \int_M \mathrm{H}d\mu > 0.
+\end{equation}Such expansion is also apparent in the evolution of hyperbolic metrics.
 \begin{example}
 \label{eq:hyperbolic}
 
@@ -574,13 +573,13 @@ Let $T$ be the maximal time of smooth existence of XCF. Then \(\det \opEin > 0\)
 
 The proof follows from equation \eqref{eq:dtdetEin} by writing,
 \[
-\partial_t \ln \det \opEin = \Box \ln \det \opEin + \frac{1}{2}\abs{T^{ijk} - T^{jik}}_V^2- 2 \Tr \opEin.
+\partial_t \ln \det \opEin = \Box \ln \det \opEin + \frac{1}{2}\abs{\mathrm{T}^{ijk} - \mathrm{T}^{jik}}_V^2- 2 \mathrm{H}.
 \]
-The last term has the wrong sign to apply the maximum principle. However, \(\partial_t \min \ln \det\opEin \geq -2 \Tr \opEin\) at the minimum of \(\ln \det\opEin\). Then if \(\det\opEin(t_0)= 0\) for some $t_0<T$, \(\ln\det\opEin \to -\infty\) as $t\to t_0$, which is only possible if \(\Tr \opEin \to \infty\). In other words one eigenvalue of \(\opEin\) goes to zero while another goes to \(\infty\) as $t$ approaches $t_0$.
+The last term has the wrong sign to apply the maximum principle. However, \(\partial_t \min \ln \det\opEin \geq -2 \mathrm{H}\) at the minimum of \(\ln \det\opEin\). If $t_0<T$ and \(\ln\det\opEin \to -\infty\) as $t\to t_0$, then \(\mathrm{H} \to \infty\). In other words one eigenvalue of \(\opEin\) goes to zero while another goes to \(\infty\) as $t$ approaches $t_0$.
 
 Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \opEin = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \opEin\) has a positive lower bound.
 
-The following monotonicity property also supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
+%The following monotonicity property also supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
@@ -624,13 +623,13 @@ The following Li-Yau-Hamilton Harnack inequality holds for integrable solutions 
 \]
 \end{thm}
 
-Solitons are closely related to the Harnack inequality. They are fixed points of the flow modulo scaling and diffeomorphism. As such, they are the expected limits (up to rescaling) of the flow. Unlike other flows such as the Ricci Flow, solitons for the XCF are very rigid. In fact something stronger is true. Recall that a soliton is a solution of XCF such that \(g_t = \lambda(t) \varphi_t^{\ast} g_0\) where \(\lambda\) is a positive function and \(\varphi_t\) a one-parameter family of diffeomorphisms. More generally, a \emph{breather} is a solution such that \(g_{t_0} = \lambda \varphi^{\ast} g_0\) for some \(t_0 > 0\), \(\lambda > 0\) and diffeomorphism \(\varphi\). Then breathers are rigid.
+Solitons are closely related to the Harnack inequality. They are fixed points of the flow modulo scaling and diffeomorphism. As such, they are the expected limits (up to rescaling) of the flow. Unlike other flows such as the Ricci Flow, solitons for the XCF are very rigid. In fact something stronger is true. Recall that a soliton is a solution of XCF such that \(g_t = \lambda(t) \varphi_t^{\ast} g_0\) where \(\lambda\) is a positive function and \(\varphi_t\) a one-parameter family of diffeomorphisms. More generally, a \emph{breather} is a solution such that \(g_{t_0} = \lambda \varphi^{\ast} g_0\) for some \(t_0 ,\lambda > 0\) and a diffeomorphism \(\varphi\).
 
 \begin{thm}[{\cite{MR2302600}}]
 The only breathers, hence also solitons to the XCF are constant curvature metrics.
 \end{thm}
 
-This follows by recalling equation \eqref{eq:dtvol} which says that volume is strictly monotone increasing. Since volume scales like \(\lambda^{3/2}\), for a breather we must have \(\lambda > 1\). On the other hand, by \Cref{thm:hyperbolicity}, $J$ is monotone non-increasing and is strictly decreasing in non-constant sectional curvature. Scaling gives \(J(t_0) = \sqrt{\lambda} J(0)\) so that if \(J\) strictly decreases we obtain the contradiction \(\lambda < 1\). Hence \(J(0) = 0\) and \(g_0\) is hyperbolic by the equality case of \Cref{thm:hyperbolicity} and hence \(g(t)\) is hyperbolic by uniqueness of solutions.
+This follows from equation \eqref{eq:dtvol} and \Cref{thm:hyperbolicity}. Since volume scales as \(\lambda^{3/2}\), for a breather we must have \(\lambda > 1\). On the other hand, scaling gives \(J(t_0) = \sqrt{\lambda} J(0)\). If \(J\) strictly decreases, then we obtain the contradiction \(\lambda < 1\). Therefore, \(J(0) = 0\) and \(g_t\) has constant sectional curvature.
 
 The theorem further supports \Cref{conj:chow_hamilton} in that if a limiting metric exists it should be stationary for the flow (up to rescaling) and hence a soliton. Thus the only expected limits have constant curvature. A Harnack inequality for general solutions would further support the conjecture since it may be used to obtain improved smoothing estimates for the flow.
 
@@ -651,11 +650,11 @@ is non-decreasing. Moreover, \(\frac{d}{dt} I(M_t)= 0\) if and only if \(\Ob\) i
 \begin{proof}
 By \cite[Proposition 9]{MR2055396}, we have
 \[
-(\partial_t - \Box) (\det\opEin)^\eta = \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V - 2\eta\Tr\opEin\right)(\det\opEin)^\eta,
+(\partial_t - \Box) (\det\opEin)^\eta = \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V - 2\eta \mathrm{H}\right)(\det\opEin)^\eta,
 \]
 where \(\Box\) is defined in \eqref{eq:box}. Integrating by parts gives the identity
 \[
-\frac{d}{dt}\int(\det\opEin)^\eta d\mu = \int \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V + (1-2\eta)\Tr\opEin\right)(\det\opEin)^\eta d\mu.
+\frac{d}{dt}\int(\det\opEin)^\eta d\mu = \int \left(\frac{\eta}{2}|\Dv^{ijk}|_V^2 + \frac{\eta}{2}(1-2\eta)|\T^i|^2_V + (1-2\eta)\mathrm{H}\right)(\det\opEin)^\eta d\mu.
 \]
 In particular, for $\eta=\frac{1}{2}$ we obtain
 \[

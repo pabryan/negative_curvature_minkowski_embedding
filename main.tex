@@ -134,9 +134,10 @@ We define the Einstein tensor by
 \eq{\Ein=\Ric-\frac{\Sc}{2}g.}
 
 We may write the Ricci decomposition of the curvature tensor in three dimensions in the form
-\[
+\begin{equation}
+\label{eq:ricci_decomp}
 \Rm = -\Ein \owedge g + \frac{\Tr \opEin}{2} g \owedge g
-\]
+\end{equation}
 where \(\owedge\) denotes the Kulkarni-Nomizu product. The sectional curvatures are
 \[
 K(X \wedge Y) = \frac{\Rm(X, Y, Y, X)}{\abs{X \wedge Y}^2}.
@@ -226,7 +227,7 @@ Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectio
 \begin{proof}
 First suppose \((\tilde{M}, \tilde{g})\) embeds isometrically into \(\R^{3,1}\). Since Minkowski space is flat, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} gives \(A = \Ob\), hence \(\Ob\) is Codazzi.
 
-Conversely, suppose \(\Ob\) is Codazzi. Since $\Ob$ solves the contracted Gauss equation \eqref{eq:gauss}, this is precisely the integrability condition required to locally integrate the over-determined system
+Conversely, suppose \(\Ob\) is Codazzi. A simple direct computation diagonalising \(\Ein\) shows $\Ob$ solves the contracted Gauss equation (second equation in \eqref{eq:gauss}). The Ricci decomposition \eqref{eq:ricci_decomp} for \(n=3\) then implies the full Gauss equation (first equation in \eqref{eq:gauss}). But the Gauss and Codazzi equations are precisely the integrability conditions required to locally integrate the over-determined system
 \begin{align*}
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
 A(F) &= \Ob
@@ -543,11 +544,13 @@ Equation \eqref{eq:dtEin} is obtained by combining equation \eqref{eq:xcf_integ}
 
 The maximum principle cannot be immediately applied to ensure positivity of \(\Ein\) (and hence negative sectional curvature) is preserved since the last term of each equation has the wrong sign. However, a slightly less direct approach using the evolution of \(\det \opEin\) effectively leads to the desired conclusion (\Cref{prop:negative_perserved}).
 
-The XCF expands negatively curved metrics as it can be seen from the evolution of the volume:
+The XCF expands negatively curved metrics as can be seen from the evolution of the volume:
 \begin{equation}
 \label{eq:dtvol}
 \frac{d}{dt} \operatorname{Vol}_g (M) = \int_M \mathrm{H}d\mu > 0.
-\end{equation}Such expansion is also apparent in the evolution of hyperbolic metrics.
+\end{equation}
+
+Such expansion is also apparent in the evolution of hyperbolic metrics.
 \begin{example}
 \label{eq:hyperbolic}
 
@@ -579,7 +582,7 @@ The last term has the wrong sign to apply the maximum principle. However, \(\par
 
 Going the other way, namely proving that if \([0, T)\) is the maximal time of existence with \(T < \infty\), then necessarily \(\inf_{t \in [0, T)} \det \opEin = 0\) would show that finite time existence implies blow up of \(\Ein\). Such a result would serve as a proxy for more general estimates, such as the smoothing estimates enjoyed by the Ricci flow. The lack of such estimates (even \(C^2\) estimates) is perhaps the major outstanding issue for the XCF. In particular, it could be that the solution blows up in finite time, yet \(\det \opEin\) has a positive lower bound.
 
-%The following monotonicity property also supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric. By the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). Since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(\lambda\).
+The following monotonicity property also supports \Cref{conj:chow_hamilton} that the flow evolves negative curvature metrics to a hyperbolic metric.
 
 \begin{thm}[{\cite[Theorem 8]{MR2055396}}]
 \label{thm:hyperbolicity}
@@ -587,6 +590,8 @@ Under the XCF
 \[J(M_t):=\int \frac{1}{3} \Tr \opEin - (\det\opEin)^{\frac{1}{3}}d\mu\]
 is non-increasing. Moreover, \(\frac{d}{dt}J(M_t) = 0\) if and only if $g$ has constant curvature.
 \end{thm}
+
+The theorem follows by direct computation and noting that by the arithmetic-geometric mean inequality applied to the eigenvalues of \(\opEin\), \(\tfrac{1}{3} \Tr\opEin \geq (\det \opEin)^{1/3}\) with equality if and only if \(\Ein = \lambda g\) for some smooth function \(\lambda\). In the equality case, since \(\dive_g \Ein = \dive_g g = 0\), we must then also have \(\lambda \equiv \text{ const.}\) and hence equality occurs if and only if \(g\) has constant sectional curvature equal to \(-\lambda\).
 
 To finish this section, we consider the stability of hyperbolic metrics under the flow. Stability is necessary for \Cref{conj:chow_hamilton} to hold, and indeed this is the case. To state the result, some normalisation is necessary. Typically normalising to fix volume is the approach taken, but here following \cite{MR2448593} a different normalisation is chosen. For any \(K < 0\), note that a constant curvature metric \(g_K\) of sectional curvature \(K\) satisfies
 \[
@@ -629,9 +634,9 @@ Solitons are closely related to the Harnack inequality. They are fixed points of
 The only breathers, hence also solitons to the XCF are constant curvature metrics.
 \end{thm}
 
-This follows from equation \eqref{eq:dtvol} and \Cref{thm:hyperbolicity}. Since volume scales as \(\lambda^{3/2}\), for a breather we must have \(\lambda > 1\). On the other hand, scaling gives \(J(t_0) = \sqrt{\lambda} J(0)\). If \(J\) strictly decreases, then we obtain the contradiction \(\lambda < 1\). Therefore, \(J(0) = 0\) and \(g_t\) has constant sectional curvature.
+This follows by monotonicity and scaling: Since volume is increasing by equation \eqref{eq:dtvol} and scales as \(\lambda^{3/2}\), for a breather we must have \(\lambda > 1\). On the other hand, since \(J\) scales as \(\lambda^{1/2}\), if \(J\) strictly decreases, then we obtain the contradiction \(\lambda < 1\). Therefore, \(J\) is constant and hence \(g_t\) has constant sectional curvature by the equality case of \Cref{thm:hyperbolicity}.
 
-The theorem further supports \Cref{conj:chow_hamilton} in that if a limiting metric exists it should be stationary for the flow (up to rescaling) and hence a soliton. Thus the only expected limits have constant curvature. A Harnack inequality for general solutions would further support the conjecture since it may be used to obtain improved smoothing estimates for the flow.
+The theorem further supports \Cref{conj:chow_hamilton} in that if a limiting metric exists it should be stationary for the flow (up to rescaling and reparametrisation) and hence a soliton. Thus the only expected limits have constant curvature. A Harnack inequality for general solutions would further support the conjecture since it may be used to obtain improved smoothing estimates for the flow.
 
 \subsection{Monotonicity Of Einstein Volume}
 \label{subsec:xcf_volume}

@@ -221,13 +221,13 @@ Now we may give an intrinsic characterisation of when \((\tilde{M}, \tilde{g})\)
 \begin{thm}[Integrability implies isometric embeddability]
 \label{thm:intg_embed}
 
-Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi if and only if the Riemannian universal cover \((\tilde{M}, \tilde{g})\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface.
+Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectional curvature. Then the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is Codazzi if and only if the Riemannian universal cover \((\tilde{M}, \tilde{g})\) embeds isometrically into Minkowski space \(\R^{3,1}\) as a locally convex, co-compact, spacelike hypersurface. Moreover the action of the group \(G\) of deck transformations of \(\pi : (\tilde{M}, \tilde{g}) \to (M, g)\) extends to an isometry of \(\R^{3,1}\) preserving the hypersurface.
 \end{thm}
 
 \begin{proof}
 First suppose \((\tilde{M}, \tilde{g})\) embeds isometrically into \(\R^{3,1}\). Since Minkowski space is flat, the second fundamental form \(A\) is Codazzi. Then \Cref{lem:ein_W} gives \(A = \Ob\), hence \(\Ob\) is Codazzi.
 
-Conversely, suppose \(\Ob\) is Codazzi. A simple direct computation diagonalising \(\Ein\) shows $\Ob$ solves the contracted Gauss equation (second equation in \eqref{eq:gauss}). The Ricci decomposition \eqref{eq:ricci_decomp} for \(n=3\) then implies the full Gauss equation (first equation in \eqref{eq:gauss}). But the Gauss and Codazzi equations are precisely the integrability conditions required to locally integrate the over-determined system
+Conversely, suppose \(\Ob\) is Codazzi. The result is a consequence of the Fundamental Theorem of Hypersurfaces: A simple direct computation diagonalising \(\Ein\) shows $\Ob$ solves the contracted Gauss equation (second equation in \eqref{eq:gauss}). The Ricci decomposition \eqref{eq:ricci_decomp} for \(n=3\) then implies the full Gauss equation (first equation in \eqref{eq:gauss}). But the Gauss and Codazzi equations are precisely the integrability conditions required to locally integrate the over-determined system
 \begin{align*}
 F^{\ast} \inpr{\cdot}{\cdot} &= g \\
 A(F) &= \Ob
@@ -235,12 +235,14 @@ A(F) &= \Ob
 for \(F\). See for example \cite[Theorem 7]{MR1713298} and for a similar argument \cite[Chapter VI.12, p. 146 and Theorem V, p.393]{MR1013365}.
 
 Since \((\tilde{M}, \tilde{g})\) is the universal cover of \((M, g)\) with strictly negative sectional curvature, \(\tilde{M}\) is diffeomorphic to \(\R^3\) by the Cartan-Hadamard theorem and we can globally integrate to obtain \(F\).
+
+That \(G\) acts on \(\R^{3,1}\) by isometry is a consequence of the rigidity part of the Fundamental Theorem of Hypersurfaces: write \(F : \tilde{M} \to \R^{3,1}\) for the embedding, fix a point \(x_0 \in \tilde{M}\) and let \(\varphi \in G\). Then there is a unique isometry \(\Phi\) of \(\R^{3,1}\) taking \(F(x_0)\) to \(F(\varphi(x_0))\) and taking the tangent plane \(T_{x_0} F(\tilde{M})\) to \(T_{\varphi(x_0)} F(\tilde{M})\) while taking the normal \(N(x_0)\) to \(N(\varphi(x_0))\) such that both normals have the same timelike orientation (e.g both are future pointing). But both the metric \(\tilde{g}\) and the second fundamental form \(h\) are preserved by \(\varphi\) (recalling that \(h\) is intrinsic) and by \(\Phi\). Uniqueness of the embedding given a tangent plane and orientation then ensure \(\varphi\) agrees with \(\Phi\). Since \(x_0\) and \(g\) are arbitrary and \(G\) acts transitively on \(\tilde{M}\), the result follows.
 \end{proof}
 
 \begin{proof}
 [Proof of \Cref{thm:intg_const_curv}]
 
-By \Cref{thm:intg_embed} we may embed \((\tilde{M}, \tilde{g})\) into Minkowski space as a locally convex, co-compact, spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the rescaled Gauss curvature flow deforms \((\tilde{M}, \tilde{g})\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus the flow provides a smooth homotopy from \((\tilde{M}, \tilde{g})\) to \((\tilde{M}, \tilde{g}_{\H})\).
+By \Cref{thm:intg_embed} we may embed \((\tilde{M}, \tilde{g})\) into Minkowski space as a locally convex, co-compact (by ambient isometry), spacelike hypersurface. By \cite[Theorem 1.1]{MR3344442}, the rescaled Gauss curvature flow deforms \((\tilde{M}, \tilde{g})\) smoothly to the hyperboloid at infinity with constant negative sectional curvature. Thus the flow provides a smooth homotopy from \((\tilde{M}, \tilde{g})\) to \((\tilde{M}, \tilde{g}_{\H})\).
 
 According to \cite[Section 12]{MR3344442} (see also \Cref{lem:xcf_gcf}), the induced metric \(\tilde{g}_t\) on \(\tilde{M}\) evolves by the Cross Curvature Flow introduced in \cite{MR2055396} (see also \Cref{lem:xcf_gcf} below):
 \[
@@ -468,7 +470,7 @@ The first basic identity is an analogue for the Cross Curvature tensor of the fa
 \Ein^{ij} \nabla_i \adj\Ein_{jk} = \frac{1}{2} \Ein^{ij} \nabla_k \adj\Ein_{ij}.
 \end{equation}
 
-The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{Devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). Let us define
+The general, non integrable case poses a number of difficulties. At the heart of these difficulties is the \emph{devil tensor} \eqref{eq:devil} that vanishes if and only if the solution is integrable (\Cref{lem:cubicform_codazzi}). Let us define
 \begin{equation}
 \label{eq:T}
 \T^{kij} = \Ein^{kl}\nabla_l \Ein^{ij}, \quad \T^i = V_{jk}\T^{ijk} = \Ein^{ij}\nabla_j \ln\det\opEin.
@@ -477,7 +479,7 @@ From the irreducible decomposition of $\T^{ijk}$ under the action of \(O(3)\) vi
 \[
 \T^{ijk}-\T^{jik} = \mathrm{L}^{ijk}-\mathrm{L}^{jik} + \frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right)
 \]
-where the traces of $\mathrm{L}^{ijk}$ with respect to $V$ are zero. The Devil tensor is defined by
+where the traces of $\mathrm{L}^{ijk}$ with respect to $V$ are zero. The devil tensor is defined by
 \begin{equation}
 \label{eq:devil}
 \Dv^{ijk}=\mathrm{L}^{ijk}-\mathrm{L}^{jik} = \T^{ijk}-\T^{jik} - \frac{1}{2}\left(\T^i\Ein^{jk}-\T^j\Ein^{ik}\right).
@@ -618,7 +620,7 @@ Any constant curvature metric is asymptotically stable under the XCF after suita
 \subsection{Harnack inequality And Solitons}
 \label{subsec:xcf_harnack_solitons}
 
-Differential Li-Yau-Hamilton Harnack inequalities have proved an indispensable tool in the study of curvature flows. For the XCF, \cite[p. 9]{MR2055396} remarked that it is hoped such an inequality holds. For integrable solutions of the XCF this is true by proving the analogous Harnack inequality for the corresponding solution of the embedded Gauss curvature flow. In general, the non-vanishing of the Devil Tensor \eqref{eq:devil} causes significant difficulties in obtaining a Harnack inequality. The evolution of the devil tensor is very complicated and it's not clear whether or not it is amenable to the  maximum principle.
+Differential Li-Yau-Hamilton Harnack inequalities have proved an indispensable tool in the study of curvature flows. For the XCF, \cite[p. 9]{MR2055396} remarked that it is hoped such an inequality holds. For integrable solutions of the XCF this is true by proving the analogous Harnack inequality for the corresponding solution of the embedded Gauss curvature flow. In general, the non-vanishing of the devil tensor \eqref{eq:devil} causes significant difficulties in obtaining a Harnack inequality. The evolution of the devil tensor is very complicated and it's not clear whether or not it is amenable to the  maximum principle.
 
 \begin{thm}(\cite[Section 6]{BIS4})
 \label{thm:harnack}

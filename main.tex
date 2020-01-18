@@ -45,7 +45,7 @@ The geometrisation conjecture may be stated as follows:
 \begin{thm}[Thurston Geometrisation]
 \label{thm:geometrisation}
 
-Every closed three manifold decomposes as a connected sum of prime manifolds, each of which may be cut along tori so that the interior of the resulting manifolds each admits a unique geometric structure of with finite volume from among a possible eight types.
+Every closed three manifold decomposes as a connected sum of prime manifolds, each of which may be cut along tori so that the interior of the resulting manifolds each admits a unique geometric structure of finite volume from among a possible eight types.
 \end{thm}
 
 A prime manifold is simply a manifold that cannot be written as a non-trivial connected sum. The decomposition into prime manifolds was given in \cite{MR0142125}. To say that \(M\) admits a geometric structure is to say that \(M\) is diffeomorphic to \(X/\Gamma\) where \(X\) is a \(G\)-manifold for some Lie group \(G\) acting transitively on \(X\) with compact stabilisers, and \(\Gamma\) is a discrete subgroup of \(G\) acting freely on \(X\). The classification into eight types of finite volume geometric structures was given by Thurston. Finally the remaining part of the theorem, that such a decomposition of prime manifolds exists was proven by Hamilton and Perelman using the Ricci flow with surgery. The eight geometries are
@@ -65,7 +65,7 @@ A closed three-manifold admitting a metric of negative sectional curvature also 
 
 Thurston proved this result for atoroidal Haken manifolds, and the general result is a consequence of geometrisation as proven by Hamilton and Perelman. The route to hyperbolisation via geometrisation is quite indirect since the Ricci flow does not generally preserve negative curvature in dimensions greater than two and furthermore, singularities may form along the Ricci flow so that surgery is necessary. The decomposition obtained in \Cref{thm:geometrisation} is not unique so that the Ricci flow with surgery need not produce the hyperbolic geometry in the limit. \Cref{thm:hyperbolisation} is deduced a posteriori from the geometrisation conjecture rather than as a direct consequence the Ricci flow.
 
-Resolving \Cref{conj:chow_hamilton} by removing the integrability condition of \Cref{thm:intg_const_curv} would give a more direct proof of hyperbolisation, while strengthening the result to the statement that arbitrary negatively curved metrics are homotopic to a hyperbolic metric. Note that by the Mostow rigidity theorem \cite{MR0236383}, hyperbolic structures are classified by fundamental group and are essentially unique. That is, if the fundamental group \(\pi_1(M_1)\) of a closed hyperbolic manifold, \((M_1, g_1)\) is isomorphic to a \(\pi_1(M_2)\) for another hyperbolic manifold \((M_2, g_2)\), then in fact \((M_1, g_1)\) and \((M_2, g_2)\) are isometric. Equivalently, any homotopy equivalence of hyperbolic manifolds may in fact be homotopied to an isometry. Then \Cref{conj:chow_hamilton} would show that the space of negatively curved metrics on a hyperbolic three-manifold is contractible.
+Below we describe \Cref{thm:intg_const_curv} stating that metrics of negative sectional curvature satisfying an integrability condition on a closed manifold may be smoothly deformed to a hyperbolic metric. \Cref{conj:chow_hamilton} claims that the integrability condition may be removed which would give a more direct proof of hyperbolisation, while strengthening the result to the statement that arbitrary negatively curved metrics are homotopic to a hyperbolic metric. Note that by the Mostow rigidity theorem \cite{MR0236383}, hyperbolic structures are classified by fundamental group and are essentially unique. That is, if the fundamental group \(\pi_1(M_1)\) of a closed hyperbolic manifold, \((M_1, g_1)\) is isomorphic to a \(\pi_1(M_2)\) for another hyperbolic manifold \((M_2, g_2)\), then in fact \((M_1, g_1)\) and \((M_2, g_2)\) are isometric. Equivalently, any homotopy equivalence of hyperbolic manifolds may in fact be homotopied to an isometry. Then \Cref{conj:chow_hamilton} would show that the space of negatively curved metrics on a hyperbolic three-manifold is contractible.
 
 \section{Embeddability and hyperbolic metrics}
 \label{sec:embed_intg}
@@ -105,7 +105,7 @@ The pullback of a constant curvature metric under the Riemannian covering $\pi$ 
 Clear, since \(G_{\H}\) is the whole isometry group.
 
 (iii)\(\ \Rightarrow\ \)(iv)
-Since \(\tilde{g}\) and \(\tilde{g}_{\H}\) are invariant under G, so is \(\tilde{h}(t)\), which in turn descends to a homotopy on \(\tilde{M}/G\). This pushes forward to the desired homotopy, \(h\) on \(M\).
+Since \(\tilde{g}\) and \(\tilde{g}_{\H}\) are invariant under \(G\), so is \(\tilde{h}(t)\), which in turn descends to a homotopy on \(\tilde{M}/G\). This pushes forward to the desired homotopy, \(h\) on \(M\).
 
 (iv)\(\ \Rightarrow\ \)(v)
 For any given \(\tilde{g}\), the push forward \(h\) of \(\tilde{h}\) defined above is the desired homotopy.
@@ -128,12 +128,10 @@ Then the Ricci and scalar curvature are defined by
 \Ric(X, Y)&= \Tr \Rm(\cdot, X) Y,\\
 		\Sc &=\Tr_{g}\Ric,
 }
-where $\Tr$ is the trace of an endomorphism and $\Tr_{g}$ is the trace of a bilinear form with respect to the metric $g$.
-
-We define the Einstein tensor by
+where $\Tr$ is the trace of an endomorphism and $\Tr_{g}$ is the trace of a bilinear form with respect to the metric $g$. We define the Einstein tensor by
 \eq{\Ein=\Ric-\frac{\Sc}{2}g.}
 
-We may write the Ricci decomposition of the curvature tensor in three dimensions in the form
+Writing \(\Ein(X, Y) = g(\opEin(X), Y)\), we may write the Ricci decomposition of the curvature tensor in three dimensions in the form
 \begin{equation}
 \label{eq:ricci_decomp}
 \Rm = -\Ein \owedge g + \frac{\Tr \opEin}{2} g \owedge g
@@ -144,7 +142,7 @@ K(X \wedge Y) = \frac{\Rm(X, Y, Y, X)}{\abs{X \wedge Y}^2}.
 \]
 The curvature operator \(\opRm\) is defined by
 \[
-\Rm(X, Y, Z, W) = \Rm(X \wedge Y, W \wedge Z) = g(\opRm(X \wedge Y), W \wedge Z).
+\Rm(X, Y, Z, W) = g(\opRm(X \wedge Y), W \wedge Z).
 \]
 
 Then from the Ricci decomposition, given an orthonormal basis of eigenvectors \(E_i\) for \(\Ein\) with eigenvalues \(\lambda_i\) we have
@@ -164,17 +162,17 @@ and the eigenvalues of \(\opRm\) are precisely the eigenvalues of \(\Ein\). The 
 K (E_i \wedge E_j) = -\frac{g(\opRm(E_i \wedge E_j), E_j \wedge E_i)}{\abs{E_i \wedge E_j}^2} = -\lambda_k.
 \end{equation}
 
-Therefore \(\Ein\) is positive definite (respectively negatively definite) if and only if the sectional curvatures are negative (respectively positive). In the case of negative sectional curvature, \(\Ein\) is hence a metric. Writing \(\Ein(X, Y) = g(\opEin(X), Y)\), define \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\).
+Therefore \(\Ein\) is positive definite (respectively negatively definite) if and only if the sectional curvatures are negative (respectively positive). In the case of negative sectional curvature, \(\Ein\) is hence a metric. Define \(\Ein^{-1}(X, Y) = g(\opEin^{-1} (X), Y)\).
 
 Now we have the following theorem. We say that a symmetric \((0,2)\)-tensor \(T\) is \emph{Codazzi} if the covariant three-tensor \(\nabla T\) is totally symmetric.
 
 \begin{thm}[Integrability and constant negative sectional curvature]
 \label{thm:intg_const_curv}
 
-Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is \emph{Codazzi}. Then \(g\) is smoothly homotopic to a metric of constant, negative sectional curvature where each metric in the homotopy also has constant, negative sectional curvature.
+Let \((M, g)\) be a closed Riemannian three-manifold of strictly negative sectional curvature with the integrability condition that the tensor \(\Ob = \sqrt{\det \opEin} \Ein^{-1}\) is \emph{Codazzi}. Then \(g\) is smoothly homotopic to a metric of constant, negative sectional curvature where each metric in the homotopy also has negative sectional curvature.
 \end{thm}
 
-Note that as a special case of the considerably more general Thurston Geometrisation of three manifolds, already any closed three-manifold admitting a metric of negative sectional curvature also admits a metric on constant negative sectional curvature. The famous final resolution of Thurston Geometrisation by Perelman requires considerable machinery so the more direct and simpler proof described here in this case is desirable. Moreover, the homotopy in the theorem is not a consequence of Geometrisation. See \Cref{sec:geometrisation} for a brief discussion on Geometrisation.
+Note that as a special case of the considerably more general Thurston Geometrisation of three manifolds, already any closed three-manifold admitting a metric of negative sectional curvature also admits a metric of constant negative sectional curvature. The famous final resolution of Thurston Geometrisation by Perelman requires considerable machinery so the more direct and simpler proof described here in this case is desirable. Moreover, the homotopy in the theorem is not a consequence of Geometrisation. See \Cref{sec:geometrisation} for a brief discussion on Geometrisation.
 
 \Cref{thm:intg_const_curv} follows from the embeddability \Cref{thm:intg_embed} and \cite[Theorem 1.1]{MR3344442}, which says that \(\tilde M\) may be deformed to the one-sheeted hyperboloid at infinity by the Gauss curvature flow.
 Before we can state and prove \Cref{thm:intg_embed}, we need some more notation concerning extrinsic geometry.
@@ -405,7 +403,7 @@ The principal symbol of the cross curvature tensor is,
 
 The degeneracy of the XCF is manifested in the second two terms. If they were absent, then the symbol would simply be \(V \mapsto \abs{\xi}^2_{\Ein} V\) which is clearly elliptic. However, the presence of the second two terms means that the symbol has a kernel and is hence not elliptic. This is what the DeTurck approach aims to address.
 
-The proof of \Cref{thm:xcf_existence_uniqueness} makes us of the DeTurck XCF,
+The proof of \Cref{thm:xcf_existence_uniqueness} makes use of the DeTurck XCF,
 \begin{equation}
 \label{eq:dtxcf}
 \partial_t g = \adj\Ein (g) + \Lie_W g =: \dtxcf
@@ -672,7 +670,7 @@ and monotonicity follows. Now apply \Cref{lem:cubicform_codazzi} and \Cref{thm:i
 
 \section*{Acknowledgments}
 
-Parts of this work were written while JS enjoyed the hospitality of the Department of Mathematics at Columbia University in New York, a visit which is funded by the "Deutsche Forschungsgemeinschaft" (DFG, German research foundation) within the research scholarship "Quermassintegral preserving local curvature flows", grant number SCHE 1879/3-1. JS would like to thank the DFG, Columbia University and especially Prof. Simon Brendle for their support. PB was supported by the ARC within the research grant “Analysis of fully non-linear geometric problems and differential equations”, number DE180100110.
+Parts of this work were written while JS enjoyed the hospitality of the Department of Mathematics at Columbia University in New York, a visit which is funded by the "Deutsche Forschungsgemeinschaft" (DFG, German research foundation) within the research scholarship "Quermassintegral preserving local curvature flows", grant number SCHE 1879/3-1. JS would like to thank the DFG, Columbia University and especially Prof. Simon Brendle for their support. PB was supported by the ARC within the research grant “Analysis of fully non-linear geometric problems and differential equations”, number DE180100110. We would also like to thank the referee for helpful comments clarifying the exposition.
 
 
 \printbibliography

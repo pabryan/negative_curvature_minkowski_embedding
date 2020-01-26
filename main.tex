@@ -1,8 +1,162 @@
 \documentclass{cambridge7a}
 
-\input{StandardPaper2}
-\input{bis}
-\input{local_definitions}
+%\input{StandardPaper2}
+%\input{bis}
+%\input{local_definitions}
+
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{amsthm,thmtools,amssymb,amsmath,amscd,amsfonts}
+\usepackage[bibstyle=alphabetic,citestyle=alphabetic,backend=bibtex,maxbibnames=99]{biblatex}
+\bibliography{Bibliography}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+
+\declaretheorem[name=Theorem,numberwithin=section]{thm}
+\declaretheorem[name=Remark,style=remark,sibling=thm]{rem}
+\declaretheorem[name=Lemma,sibling=thm]{lemma}
+\declaretheorem[name=Proposition,sibling=thm]{prop}
+\declaretheorem[name=Conjecture,sibling=thm]{conj}
+\declaretheorem[name=Definition,style=definition,sibling=thm]{defn}
+\declaretheorem[name=Corollary,sibling=thm]{cor}
+\declaretheorem[name=Assumption,style=remark,sibling=thm]{ass}
+\declaretheorem[name=Example,style=remark,sibling=thm]{example}
+
+\usepackage{cleveref}
+\crefname{lemma}{Lemma}{Lemmata}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{thm}{Theorem}{Theorems}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{conj}{Conjecture}{Conjectures}
+\crefname{defn}{Definition}{Definitions}
+\crefname{example}{Example}{Examples}
+\crefname{rem}{Remark}{Remarks}
+\crefname{ass}{Assumption}{Assumptions}
+\crefname{not}{Notation}{Notation}
+\crefname{section}{Section}{Sections}
+
+%Symbols
+\renewcommand{\~}{\tilde}
+\renewcommand{\-}{\bar}
+\newcommand{\bs}{\backslash}
+\newcommand{\cn}{\colon}
+\newcommand{\sub}{\subset}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Di}{\mathbb{D}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\8}{\infty}
+
+%Greek letters
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\renewcommand{\d}{\delta}
+\newcommand{\e}{\epsilon}
+\renewcommand{\k}{\kappa}
+\renewcommand{\l}{\lambda}
+\renewcommand{\o}{\omega}
+\renewcommand{\t}{\theta}
+\newcommand{\s}{\sigma}
+\newcommand{\p}{\varphi}
+\newcommand{\z}{\zeta}
+\newcommand{\vt}{\vartheta}
+\renewcommand{\O}{\Omega}
+\newcommand{\D}{\Delta}
+\newcommand{\G}{\Gamma}
+%\newcommand{\T}{\Theta}
+%\renewcommand{\L}{\Lambda}
+
+%Mathcal Letters
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cW}{\mathcal{W}}
+
+%Mathematical operators
+\newcommand{\INT}{\int_{\O}}
+\newcommand{\DINT}{\int_{\d\O}}
+\newcommand{\Int}{\int_{-\infty}^{\infty}}
+\newcommand{\del}{\partial}
+
+\newcommand{\Lie}{\mathcal{L}}
+\newcommand{\inpr}[2]{\left\langle #1,#2 \right\rangle}
+\newcommand{\abs}[1]{\left\lvert{#1}\right\rvert}
+\newcommand{\fr}[2]{\frac{#1}{#2}}
+\newcommand{\x}{\times}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Id}{Id}
+
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\graph}{graph}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\opRic}{\mathcal{R}ic}
+\DeclareMathOperator{\Rm}{Rm}
+\DeclareMathOperator{\opRm}{\mathcal{R}m}
+\DeclareMathOperator{\Sc}{R}
+\DeclareMathOperator{\Ein}{E}
+\DeclareMathOperator{\opEin}{\mathcal{E}}
+\DeclareMathOperator{\Grav}{G}
+\DeclareMathOperator{\opGrav}{\mathcal{G}}
+\DeclareMathOperator{\Sch}{P}
+\DeclareMathOperator{\W}{\mathcal{W}}
+\DeclareMathOperator{\Wy}{C}
+\DeclareMathOperator{\inj}{inj}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Sym}{Sym}
+
+\newcommand{\op}[1]{\mathcal{#1}}
+
+%Environments
+\newcommand{\Theo}[3]{\begin{#1}\label{#2} #3 \end{#1}}
+\newcommand{\pf}[1]{\begin{proof} #1 \end{proof}}
+\newcommand{\eq}[1]{\begin{equation}\begin{alignedat}{2} #1 \end{alignedat}\end{equation}}
+\newcommand{\IntEq}[4]{#1&#2#3	 &\quad &\text{in}~#4,}
+\newcommand{\BEq}[4]{#1&#2#3	 &\quad &\text{on}~#4}
+\newcommand{\br}[1]{\left(#1\right)}
+
+%Logical symbols
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\hra}{\hookrightarrow}
+\newcommand{\mt}{\mapsto}
+
+%Names
+\newcommand{\holder}{H\"older}
+
+%Fonts
+\newcommand{\mc}{\mathcal}
+\renewcommand{\it}{\textit}
+\newcommand{\mrm}{\mathrm}
+
+%Spacing
+\newcommand{\hp}{\hphantom}
+
+% Local macros
+\DeclareMathOperator{\Ob}{O}
+\DeclareMathOperator{\opOb}{\mathcal{O}}
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\Dv}{D}
+\DeclareMathOperator{\xcf}{\sigma}
+\DeclareMathOperator{\dtxcf}{\xcf_{\operatorname{DT}}}
+\renewcommand{\L}{\ensuremath{\operatorname{L}}}
+\DeclareMathOperator{\dtrf}{\Ric_{\operatorname{DT}}}
+
+\author{Paul Bryan and Mohammad N. Ivaki and Julian Scheuer}
 
 \begin{document}
 
@@ -20,7 +174,9 @@ This short note is a mostly expository article examining negatively curved three
 
 \maketitle
 
-\chapter{Introduction}
+\chapter[Negatively Curved Three Manifolds]{Negatively Curved Three-Manifolds, Hyperbolic Metrics, Isometric Embeddings In Minkowski Space And The Cross Curvature Flow}
+
+\section{Introduction}
 \label{sec:intro}
 
 In the early 1980's, Thurston announced the Geometrisation Conjecture \cite{MR648524}. At around the same time, Hamilton introduced the Ricci flow \cite{Hamilton:/1982}. The Geometrisation Conjecture claimed that closed three-manifolds could be decomposed into pieces modelled on geometric structures of eight possible types, while the Ricci flow deformed metrics by their Ricci curvature. At that time, Thurston classified the possible geometric structures into the eight types and proved the Geometrisation Conjecture for Haken manifolds, while Hamilton obtained convergence to a constant sectional curvature metric provided the initial metric has positive Ricci curvature.
@@ -35,7 +191,7 @@ In \cite{MR2055396}, evidence that the XCF deforms arbitrary negatively curved m
 
 There are other results for the XCF contained in the literature. Available space precludes complete discussion here. Briefly, long time existence and expansion to infinity of a square torus bundle is obtained in \cite{MR2222245}. Long time existence, convergence results and singularity analysis on locally homogeneous spaces of variable curvature where the XCF reduces to an ODE is examined in \cite{MR2407107,MR2653711,MR2426751} as well as the backwards behaviour in \cite{MR2601352}. On a solid torus, long time existence and curvature bounds for the XCF starting at the \(2\pi\)-metric of Gromov and Thurston is obtained in \cite{MR2602839}. Finally, uniqueness and backwards uniqueness are addressed in \cite{MR3575926,MR3544962}.
 
-\chapter{Geometrisation Of Three Manifolds}
+\section{Geometrisation Of Three Manifolds}
 \label{sec:geometrisation}
 
 For surfaces, the uniformisation theorem and Gauss-Bonnet theorem provide a complete picture of the topology and its relation to curvature. The three dimensional case is more complicated than the two dimensional case, but is almost completely understood thanks to Perelman's successful completion \cite{2003math......7245P,2003math......3109P,2002math.....11159P} of Hamilton's program based on the Ricci flow \cite{Hamilton:/1982} to solve the Poincar\'e and Thurston geometrisation conjectures \cite{MR648524}. The remaining piece of the puzzle is the structure of hyperbolic, closed three manifolds. We include here a brief description and refer the reader to \cite{MR705527} and \cite{MR1435975} for in depth discussions of geometrisation and \cite{MR3186136,MR2334563,MR2460872} for expositions of the Hamilton-Perelman proof. Unless explicitly stated otherwise, the results described here may be found in these references.
@@ -67,7 +223,7 @@ Thurston proved this result for atoroidal Haken manifolds, and the general resul
 
 Below we describe \Cref{thm:intg_const_curv} stating that metrics of negative sectional curvature satisfying an integrability condition on a closed manifold may be smoothly deformed to a hyperbolic metric. \Cref{conj:chow_hamilton} claims that the integrability condition may be removed which would give a more direct proof of hyperbolisation, while strengthening the result to the statement that arbitrary negatively curved metrics are homotopic to a hyperbolic metric. Note that by the Mostow rigidity theorem \cite{MR0236383}, hyperbolic structures are classified by fundamental group and are essentially unique. That is, if the fundamental group \(\pi_1(M_1)\) of a closed hyperbolic manifold, \((M_1, g_1)\) is isomorphic to a \(\pi_1(M_2)\) for another hyperbolic manifold \((M_2, g_2)\), then in fact \((M_1, g_1)\) and \((M_2, g_2)\) are isometric. Equivalently, any homotopy equivalence of hyperbolic manifolds may in fact be homotopied to an isometry. Then \Cref{conj:chow_hamilton} would show that the space of negatively curved metrics on a hyperbolic three-manifold is contractible.
 
-\chapter{Embeddability and hyperbolic metrics}
+\section{Embeddability and hyperbolic metrics}
 \label{sec:embed_intg}
 
 Let \((M, g)\) be a compact, Riemannian manifold with strictly negative curvature. Let \(\pi\colon (\tilde{M}, \tilde{g}) \to (M, g)\) be the Riemannian universal cover so that \(\pi : \tilde{M} \to M\) is a covering map with \(\tilde{M}\) simply connected and \(\tilde{g} = \pi^{\ast} g\). Let \(G\) denote the deck transformation group of the cover and observe that \(\tilde{g}\) is invariant under \(G\). That is, \(G \leq \text{Diff}(\tilde{M})\) is a group of diffeomorphisms of \(\tilde{M}\) and \(\varphi^{\ast} \tilde{g} = \tilde{g}\) for all \(\varphi \in G\) so that \(G\) acts by isometry on \((\tilde{M}, \tilde{g})\). Then \(\tilde{g}\) induces a metric \(\bar{g}\) on the quotient \(\tilde{M}/G\) such that
@@ -262,9 +418,9 @@ The XCF deforms arbitrary negatively curved metrics to a hyperbolic metric.
 
 Evidence for this conjecture includes convergence in the integrable case from \Cref{thm:intg_const_curv}, asymptotic stability of the hyperbolic metric under XCF (\cite{MR2448593} and \Cref{thm:hyperbolic_stability} below), monotonicity of an integral quantity measuring the deviation from constant curvature (\cite{MR2055396} and \Cref{thm:hyperbolicity} below).
 
-\chapter{The Cross Curvature Flow}
+\section{The Cross Curvature Flow}
 \label{sec:xcf}
-\section{Definition And Basic Properties Of The Flow}
+\subsection{Definition And Basic Properties Of The Flow}
 \label{subsec:xcf_defn}
 
 Let \((M, g)\) be a closed, Riemannian manifold and define
@@ -363,7 +519,7 @@ so that
 \]
 \end{proof}
 
-\section{Short Time Existence And Uniqueness}
+\subsection{Short Time Existence And Uniqueness}
 \label{subsec:xcf_existence_uniqueness}
 
 The question of short time existence and uniqueness of solutions to geometric, parabolic equations on tensor bundles is complicated by the diffeomorphism invariance of the problem leading to degeneracies in the principal symbol. For the Ricci flow, DeTurck described a method to deal with this degeneracy by breaking the diffeomorphism invariance (i.e. fixing a gauge) to obtain an equivalent, strictly parabolic flow referred to as the DeTurck flow \cite{MR697987}. In \cite[Section 6]{MR1375255} a further simplification of DeTurck's method was given. Buckland then adapted this approach to the XCF, while also pointing out a gap in the original proof of short time existence and uniqueness for XCF \cite{MR2207496} (see \Cref{rem:xcf_rf} below).
@@ -457,7 +613,7 @@ where \(L_g(T) = \Ein^{ij} \nabla_i \adj \Grav(T)_{jk} - \frac{1}{2} \Ein^{ij} \
 \cite{MR2207496} observed that \(g \mapsto L_g\) is second order in \(g\) so that the argument in \cite[Sections 4-6]{Hamilton:/1982} cannot be applied. However, as we have seen, even though the terms in \eqref{eq:dtxcf_symbol} do not cancel, the DeTurck flow using \(W\) from the Ricci flow is still uniformly parabolic. Existence for XCF follows immediately, and uniqueness is obtained by the known result using the harmonic map heat flow as in the Ricci flow.
 \end{rem}
 
-\section{Basic Identities And Evolution Equations}
+\subsection{Basic Identities And Evolution Equations}
 \label{subsec:xcf_identities}
 
 Now we give some fundamental identities and evolution equations for the study of the XCF. Since there are many traces and swapping slots in what follows, it is convenient to use index notation. For convenience, we define \(V = \Ein^{-1}\) (that is \(V(X, Y) = g(\opEin^{-1} (X), Y)\)).
@@ -563,7 +719,7 @@ since scaling \(g_0\) by \(r\) results in \(\adj\Ein(g_t) = \frac{1}{r} \adj\Ein
 
 We see that up to scale, hyperbolic metrics are fixed points. In fact, they are the only fixed points up to scale and reparametrisation (i.e. solitons). See \Cref{subsec:xcf_harnack_solitons} below.
 
-\section{Towards Hyperbolic Convergence}
+\subsection{Towards Hyperbolic Convergence}
 \label{subsec:xcf_hyperbolic_convergence}
 
 The following results support \Cref{conj:chow_hamilton} that the XCF deforms arbitrary negatively curved metrics to a hyperbolic metric. Under the XCF, it is not so easy to prove directly that negative sectional curvature is preserved. However, it is possible to prove that if \(\det \opEin \to 0\), then a singularity must occur and thus negative curvature is effectively preserved since that corresponds to positive of \(\Ein\).
@@ -615,7 +771,7 @@ Then the spectrum of the right hand side is contained in \((-\infty, -1]\) (\cit
 Any constant curvature metric is asymptotically stable under the XCF after suitable normalisation.
 \end{thm}
 
-\section{Harnack inequality And Solitons}
+\subsection{Harnack inequality And Solitons}
 \label{subsec:xcf_harnack_solitons}
 
 Differential Li-Yau-Hamilton Harnack inequalities have proved an indispensable tool in the study of curvature flows. For the XCF, \cite[p. 9]{MR2055396} remarked that it is hoped such an inequality holds. For integrable solutions of the XCF this is true by proving the analogous Harnack inequality for the corresponding solution of the embedded Gauss curvature flow. In general, the non-vanishing of the devil tensor \eqref{eq:devil} causes significant difficulties in obtaining a Harnack inequality. The evolution of the devil tensor is very complicated and it's not clear whether or not it is amenable to the  maximum principle.
@@ -638,7 +794,7 @@ This follows by monotonicity and scaling: Since volume is increasing by equation
 
 The theorem further supports \Cref{conj:chow_hamilton} in that if a limiting metric exists it should be stationary for the flow (up to rescaling and reparametrisation) and hence a soliton. Thus the only expected limits have constant curvature. A Harnack inequality for general solutions would further support the conjecture since it may be used to obtain improved smoothing estimates for the flow.
 
-\section{Monotonicity Of Einstein Volume}
+\subsection{Monotonicity Of Einstein Volume}
 \label{subsec:xcf_volume}
 
 Since the Einstein tensor is a metric, it induces a volume form. By \cite[Proposition 9]{MR2055396}, the Einstein volume is monotone non-decreasing along the XCF. We may strengthen this result, characterising solutions to the XCF such that \(\frac{d}{dt} I(M_t) = 0\) as precisely the integrable solutions, a question posed in \cite{MR2055396}, page 9.
@@ -668,7 +824,7 @@ In particular, for $\eta=\frac{1}{2}$ we obtain
 and monotonicity follows. Now apply \Cref{lem:cubicform_codazzi} and \Cref{thm:intg_embed} to obtain the second part.
 \end{proof}
 
-\chapter*{Acknowledgments}
+\section*{Acknowledgments}
 
 Parts of this work were written while JS enjoyed the hospitality of the Department of Mathematics at Columbia University in New York, a visit which is funded by the "Deutsche Forschungsgemeinschaft" (DFG, German research foundation) within the research scholarship "Quermassintegral preserving local curvature flows", grant number SCHE 1879/3-1. JS would like to thank the DFG, Columbia University and especially Prof. Simon Brendle for their support. PB was supported by the ARC within the research grant “Analysis of fully non-linear geometric problems and differential equations”, number DE180100110. We would also like to thank the referee for helpful comments clarifying the exposition.
 
